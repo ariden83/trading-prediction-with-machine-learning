@@ -1,0 +1,6 @@
+myenv/*
+brent/*
+model/*
+cache/*.parquet
+cache/*.parquet_1
+wrong_prediction/*.csv
