@@ -6,7 +6,7 @@ PYTHON = python3
 # Main script
 SCRIPT = src/model_trainer.py
 PREDICT_SCRIPT = src/predict.py
-MODEL =
+MODEL = model/best_model.h5
 
 # Environment setup
 .PHONY: setup
@@ -95,7 +95,7 @@ custom-predict:
 # Start WebSocket prediction service
 .PHONY: start-service
 start-service:
-	$(PYTHON) prediction_service.py
+	$(PYTHON) ./src/prediction_service.py
 
 # Clean generated files
 .PHONY: clean

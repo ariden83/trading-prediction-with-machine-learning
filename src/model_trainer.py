@@ -486,16 +486,27 @@ def load_json_files_from_directory(directory_path):
     return combined_df
 
 
+# La fonction filter_by_time_interval filtre un DataFrame pour ne conserver que les lignes où l’intervalle de temps
+# entre deux dates consécutives (dans la colonne FromDate) est exactement égal à la valeur spécifiée par interval (en minutes).
 def filter_by_time_interval(df, interval):
     df['prev_date'] = df['FromDate'].shift(1)
     df['time_diff'] = (df['FromDate'] - df['prev_date']).dt.total_seconds() / 60
     return df[df['time_diff'] == interval]
 
 
-def preprocess_features(directory_path):
-    features_df = load_json_files_from_directory(directory_path)
+def remove_zero_open_close(df):
+    print(df[['Open', 'Close']].dtypes)
+    print(df[(df['Open'] == 0) & (df['Close'] == 0)])
+    print(df[(df['Open'] == '0') & (df['Close'] == '0')])
+    """Supprime les lignes où 'Open' et 'Close' sont à 0.0."""
+    return df[~((df['Open'] == 0.0) & (df['Close'] == 0.0))]
+
+
+def preprocess_features(features_df):
     features_df['FromDate'] = pd.to_datetime(features_df['FromDate'])
+    # features_df = remove_zero_open_close(features_df)
     features_df = features_df.sort_values(by='FromDate')
+
     features_df = filter_by_time_interval(features_df, interval=5)
     return features_df
 
@@ -547,6 +558,10 @@ def add_direction(df):
 
 def add_candle_features(df):
     df['candle_range'] = df['High'] - df['Low']
+    print("==== Bougies avec candle_range == 0 ====")
+    print(df[df['candle_range'] == 0][['FromDate', 'High', 'Low', 'Open', 'Close']])
+
+
     df['corps_candle'] = np.abs(df['Close'] - df['Open']) / df['candle_range']
     df['meche_haute'] = (df['High'] - np.maximum(df['Open'], df['Close'])) / df['candle_range']
     df['meche_basse'] = (np.minimum(df['Open'], df['Close']) - df['Low']) / df['candle_range']
@@ -1186,8 +1201,8 @@ def add_volume_indicators(df):
     df['PV_Change'] = df['PV_Ratio'].pct_change()
 
     # On-Balance Volume (OBV)
-    df['OBV'] = 0
-    df.loc[1:, 'OBV'] = ((df['Close'].diff() > 0) * 2 - 1) * df['Volume']
+    df['OBV'] = 0.0
+    df.loc[1:, 'OBV'] = ((df['Close'].diff() > 0).astype(int) * 2 - 1) * df['Volume']
     df['OBV'] = df['OBV'].cumsum()
 
     # Accumulation/Distribution Line
@@ -1232,7 +1247,9 @@ def add_volume_indicators(df):
     df['Volume_Oscillator'] = df['Volume_SMA_5'] - df['Volume_SMA_20']
 
     # Volume-Weighted Average Price (VWAP)
-    df['VWAP'] = (df['Close'] * df['Volume']).cumsum() / df['Volume'].cumsum()
+    vwap = (df['Close'] * df['Volume']).cumsum() / df['Volume'].cumsum()
+    df = pd.concat([df, pd.DataFrame({'VWAP': vwap})], axis=1)
+    df = df.copy()
 
     # Volume-Weighted Moving Average (VWMA)
     df['VWMA_10'] = (df['Close'] * df['Volume']).rolling(window=10).sum() / df['Volume'].rolling(window=10).sum()
@@ -1358,7 +1375,7 @@ def load_timeframe_data(base_directory, timeframe):
     return df
 
 
-def add_multi_timeframe_features(df_5min, base_directory='brent'):
+def add_multi_timeframe_features(df_5min, df_1h, df_4h, df_1d, base_directory='brent'):
     """
     Add features from multiple timeframes (1h, 4h, 1d) to provide broader market context.
     This helps the model understand both short and long-term trends.
@@ -1374,15 +1391,10 @@ def add_multi_timeframe_features(df_5min, base_directory='brent'):
         DataFrame with added multi-timeframe features
     """
     # Ensure the dataframe is sorted by time
-    df_5min = df_5min.sort_values('FromDate')
+    # df_5min = df_5min.sort_values('FromDate')
 
+    # print(df_5min[['FromDate', 'Open', 'High', 'Low', 'Close', 'Volume']].head())
 
-    print(df_5min[['FromDate', 'Open', 'High', 'Low', 'Close', 'Volume']].head())
-
-    # Load data from other timeframes
-    df_1h = load_timeframe_data(base_directory, '1h')
-    df_4h = load_timeframe_data(base_directory, '4h')
-    df_1d = load_timeframe_data(base_directory, '1d')
 
     # If any of the dataframes are empty, fall back to using the shift method
     if df_1h.empty or df_4h.empty or df_1d.empty:
@@ -1550,13 +1562,13 @@ def add_multi_timeframe_features(df_5min, base_directory='brent'):
 
 
 
-def detect_patterns_multi_tf(df, timeframes=['5T', '1H', '4H', '1D']):
+def detect_patterns_multi_tf(df, timeframes=['5min', '1h', '4h', '1d']):
     """
     Applique la détection de double top et double bottom sur plusieurs timeframes et fusionne les résultats.
 
     Args:
         df (pd.DataFrame): Données contenant 'FromDate', 'High', 'Low', 'Close'.
-        timeframes (list): Liste des timeframes à analyser (par défaut ['5T', '1H', '4H', '1D']).
+        timeframes (list): Liste des timeframes à analyser (par défaut ['5min', '1h', '4h', '1d']).
 
     Returns:
         pd.DataFrame: DataFrame enrichi avec les signaux sur plusieurs timeframes.
@@ -1671,23 +1683,29 @@ def detect_patterns(df):
 
 
 # =========== MAIN FUNCTION ===========
-
-def createdata(cache_file):
+def load_data():
+    base_directory = "./brent"
     # Chemin vers le dossier contenant les fichiers JSON
-    directory_path = "./brent/5min"
-
+    features_df = load_json_files_from_directory(base_directory + "/5min")
     # Charger les fichiers JSON et créer le DataFrame combiné
-    features_df = preprocess_features(directory_path)
+    features_df = preprocess_features(features_df)
 
-    # Convertir 'FromDate' en datetime
-    features_df['FromDate'] = pd.to_datetime(features_df['FromDate'])
+    # Load data from other timeframes
+    print("Load features (1h, 4h, 1d)...")
+    df_1h = load_timeframe_data(base_directory, '1h')
+    df_4h = load_timeframe_data(base_directory, '4h')
+    df_1d = load_timeframe_data(base_directory, '1d')
 
-    # Triez les données par 'FromDate'
-    features_df = features_df.sort_values(by='FromDate')
-    features_df = add_volume_indicators(features_df)
+    return create_parquet(features_df, df_1h, df_4h, df_1d)
+
+
+def create_parquet(features_df, df_1h, df_4h, df_1d):
 
     print("Adding multi-timeframe features (1h, 4h, 1d)...")
-    features_df = add_multi_timeframe_features(features_df)
+    features_df = add_multi_timeframe_features(features_df, df_1h, df_4h, df_1d)
+
+    features_df = add_volume_indicators(features_df)
+    
     features_df = detect_patterns_multi_tf(features_df)
 
     # Filtrer les lignes avec un intervalle de 5 minutes
@@ -1731,7 +1749,8 @@ def createdata(cache_file):
     features_df = add_body_ratio(features_df)
     features_df = calculate_macd(features_df)
 
-    features_df['body_ratio_prev'] = features_df['candle_range'] / features_df['candle_range'].shift(1)
+    features_df['body_ratio_prev'] = features_df['candle_range'] / features_df['candle_range'].shift(1).replace(0, np.nan)
+    features_df['body_ratio_prev'] = features_df['body_ratio_prev'].replace([np.inf, -np.inf], np.nan).fillna(0)
 
     # Ajouter des indicateurs techniques
     features_df['SMA_10'] = features_df['Close'].rolling(window=10).mean()
@@ -1882,8 +1901,6 @@ def createdata(cache_file):
         if col in features_df.columns:
             features_df[col] = features_df[col].astype(bool)
 
-    # Sauvegarde les features après leur calcul
-    features_df.to_parquet(cache_file, index=False)  # Format plus efficace que CSV
     return features_df
 
 
@@ -1892,14 +1909,16 @@ def main():
     if os.path.exists(cache_file):
         print("🔄 Chargement des features depuis le cache...")
         features_df = pd.read_parquet(cache_file)
+        # Sort by date to ensure deterministic order
+        features_df = features_df.sort_values('FromDate')
         # features_df.to_parquet(cache_file, index=False)
         # features_df = pd.read_csv("features_cache.csv")  # Alternative si besoin CSV
     else:
         print("⚙️ Calcul des features...")
-        features_df = createdata(cache_file)
+        features_df = load_data()
+        print("⚙️ Sauvegarde des features...")
+        features_df.to_parquet(cache_file, index=False)
 
-    # Sort by date to ensure deterministic order
-    features_df = features_df.sort_values('FromDate')
 
     # Créer des séquences temporelles
     sequence_length = 16
