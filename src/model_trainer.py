@@ -952,29 +952,67 @@ def add_candle_trend_relation(df):
 
 
 def add_engulfing(df):
-    # Bougie haussière engloutissante : La bougie actuelle engloutit la bougie précédente (et est haussière)
-    df['bullish_engulfing'] = (
-            (df['Close'] > df['Open']) &  # La bougie actuelle est haussière
-            (df['Close'].shift(1) < df['Open'].shift(1)) &  # La bougie précédente est baissière
-            (df['Open'] < df['Close'].shift(1)) &  # Le bas de la bougie actuelle est inférieur au haut de la bougie précédente
-            (df['Close'] > df['Open'].shift(1)) &  # Le haut de la bougie actuelle est supérieur au bas de la bougie précédente
-            (df['candle_range'] > df['candle_range'].shift(1)) &  # La bougie actuelle est plus grande que la précédente
-            (df['High'] > df['High'].shift(1)) &  # Le haut de la bougie actuelle dépasse celui de la bougie précédente
-            (df['Low'] < df['Low'].shift(1))  # Le bas de la bougie actuelle est inférieur à celui de la bougie précédente
+    """
+    Ajoute deux colonnes au DataFrame : bullish_engulfing et bearish_engulfing.
+
+    Cette fonction identifie les patterns d'englobement (engulfing patterns) qui sont
+    des indicateurs importants en analyse technique des chandeliers japonais.
+
+    Args:
+        df (pd.DataFrame): DataFrame contenant les colonnes OHLC (Open, High, Low, Close)
+
+    Returns:
+        pd.DataFrame: DataFrame avec les colonnes 'bullish_engulfing' et 'bearish_engulfing' ajoutées
+    """
+    # Vérification des colonnes nécessaires
+    required_columns = ['Open', 'Close']
+    for col in required_columns:
+        if col not in df.columns:
+            raise ValueError(f"La colonne '{col}' est requise mais absente du DataFrame")
+
+    # Création de copies pour éviter les SettingWithCopyWarning
+    df_copy = df.copy()
+
+    # Calcul du corps des bougies
+    current_body = (df_copy['Close'] - df_copy['Open']).abs()
+    prev_body = (df_copy['Close'].shift(1) - df_copy['Open'].shift(1)).abs()
+
+    # Identification des tendances des bougies
+    current_bullish = df_copy['Close'] > df_copy['Open']
+    current_bearish = df_copy['Close'] < df_copy['Open']
+    prev_bullish = df_copy['Close'].shift(1) > df_copy['Open'].shift(1)
+    prev_bearish = df_copy['Close'].shift(1) < df_copy['Open'].shift(1)
+
+    # Définition de l'englobement
+    # Pour le pattern haussier engloutissant (bullish engulfing)
+    df_copy['bullish_engulfing'] = (
+            current_bullish &                           # Bougie actuelle haussière
+            prev_bearish &                              # Bougie précédente baissière
+            (df_copy['Open'] <= df_copy['Close'].shift(1)) &  # Ouverture actuelle sous/égale à la clôture précédente
+            (df_copy['Close'] >= df_copy['Open'].shift(1)) &  # Clôture actuelle au-dessus/égale à l'ouverture précédente
+            (current_body > prev_body * 0.95)           # Corps actuel plus grand que le précédent (avec tolérance de 5%)
     ).astype(int)
 
-    # Bougie baissière engloutissante : La bougie actuelle engloutit la bougie précédente (et est baissière)
-    df['bearish_engulfing'] = (
-            (df['Close'] < df['Open']) &  # La bougie actuelle est baissière
-            (df['Close'].shift(1) > df['Open'].shift(1)) &  # La bougie précédente est haussière
-            (df['Open'] > df['Close'].shift(1)) &  # Le bas de la bougie actuelle est supérieur au haut de la bougie précédente
-            (df['Close'] < df['Open'].shift(1)) &  # Le haut de la bougie actuelle est inférieur au bas de la bougie précédente
-            (df['candle_range'] > df['candle_range'].shift(1)) &  # La bougie actuelle est plus grande que la précédente
-            (df['High'] < df['High'].shift(1)) &  # Le haut de la bougie actuelle est inférieur à celui de la bougie précédente
-            (df['Low'] > df['Low'].shift(1))  # Le bas de la bougie actuelle est supérieur à celui de la bougie précédente
+    # Pour le pattern baissier engloutissant (bearish engulfing)
+    df_copy['bearish_engulfing'] = (
+            current_bearish &                           # Bougie actuelle baissière
+            prev_bullish &                              # Bougie précédente haussière
+            (df_copy['Open'] >= df_copy['Open'].shift(1)) &  # Ouverture actuelle au-dessus/égale à l'ouverture précédente
+            (df_copy['Close'] <= df_copy['Close'].shift(1)) &  # Clôture actuelle sous/égale à la clôture précédente
+            (current_body > prev_body * 0.95)           # Corps actuel plus grand que le précédent (avec tolérance de 5%)
     ).astype(int)
 
-    return df
+    # Gestion des valeurs manquantes (première ligne)
+    df_copy.loc[df_copy.index[0], ['bullish_engulfing', 'bearish_engulfing']] = 0
+
+    # Calcul d'un score d'intensité pour ces patterns (facultatif)
+    df_copy['engulfing_strength'] = np.where(
+        (df_copy['bullish_engulfing'] == 1) | (df_copy['bearish_engulfing'] == 1),
+        current_body / prev_body,
+        0
+    )
+
+    return df_copy
 
 
 def add_wick_features(df):
@@ -2453,6 +2491,8 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
                             'Price_Trend', 'ADL_Divergence',
                             'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross',
                             'PVT_cross_signal', 'PVT_delta5',
+                            'doji_type', 'doji', 'doji_strength', 'perfect_doji', 'doji_invalid', 'pattern_type',
+                            'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength',
                             'Keltner_Low', 'Keltner_Mid', 'Keltner_Width'], axis=1).tail(20))
     features_df['ADX'] = ta.trend.adx(
         high=features_df['High'],
