@@ -18,6 +18,11 @@ h1 {
     color: #2c3e50;
     margin-top: 0;
 }
+#price-chart {
+    width: 100%;
+    height: 350px !important; /* Hauteur fixe pour le canvas avec !important pour s'assurer qu'elle est respectée */
+    max-height: 350px !important; /* Hauteur maximale fixe */
+}
 .card {
     background-color: #fff;
     border-radius: 8px;

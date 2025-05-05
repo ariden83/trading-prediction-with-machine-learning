@@ -12,9 +12,9 @@ from datetime import datetime, timedelta
 from sklearn.metrics import accuracy_score, roc_auc_score, classification_report
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras import Input
-from sklearn.utils.class_weight import compute_class_weight
+# from sklearn.utils.class_weight import compute_class_weight
 from sklearn.metrics import precision_recall_curve, auc
-from sklearn.dummy import DummyClassifier
+# from sklearn.dummy import DummyClassifier
 from tensorflow.keras.layers import Conv1D, MaxPooling1D, Flatten
 import ta
 import pandas_ta as pta
@@ -22,8 +22,7 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.optimizers import Adam
 import seaborn as sns
 import pytz
-from datetime import timedelta
-import fastparquet
+# import fastparquet
 from tensorflow.keras.initializers import HeNormal, GlorotUniform, LecunNormal
 
 print("Parquet engines loaded successfully!")
@@ -1169,6 +1168,144 @@ def analyze_errors(features_df, y_test, y_pred, filename="./doc/assets/wrong_pre
     return wrong_predictions
 
 
+def obv(df):
+    # Calculer l'OBV correctement
+    df['OBV'] = 0
+    # Différentes fenêtres pour l'OBV
+    short_window = 5
+    medium_window = 15
+    long_window = 30
+
+    # Calcul de l'OBV de base
+    for i in range(1, len(df)):
+        if df['Close'].iloc[i] > df['Close'].iloc[i-1]:
+            df.loc[df.index[i], 'OBV'] = df.loc[df.index[i-1], 'OBV'] + df.loc[df.index[i], 'Volume']
+        elif df['Close'].iloc[i] < df['Close'].iloc[i-1]:
+            df.loc[df.index[i], 'OBV'] = df.loc[df.index[i-1], 'OBV'] - df.loc[df.index[i], 'Volume']
+        else:
+            df.loc[df.index[i], 'OBV'] = df.loc[df.index[i-1], 'OBV']
+
+    # Normalisation de l'OBV de base
+    # Méthode 1: Normalisation par le volume moyen - transformation en "équivalent jours de volume"
+    mean_volume = df['Volume'].mean()
+    if mean_volume > 0:  # Éviter la division par zéro
+        df['OBV_normalized'] = df['OBV'] / mean_volume
+    else:
+        df['OBV_normalized'] = df['OBV']
+
+    # Méthode 2: Normalisation Min-Max entre -1 et 1
+    obv_min, obv_max = df['OBV'].min(), df['OBV'].max()
+    if obv_max > obv_min:  # Éviter la division par zéro
+        df['OBV_norm_minmax'] = 2 * (df['OBV'] - obv_min) / (obv_max - obv_min) - 1
+    else:
+        df['OBV_norm_minmax'] = 0
+
+    # Calcul des moyennes mobiles avec différentes fenêtres (utilisant l'OBV normalisé)
+    df['OBV_SMA_short'] = df['OBV_normalized'].rolling(window=short_window).mean()
+    df['OBV_SMA_medium'] = df['OBV_normalized'].rolling(window=medium_window).mean()
+    df['OBV_SMA_long'] = df['OBV_normalized'].rolling(window=long_window).mean()
+
+    # Tendances pour différentes périodes
+    df['OBV_Trend_short'] = 0
+    df['OBV_Trend_medium'] = 0
+    df['OBV_Trend_long'] = 0
+
+    # Calculer les tendances pour chaque fenêtre
+    for i in range(short_window, len(df)):
+        if df.loc[df.index[i], 'OBV_SMA_short'] > df.loc[df.index[i-1], 'OBV_SMA_short'] * 1.001:
+            df.loc[df.index[i], 'OBV_Trend_short'] = 1
+        elif df.loc[df.index[i], 'OBV_SMA_short'] < df.loc[df.index[i-1], 'OBV_SMA_short'] * 0.999:
+            df.loc[df.index[i], 'OBV_Trend_short'] = -1
+        else:
+            df.loc[df.index[i], 'OBV_Trend_short'] = 0
+
+    for i in range(medium_window, len(df)):
+        # Tendance moyen terme
+        if df.loc[df.index[i], 'OBV_SMA_medium'] > df.loc[df.index[i-1], 'OBV_SMA_medium'] * 1.0008:
+            df.loc[df.index[i], 'OBV_Trend_medium'] = 1
+        elif df.loc[df.index[i], 'OBV_SMA_medium'] < df.loc[df.index[i-1], 'OBV_SMA_medium'] * 0.9992:
+            df.loc[df.index[i], 'OBV_Trend_medium'] = -1
+        else:
+            df.loc[df.index[i], 'OBV_Trend_medium'] = 0
+
+    for i in range(long_window, len(df)):
+        # Tendance long terme
+        if df.loc[df.index[i], 'OBV_SMA_long'] > df.loc[df.index[i-1], 'OBV_SMA_long'] * 1.0005:
+            df.loc[df.index[i], 'OBV_Trend_long'] = 1
+        elif df.loc[df.index[i], 'OBV_SMA_long'] < df.loc[df.index[i-1], 'OBV_SMA_long'] * 0.9995:
+            df.loc[df.index[i], 'OBV_Trend_long'] = -1
+        else:
+            df.loc[df.index[i], 'OBV_Trend_long'] = 0
+
+    # Feature composite pour la tendance globale
+    df['OBV_Trend'] = df['OBV_Trend_short'] + df['OBV_Trend_medium'] + df['OBV_Trend_long']
+
+    return df
+
+
+def adl(df):
+    """
+    Calcule l'indicateur Accumulation/Distribution Line (ADL) complet avec dérivés.
+
+    L'ADL est un indicateur de volume qui évalue la relation entre le prix et le volume
+    pour confirmer les tendances de prix ou anticiper les renversements.
+    """
+    # Calcul du Money Flow Multiplier
+    money_flow_multiplier = ((df['Close'] - df['Low']) - (df['High'] - df['Close'])) / (df['High'] - df['Low'])
+
+    # Remplacer les valeurs infinies et NaN qui se produisent quand High = Low
+    money_flow_multiplier = money_flow_multiplier.replace([np.inf, -np.inf], np.nan).fillna(0)
+
+    # Money Flow Volume = Money Flow Multiplier * Volume
+    df['MFV'] = money_flow_multiplier * df['Volume']
+
+    # ADL = Somme cumulative du Money Flow Volume
+    df['ADL'] = df['MFV'].cumsum()
+
+    # Normalisation de l'ADL pour faciliter l'interprétation
+    adl_min, adl_max = df['ADL'].min(), df['ADL'].max()
+    if adl_max > adl_min:  # Éviter la division par zéro
+        df['ADL_norm'] = 2 * (df['ADL'] - adl_min) / (adl_max - adl_min) - 1
+    else:
+        df['ADL_norm'] = 0
+
+    # Moyennes mobiles de l'ADL pour différentes périodes
+    df['ADL_SMA5'] = df['ADL'].rolling(window=5).mean()
+    df['ADL_SMA15'] = df['ADL'].rolling(window=15).mean()
+    df['ADL_SMA30'] = df['ADL'].rolling(window=30).mean()
+
+    # Tendance de l'ADL (court terme)
+    df['ADL_Trend'] = 0
+    for i in range(5, len(df)):
+        if df['ADL_SMA5'].iloc[i] > df['ADL_SMA5'].iloc[i-1] * 1.0001:
+            df.loc[df.index[i], 'ADL_Trend'] = 1  # Tendance haussière
+        elif df['ADL_SMA5'].iloc[i] < df['ADL_SMA5'].iloc[i-1] * 0.9999:
+            df.loc[df.index[i], 'ADL_Trend'] = -1  # Tendance baissière
+
+    # Divergence entre ADL et prix (signaux importants)
+    df['Price_Trend'] = 0
+    df['ADL_Divergence'] = 0
+
+    for i in range(5, len(df)):
+        # Tendance du prix sur 5 périodes
+        if df['Close'].iloc[i] > df['Close'].iloc[i-5] * 1.0005:  # Réduit de 0.5% à 0.05%
+            df.loc[df.index[i], 'Price_Trend'] = 1
+        elif df['Close'].iloc[i] < df['Close'].iloc[i-5] * 0.9995:  # Réduit de 0.5% à 0.05%
+            df.loc[df.index[i], 'Price_Trend'] = -1
+
+        # Divergence: tendance de prix différente de la tendance ADL
+        if df['Price_Trend'].iloc[i] != 0 and df['ADL_Trend'].iloc[i] != 0:  # S'assurer qu'on a des tendances
+            if df['Price_Trend'].iloc[i] == 1 and df['ADL_Trend'].iloc[i] == -1:
+                df.loc[df.index[i], 'ADL_Divergence'] = -1  # Divergence baissière
+            elif df['Price_Trend'].iloc[i] == -1 and df['ADL_Trend'].iloc[i] == 1:
+                df.loc[df.index[i], 'ADL_Divergence'] = 1   # Divergence haussière
+
+    print("Répartition des valeurs Price_Trend:", df['Price_Trend'].value_counts())
+    print("Répartition des valeurs ADL_Trend:", df['ADL_Trend'].value_counts())
+    print("Répartition des valeurs ADL_Divergence:", df['ADL_Divergence'].value_counts())
+
+    return df
+
 def add_volume_indicators(df):
 
     df['Volume'] = df['Volume'].replace(0, 1e-6)
@@ -1200,14 +1337,10 @@ def add_volume_indicators(df):
     df['PV_Ratio'] = df['Close'] * df['Volume']
     df['PV_Change'] = df['PV_Ratio'].pct_change()
 
-    # On-Balance Volume (OBV)
-    df['OBV'] = 0.0
-    df.loc[1:, 'OBV'] = ((df['Close'].diff() > 0).astype(int) * 2 - 1) * df['Volume']
-    df['OBV'] = df['OBV'].cumsum()
+    df = obv(df)
 
     # Accumulation/Distribution Line
-    df['ADL'] = ((df['Close'] - df['Low']) - (df['High'] - df['Close'])) / (df['High'] - df['Low']) * df['Volume']
-    df['ADL'] = df['ADL'].cumsum()
+    df = adl(df)
 
     # Chaikin Money Flow (period 20)
     df['MFM'] = ((df['Close'] - df['Low']) - (df['High'] - df['Close'])) / (df['High'] - df['Low'])
@@ -1288,17 +1421,17 @@ def add_volume_indicators(df):
     df['Vol_Weighted_RSI'] = 100 - (100 / (1 + (df['Vol_Weighted_Up_Avg'] / df['Vol_Weighted_Down_Avg'])))
 
 
-    print(df[df['Volume'] == 0].head(10))
-    print(f"Nombre de volumes à zéro : {df['Volume'].eq(0).sum()}")
-    print(df['Volume'].value_counts())
-    print(df['Volume'].describe())
+    # print(df[df['Volume'] == 0].head(10))
+    # print(f"Nombre de volumes à zéro : {df['Volume'].eq(0).sum()}")
+    # print(df['Volume'].value_counts())
+    # print(df['Volume'].describe())
 
     df.replace([np.inf, -np.inf], np.nan, inplace=True)
     df.fillna(0, inplace=True)
 
-    print(df.isna().sum())  # Voir combien de NaN restent
-    print((df == np.inf).sum())  # Voir s'il reste des inf
-    print((df == -np.inf).sum())  # Voir s'il reste des -inf
+    # print(df.isna().sum())  # Voir combien de NaN restent
+    # print((df == np.inf).sum())  # Voir s'il reste des inf
+    # print((df == -np.inf).sum())  # Voir s'il reste des -inf
 
     return df
 
@@ -1373,6 +1506,46 @@ def load_timeframe_data(base_directory, timeframe):
 
     print(f"Loaded {len(df)} {timeframe} data points from {df['FromDate'].min()} to {df['FromDate'].max()}")
     return df
+
+
+def get_last_closed_row(df, delta, date):
+    # On cherche la dernière bougie dont la fin de période < date
+    # On suppose que 'FromDate' est le début de la période
+    df = df[df['FromDate'] + delta < date]
+    if df.empty:
+        return None
+    return df.iloc[-1]
+
+
+# Pour chaque séquence 5min, associer dynamiquement les features 1h, 4h, 1d correspondant à la même période (par exemple, la dernière valeur 1h, 4h, 1d disponible à la fin de la séquence).
+def get_multi_timeframe_features_for_sequence(seq_5min, df_1h, df_4h, df_1d):
+    """
+    Pour chaque séquence 5min, associe dynamiquement les features 1h, 4h, 1d correspondant à la même période,
+    c'est-à-dire la dernière valeur 1h, 4h, 1d dont la période est complètement terminée
+    (évite toute fuite d'information du futur).
+    """
+    last_5min_date = seq_5min['FromDate'].iloc[-1]
+
+    # Définir la durée de chaque timeframe
+    tf_deltas = {
+        '1h': pd.Timedelta(hours=1),
+        '4h': pd.Timedelta(hours=4),
+        '1d': pd.Timedelta(days=1)
+    }
+
+    row_1h = get_last_closed_row(df_1h, tf_deltas['1h'], last_5min_date)
+    row_4h = get_last_closed_row(df_4h, tf_deltas['4h'], last_5min_date)
+    row_1d = get_last_closed_row(df_1d, tf_deltas['1d'], last_5min_date)
+
+    features = {}
+    if row_1h is not None:
+        features.update({f'1h_{col}': row_1h[col] for col in row_1h.index if col != 'FromDate'})
+    if row_4h is not None:
+        features.update({f'4h_{col}': row_4h[col] for col in row_4h.index if col != 'FromDate'})
+    if row_1d is not None:
+        features.update({f'1d_{col}': row_1d[col] for col in row_1d.index if col != 'FromDate'})
+
+    return features
 
 
 def add_multi_timeframe_features(df_5min, df_1h, df_4h, df_1d, base_directory='brent'):
@@ -1562,7 +1735,7 @@ def add_multi_timeframe_features(df_5min, df_1h, df_4h, df_1d, base_directory='b
 
 
 
-def detect_patterns_multi_tf(df, timeframes=['5min', '1h', '4h', '1d']):
+def detect_patterns_multi_tf(df, df_1h, df_4h, df_1d, timeframes=['5min', '1h', '4h', '1d']):
     """
     Applique la détection de double top et double bottom sur plusieurs timeframes et fusionne les résultats.
 
@@ -1573,33 +1746,43 @@ def detect_patterns_multi_tf(df, timeframes=['5min', '1h', '4h', '1d']):
     Returns:
         pd.DataFrame: DataFrame enrichi avec les signaux sur plusieurs timeframes.
     """
+    # df = df.copy()  # On évite de modifier l'original
 
-    df = df.copy()  # On évite de modifier l'original
+    last_row = get_last_closed_row(df, pd.Timedelta(minutes=5), df['FromDate'].iloc[-1])
+    df_1h_limited = df_1h[df_1h['FromDate'] <= last_row['FromDate']] if last_row is not None else df_1h.iloc[0:0]
+    df_4h_limited = df_4h[df_4h['FromDate'] <= last_row['FromDate']] if last_row is not None else df_4h.iloc[0:0]
+    df_1d_limited = df_1d[df_1d['FromDate'] <= last_row['FromDate']] if last_row is not None else df_1d.iloc[0:0]
+
+    dfs = {'5min': df, '1h': df_1h_limited, '4h': df_4h_limited, '1d': df_1d_limited}
 
     for tf in timeframes:
-        # Resample les données selon le timeframe
-        df_tf = df.resample(tf, on='FromDate').agg({
-            'High': 'max',
-            'Low': 'min',
-            'Close': 'last'
-        }).dropna().reset_index()
+        df_tf = dfs[tf]
+        results = detect_patterns(df_tf)
+        if not results.empty:
+            df[f'double_top_{tf}'] = results['double_top'].iloc[-1]
+            df[f'double_top_value_{tf}'] = results['double_top_value'].iloc[-1] if 'double_top_value' in results else np.nan
+            df[f'double_bottom_{tf}'] = results['double_bottom'].iloc[-1]
+            df[f'double_bottom_value_{tf}'] = results['double_bottom_value'].iloc[-1] if 'double_bottom_value' in results else np.nan
+            df[f'breakout_price_{tf}'] = results['breakout_price'].iloc[-1]
+            # Ajout explicite de la ligne de résistance du double top si présente
+            if 'double_top_line' in results:
+                df[f'double_top_line_{tf}'] = results['double_top_line'].iloc[-1]
+            else:
+                df[f'double_top_line_{tf}'] = np.nan
 
-        # Applique la détection des patterns
-        df_tf = detect_patterns(df_tf)
+            if 'double_bottom_line' in results:
+                df[f'double_bottom_line_{tf}'] = results['double_bottom_line'].iloc[-1]
+            else:
+                df[f'double_bottom_line_{tf}'] = np.nan
+        else:
+            df[f'double_top_{tf}'] = False
+            df[f'double_bottom_{tf}'] = False
+            df[f'breakout_price_{tf}'] = False
+            df[f'double_top_value_{tf}'] = np.nan
+            df[f'double_bottom_value_{tf}'] = np.nan
+            df[f'double_top_line_{tf}'] = np.nan
+            df[f'double_bottom_line_{tf}'] = np.nan
 
-        # Renomme les colonnes pour éviter les conflits
-        df_tf = df_tf.rename(columns={
-            'double_top': f'double_top_{tf}',
-            'double_bottom': f'double_bottom_{tf}',
-            'breakout_price': f'breakout_price_{tf}'
-        })
-
-        df_tf[f'double_top_{tf}'] = df_tf[f'double_top_{tf}'].astype(bool)
-        df_tf[f'double_bottom_{tf}'] = df_tf[f'double_bottom_{tf}'].astype(bool)
-
-        # Fusion avec le dataframe original (en associant aux timestamps les plus proches)
-        df = df.merge(df_tf[['FromDate', f'double_top_{tf}', f'double_bottom_{tf}', f'breakout_price_{tf}']],
-                      on='FromDate', how='left')
 
     return df
 
@@ -1608,12 +1791,11 @@ def detect_patterns_multi_tf(df, timeframes=['5min', '1h', '4h', '1d']):
 def detect_patterns(df):
     """
     Détecte les patterns Double Top, Double Bottom et prédit les niveaux de cassure potentiels.
-
+    Ajoute la ligne de résistance du double top (valeur du sommet) pour la dernière valeur trouvée.
     Args:
         df: DataFrame contenant les colonnes 'FromDate', 'High', 'Low', 'Close'
-
     Returns:
-        DataFrame avec colonnes supplémentaires indiquant les patterns détectés et le niveau de cassure.
+        DataFrame avec colonnes supplémentaires indiquant les patterns détectés, le niveau de cassure et la résistance.
     """
 
     # Détection des sommets et creux locaux
@@ -1629,6 +1811,7 @@ def detect_patterns(df):
     double_tops = []
     double_bottoms = []
     breakouts = []
+    double_top_lines = []
 
     peaks = df[df['is_peak']].index
     troughs = df[df['is_trough']].index
@@ -1641,6 +1824,7 @@ def detect_patterns(df):
         if abs(df.loc[first_peak, 'High'] - df.loc[second_peak, 'High']) / df.loc[first_peak, 'High'] < 0.01:
             neckline = df.loc[first_peak:second_peak, 'Low'].min()
             double_tops.append((df.loc[second_peak, 'FromDate'], neckline))
+            double_top_lines.append((df.loc[second_peak, 'FromDate'], df.loc[first_peak, 'High']))
 
             # Prédiction du breakdown après cassure du support
             target_price = neckline - (df.loc[first_peak, 'High'] - neckline)
@@ -1668,52 +1852,55 @@ def detect_patterns(df):
     # Initialisation propre de breakout_price avec NaN (float par défaut)
     df['breakout_price'] = np.nan
 
+    # Initialisation de la ligne de résistance du double top
+    df['double_top_line'] = np.nan
+    df['double_bottom_line'] = np.nan
+
+    # Ajout des valeurs de breakout_price et de la ligne de résistance
+    for date, pattern, price in breakouts:
+        df.loc[df['FromDate'] == date, 'breakout_price'] = float(price)
+    for date, resistance in double_top_lines:
+        df.loc[df['FromDate'] == date, 'double_top_line'] = float(resistance)
+    for date, support in double_bottoms:
+        df.loc[df['FromDate'] == date, 'double_bottom_line'] = float(support)
+
     # Création d'une colonne indicatrice (0 si NaN, 1 sinon)
     df['has_breakout'] = df['breakout_price'].notna().astype(int)
 
-    # Ajout des valeurs de breakout_price basées sur breakouts
-    for date, pattern, price in breakouts:
-        df.loc[df['FromDate'] == date, 'breakout_price'] = float(price)
-
     # Vérification des types après modification
     print(df.dtypes)
-    print(df['breakout_price'].dropna().head())
+    print(df[['breakout_price', 'double_top_line', 'double_bottom_line']].dropna().head())
 
     return df
 
 
 # =========== MAIN FUNCTION ===========
-def load_data():
-    base_directory = "./brent"
+def load_data(base_directory, df_1h, df_4h, df_1d):
     # Chemin vers le dossier contenant les fichiers JSON
     features_df = load_json_files_from_directory(base_directory + "/5min")
     # Charger les fichiers JSON et créer le DataFrame combiné
     features_df = preprocess_features(features_df)
 
     # Load data from other timeframes
-    print("Load features (1h, 4h, 1d)...")
-    df_1h = load_timeframe_data(base_directory, '1h')
-    df_4h = load_timeframe_data(base_directory, '4h')
-    df_1d = load_timeframe_data(base_directory, '1d')
+    # print("Load features (1h, 4h, 1d)...")
+    # df_1h = load_timeframe_data(base_directory, '1h')
+    # df_4h = load_timeframe_data(base_directory, '4h')
+    # df_1d = load_timeframe_data(base_directory, '1d')
 
     return create_parquet(features_df, df_1h, df_4h, df_1d)
 
 
 def create_parquet(features_df, df_1h, df_4h, df_1d):
-
+    print(f"Nombre de lignes dans create_parquet v0.0.0 : {len(features_df)}")
     print("Adding multi-timeframe features (1h, 4h, 1d)...")
-    features_df = add_multi_timeframe_features(features_df, df_1h, df_4h, df_1d)
+    # features_df = add_multi_timeframe_features(features_df, df_1h, df_4h, df_1d)
 
     features_df = add_volume_indicators(features_df)
-    
-    features_df = detect_patterns_multi_tf(features_df)
 
     # Filtrer les lignes avec un intervalle de 5 minutes
     features_df['prev_date'] = features_df['FromDate'].shift(1)
     features_df["timestamp"] = features_df['FromDate'].apply(lambda x: int(x.timestamp()))
-
     features_df['time_diff'] = (features_df['FromDate'] - features_df['prev_date']).dt.total_seconds() / 60
-    features_df = features_df[features_df['time_diff'] == 5]
 
     features_df = add_time_columns(features_df)
 
@@ -1756,6 +1943,7 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
     features_df['SMA_10'] = features_df['Close'].rolling(window=10).mean()
     features_df['EMA_10'] = features_df['Close'].ewm(span=10, adjust=False).mean()
 
+    print(f"Nombre de lignes dans features_df avant ATR : {len(features_df)}")
     features_df['ATR_14'] = ta.volatility.AverageTrueRange(
         high=features_df['High'],
         low=features_df['Low'],
@@ -1763,12 +1951,12 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
         window=14
     ).average_true_range()
 
-    features_df['ATR_50'] = ta.volatility.AverageTrueRange(
-        high=features_df['High'],
-        low=features_df['Low'],
-        close=features_df['Close'],
-        window=50
-    ).average_true_range()
+    # features_df['ATR_50'] = ta.volatility.AverageTrueRange(
+    #    high=features_df['High'],
+    #    low=features_df['Low'],
+    #    close=features_df['Close'],
+    #    window=50
+    # ).average_true_range()
 
     features_df['MACD'] = ta.trend.MACD(
         close=features_df['Close'],
@@ -1806,16 +1994,58 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
         smooth2=3
     ).stochrsi()
 
+    print(f"Nombre de lignes dans create_parquet v0.1.0 : {len(features_df)}")
     kc = ta.volatility.KeltnerChannel(
         high=features_df['High'],
         low=features_df['Low'],
         close=features_df['Close'],
         window=20
     )
+    # print(f"Nombre de lignes dans create_parquet v0.1.1 : {len(features_df)}")
+    # Après la ligne 1870
+    middle_band = kc.keltner_channel_mband()
+    # print("Middle Band sample:", middle_band.head(30)) # Afficher les premières valeurs
+    # print("Is Middle Band zero?:", (middle_band == 0).sum()) # Compter les zéros
+    # print("Is Middle Band NaN?:", middle_band.isna().sum()) # Compter les NaN
+
     features_df['Keltner_High'] = kc.keltner_channel_hband()
     features_df['Keltner_Low'] = kc.keltner_channel_lband()
+    features_df['Keltner_Mid'] = middle_band # Stocker pour inspection
     features_df['Keltner_Width'] = kc.keltner_channel_wband()
 
+    # Vérifier les lignes où Width est NaN mais High/Low ne le sont pas
+    problematic_rows = features_df[features_df['Keltner_Width'].isna() & features_df['Keltner_High'].notna()]
+    # print("Problematic Rows Sample:\n", problematic_rows[['Close', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width']].head())
+
+    # print(f"Nombre de lignes dans create_parquet v0.1.2 : {len(features_df)}")
+    # print("features_df info:")
+    # print(features_df.info())
+    # print("features_df head:")
+    # print(features_df.head(20))
+    # print("features_df tail:")
+    print(features_df.drop(['FromDate', 'time_diff', 'Open', 'High', 'Low', 'Close',  'Volume',
+                            'date', 'prev_date', 'Volume_SMA_5', 'Volume_SMA_10', 'Stoch_RSI', 'Keltner_High',
+                            'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20',
+                            'SuperTrend_Trend', 'SuperTrend_Direction',
+                            'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'ATR_14',
+                            'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width',  'MFM', 'MFV', 'CMF_20',
+                            'CCI_5', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10',
+                            'CCI_10', 'corps_candle_prev', 'corps_sum', 'ratio_corps', 'EMA_12',
+                            'EMA_26', 'upper_wick', 'lower_wick', 'same_direction', 'candle_trend',
+                            'meche_basse', 'meche_haute', 'corps_candle', 'candle_range', 'direction',
+                            'future_direction_2', 'RSI_Crossover_EMA', 'RSI_Crossover_SMA', 'RSI_Trend_Direction',
+                            'RSI_Trend', 'RSI_EMA_14', 'RSI_EMA_7', 'Vol_Weighted_RSI_SMA', 'Volume_Oscillator',
+                            'SMA_RSI', 'RSI', 'VWAP', 'RSI_SMA_7', 'RSI_SMA_14', 'VWMA_10', 'is_summer', 'RSI_14',
+                            'stock_open_hour', 'market_open_hour', 'VWMA_20', 'Force_Index_1', 'minute', 'day_of_week',
+                            'Force_Index_13', 'day', 'hour', 'year', 'month', 'timestamp', 'Vol_Weighted_RSI',
+                            'Vol_Weighted_Down_Avg', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down', 'Vol_Weighted_Up',
+                            'MFI_14', 'Money_Flow_Negative', 'Money_Flow_Positive', 'Typical_Price_Prev',
+                            'Raw_Money_Flow', 'Typical_Price', 'OBV', 'OBV_normalized', 'OBV_norm_minmax',
+                            'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium',
+                            'OBV_Trend_long', 'OBV_Trend',
+                            'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend',
+                            'Price_Trend', 'ADL_Divergence',
+                            'Keltner_Low', 'Keltner_Mid', 'Keltner_Width'], axis=1).tail(20))
     features_df['ADX'] = ta.trend.adx(
         high=features_df['High'],
         low=features_df['Low'],
@@ -1823,6 +2053,7 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
         window=14
     )
 
+    print(f"Nombre de lignes dans create_parquet v0.1.3 : {len(features_df)}")
     features_df['Williams_R'] = ta.momentum.williams_r(
         high=features_df['High'],
         low=features_df['Low'],
@@ -1904,7 +2135,19 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
     return features_df
 
 
+def assign_multi_timeframe_features(features):
+    """Assigne dynamiquement les features multi-timeframes à la séquence."""
+    return features
+
+
 def main():
+
+    print("Load features (1h, 4h, 1d)...")
+    base_directory = "./brent"
+    df_1h = load_timeframe_data(base_directory, '1h')
+    df_4h = load_timeframe_data(base_directory, '4h')
+    df_1d = load_timeframe_data(base_directory, '1d')
+
     cache_file = "./cache/features_cache.parquet"
     if os.path.exists(cache_file):
         print("🔄 Chargement des features depuis le cache...")
@@ -1915,7 +2158,7 @@ def main():
         # features_df = pd.read_csv("features_cache.csv")  # Alternative si besoin CSV
     else:
         print("⚙️ Calcul des features...")
-        features_df = load_data()
+        features_df = load_data(base_directory, df_1h, df_4h, df_1d)
         print("⚙️ Sauvegarde des features...")
         features_df.to_parquet(cache_file, index=False)
 
@@ -1924,10 +2167,41 @@ def main():
     sequence_length = 16
     sequences = []
 
+    # avant de pousser une séquence dans la liste des séquences, je voudrais vérifier que chaque feature poussée dans la séquence a bien un écart de 5 minutes avec la feature précédente puis que chaque séquence possède bien le sequence_length attendu
+    # features_df['day_of_year'] = features_df['FromDate'].dt.dayofyear
+    # features_df['sin_day'] = np.sin(2 * np.pi * features_df['day_of_year'] / 365)
+    # features_df['cos_day'] = np.cos(2 * np.pi * features_df['day_of_year'] / 365)
+    # features_df['sin_hour'] = np.sin(2 * np.pi * features_df['hour'] / 24)
+    # features_df['cos_hour'] = np.cos(2 * np.pi * features_df['hour'] / 24)
+    # features_df['period_of_day'] = features_df['FromDate'].apply(lambda x: get_period_of_day_with_timezone(x))
+    # features_df['hourly_return'] = features_df['Close'].pct_change()
+    # ici, j'ai des séquences de 16 données de la timeline de 5 minutes. Est ce qu'au lieu d'agréger les données 1h, 4h et 1 day dans add_multi_timeframe_features alors que j'ai que les 16 dernières features de la timeline 5minute, est ce qu'il ne faudrait pas associer à la séquence elle même les données des X dernières heures, X derniers jours, et calculer aussi day_of_year, sin_day, cos_day...
+
+    # Oui, ta remarque est pertinente. Si tu ne conserves que les 16 dernières données 5min (soit 1h20), alors les features 1h, 4h, 1d ajoutées via add_multi_timeframe_features ne sont pertinentes que si elles correspondent exactement à la même période que ta séquence.
+    # Sinon, tu risques d’introduire un décalage temporel ou d’utiliser des valeurs qui ne sont pas synchronisées avec ta séquence d’entrée.
+    # Ce qu’il faudrait idéalement faire :
+    # Pour chaque séquence 5min, associer dynamiquement les features 1h, 4h, 1d correspondant à la même période (par exemple, la dernière valeur 1h, 4h, 1d disponible à la fin de la séquence).
+    # Calculer les features cycliques (day_of_year, sin_day, cos_day, etc.) pour chaque timestamp de la séquence.
+    # Si tu veux enrichir la séquence avec des agrégats sur 1h, 4h, 1d, tu peux calculer ces agrégats (moyenne, min, max, etc.) sur la séquence elle-même ou sur les données brutes couvrant la période voulue.
+    # En résumé :
+    # Il vaut mieux associer les features multi-timeframes et cycliques à la séquence au moment de la création de la séquence, et non pas globalement sur tout le DataFrame.
+    # Cela garantit que chaque séquence d’entrée au modèle contient des features cohérentes et synchronisées temporellement.
+    # À faire :
+    # Adapter la fonction de création de séquences pour inclure dynamiquement les features 1h, 4h, 1d et cycliques, calculées à partir des données couvrant la période de la séquence.
+    # Éviter d’agréger globalement dans add_multi_timeframe_features si tu ne travailles que sur des séquences courtes.
+    # Cela améliorera la pertinence temporelle de tes features pour la prédiction.
     for i in range(len(features_df) - sequence_length):
-        seq_x = features_df[selected_features].iloc[i:i + sequence_length].values
-        seq_y = features_df['future_direction_2'].iloc[i + sequence_length]  # Direction du prochain point
-        sequences.append((seq_x, seq_y))
+        seq = features_df.iloc[i:i+sequence_length]
+        # Vérifie la longueur et l'écart de temps de 5 minutes entre chaque élément
+        if len(seq) == sequence_length and all(
+                (seq['FromDate'].iloc[j] - seq['FromDate'].iloc[j-1]).total_seconds() == 300
+                for j in range(1, sequence_length)
+        ):
+            features = get_multi_timeframe_features_for_sequence(seq, df_1h, df_4h, df_1d)
+            seq.assign(**features)
+            # seq = assign_multi_timeframe_features(seq, features)
+            seq = detect_patterns_multi_tf(seq, df_1h, df_4h, df_1d)
+            sequences.append(seq)
 
     # Séparer les données en X (features) et y (labels)
     X = np.array([seq[0] for seq in sequences])

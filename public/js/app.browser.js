@@ -13,6 +13,23 @@ const sampleData = {
     '1d': []
 };
 
+// Configuration globale
+const config = {
+    // URL de base pour les appels API
+    apiBaseUrl: 'http://localhost:3001/api', // URL complète du serveur Express
+    // Symbole du Brent sur Yahoo Finance
+    brentSymbol: 'BZ=F',
+    // Périodes disponibles pour l'affichage des données
+    periods: {
+        '5m': { interval: '5m', days: 1 },
+        '5d': { interval: '30m', days: 5 },
+        '1mo': { interval: '1d', days: 30 },
+        '6mo': { interval: '1wk', days: 180 },
+        '1y': { interval: '1mo', days: 365 }
+    }
+};
+
+
 // loadData pour charger les données 1d depuis un fichier JSON.
 async function loadData(jsonFile) {
     try {
@@ -46,18 +63,20 @@ async function loadData(jsonFile) {
 }
 
 (async () => {
-    sampleData['1d'] = await loadData('../../../brent/1d/all_v2.json');
-    sampleData['4h'] = await loadData('../../../brent/4h/all_v2.json');
-    sampleData['1h'] = await loadData('../../../brent/1h/all_v2.json');
+    sampleData['1d'] = (await loadData('../../../brent/1d/all_v2.json'));
+    sampleData['4h'] = (await loadData('../../../brent/4h/all_v2.json'));
+    sampleData['1h'] = (await loadData('../../../brent/1h/all_v2.json'));
     sampleData['5min'] = (await loadData('../../../brent/5min/2025-03-11-23.json'))
         .filter(d => d.close !== undefined && d.open !== undefined)
-        .slice(-16)
+        .slice(0, -22) // Retirer les 20 dernières données
+        .slice(-50) // Garder les 20 dernières données
         .map(d => ({ ...d, date: new Date(d.timestamp).toLocaleString() }));
 
     console.table( sampleData['5min']);
-    console.table( sampleData['1h']);
-    console.table( sampleData['4h']);
-    console.table( sampleData['1d']);
+    //console.table( sampleData['1h']);
+    //console.table( sampleData['4h']);
+    //console.table( sampleData['1d']);
+    recreateChartWithData(sampleData['5min'])
 })();
 
 
@@ -295,73 +314,152 @@ function logMessage(type, message) {
     }
 }
 
-// Générer des données OHLCV aléatoires pour tester
-function generateSampleData(count, timeframe) {
-    const data = [];
-    let basePrice = 100;
-    let baseVolume = 1000;
+function recreateChartWithData(data) {
+    let chart; // Instance du graphique
+    let currentPeriod = '5min'; // Période d'affichage par défaut
+    // console.log('Recréation complète du graphique avec période:', currentPeriod);
+    // console.log('Données pour la recréation:', data);
 
-    // Facteurs multiplicateurs en fonction du timeframe
-    let priceFactor = 0.002; // 5min par défaut
-    let volumeFactor = 1;
+    // Récupération du canvas
+    const chartContainer = document.querySelector('.chart-container');
+    const existingCanvas = document.getElementById('price-chart');
 
-    switch (timeframe) {
-        case '1h':
-            priceFactor = 0.005;
-            volumeFactor = 12;
-            break;
-        case '4h':
-            priceFactor = 0.01;
-            volumeFactor = 48;
-            break;
-        case '1d':
-            priceFactor = 0.02;
-            volumeFactor = 288;
-            break;
+    if (chart) {
+        try {
+            chart.destroy();
+        } catch (e) {
+            console.error('Erreur lors de la destruction du graphique:', e);
+        }
+        chart = null;
     }
 
-    // Déterminer le pas de temps en fonction du timeframe
-    let timeStep = 5 * 60 * 1000; // 5 minutes en millisecondes par défaut
-
-    switch (timeframe) {
-        case '1h':
-            timeStep = 60 * 60 * 1000; // 1 heure
-            break;
-        case '4h':
-            timeStep = 4 * 60 * 60 * 1000; // 4 heures
-            break;
-        case '1d':
-            timeStep = 24 * 60 * 60 * 1000; // 1 jour
-            break;
+    // Suppression du canvas existant
+    if (existingCanvas && existingCanvas.parentNode) {
+        existingCanvas.parentNode.removeChild(existingCanvas);
     }
 
-    // Date de départ (il y a count * timeStep millisecondes)
-    let timestamp = Date.now() - (count * timeStep);
+    // Création d'un nouveau canvas
+    const newCanvas = document.createElement('canvas');
+    newCanvas.id = 'price-chart';
+    chartContainer.appendChild(newCanvas);
 
-    for (let i = 0; i < count; i++) {
-        // Variation aléatoire du prix
-        const change = (Math.random() - 0.5) * 2 * priceFactor * basePrice;
-        basePrice += change;
-
-        // Calculer les valeurs OHLCV
-        const open = basePrice;
-        const high = open * (1 + Math.random() * priceFactor);
-        const low = open * (1 - Math.random() * priceFactor);
-        const close = (high + low) / 2;
-        const volume = Math.floor(baseVolume * (0.8 + Math.random() * 0.4) * volumeFactor);
-
-        data.push({
-            timestamp: timestamp,
-            open: open,
-            high: high,
-            low: low,
-            close: close,
-            volume: volume
+    // Formatage des dates pour meilleure lisibilité
+    const formattedData = [];
+    for (let i = 0; i < data.length; i++) {
+        formattedData.push({
+            ...data[i],
+            formattedDate: formatDate(data[i].timestamp, currentPeriod)
         });
-
-        // Avancer dans le temps
-        timestamp += timeStep;
     }
 
-    return data;
+
+    console.table(formattedData);
+
+    // Tri des données par date (croissant)
+    formattedData.sort((a, b) => {
+        return new Date(a.date) - new Date(b.date);
+    });
+
+    // Préparation des données pour le graphique
+    const labels = formattedData.map(item => item.formattedDate);
+    const prices = formattedData.map(item => item.close);
+
+    console.log(`Préparation du graphique avec ${labels.length} labels et ${prices.length} prix.`);
+
+    // Adapter le nombre de ticks en fonction de la période
+    let ticksConfig = {};
+    if (currentPeriod === '1m') {
+        ticksConfig = {maxTicksLimit: 6};
+    } else if (currentPeriod === '5min') {
+        ticksConfig = { maxTicksLimit: 6 };
+    } else if (currentPeriod === '5d') {
+        ticksConfig = { maxTicksLimit: 10 };
+    } else if (currentPeriod === '1mo') {
+        ticksConfig = { maxTicksLimit: 15 };
+    } else {
+        ticksConfig = { maxTicksLimit: 12 };
+    }
+
+    // Création du nouveau graphique
+    const ctx = newCanvas.getContext('2d');
+    chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Prix du Brent (USD)',
+                data: prices,
+                borderColor: '#3498db',
+                backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                borderWidth: 2,
+                tension: 0.4,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+                duration: 500 // Animation plus rapide
+            },
+            plugins: {
+                legend: {
+                    display: true // Afficher la légende pour distinguer les deux lignes
+                },
+            },
+            scales: {
+                y: {
+                    beginAtZero: false
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+            }
+        }
+    });
+
+    console.log('Graphique créé avec succès pour la période:', currentPeriod);
+}
+
+// Formater la date en fonction de la période
+function formatDate(dateString, period) {
+    // Création d'une date à partir de la chaîne
+    const date = new Date(dateString);
+
+    // Déterminer l'affichage en fonction de la période
+    if (period === '5min') {
+        // Vérifier l'intervalle actuel dans la configuration
+        const interval = config.periods['5m'].interval;
+
+        // Format HH:MM pour un intervalle de 5 minutes
+        return date.toLocaleTimeString('fr-FR', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+        });
+    } else if (period === '5d') {
+        // Format JJ/MM HHh pour un intervalle de 30 minutes
+        return date.toLocaleDateString('fr-FR', {
+                day: '2-digit',
+                month: '2-digit'
+            }) + ' ' +
+            date.getHours().toString().padStart(2, '0') + 'h';
+    } else if (period === '1mo') {
+        // Format JJ/MM pour un intervalle d'un jour
+        return date.toLocaleDateString('fr-FR', {
+            day: '2-digit',
+            month: '2-digit'
+        });
+    } else if (period === '6mo' || period === '1y') {
+        // Format MM/AA pour les périodes plus longues
+        return date.toLocaleDateString('fr-FR', {
+            month: '2-digit',
+            year: '2-digit'
+        });
+    } else {
+        // Format par défaut
+        return date.toLocaleDateString('fr-FR');
+    }
 }

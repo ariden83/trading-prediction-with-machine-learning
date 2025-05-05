@@ -175,31 +175,34 @@ def update_historical_data(timeframe, ohlcv_data):
 
 def prepare_prediction_data():
     """Prépare les données pour la prédiction à partir des données historiques."""
-    # Vérifier si nous avons des données pour tous les timeframes requis
-    if all(len(historical_data[tf]) > 0 for tf in ['5min', '1h', '4h', '1d']):
-        # Convertir les DataFrames en types attendus
-        df_5min = historical_data['5min'].copy()
-        df_5min = preprocess_features(df_5min)
-        # df_5min = remove_zero_open_close(df_5min)
-
-        df_1h = historical_data['1h'].copy()
-        df_1h = preprocess_features_light(df_1h)
-        # df_1h = remove_zero_open_close(df_1h)
-
-        df_4h = historical_data['4h'].copy()
-        df_4h = preprocess_features_light(df_4h)
-        # df_4h = remove_zero_open_close(df_4h)
-
-        df_1d = historical_data['1d'].copy()
-        df_1d = preprocess_features_light(df_1d)
-        # df_1d = remove_zero_open_close(df_1d)
-
-        # Préparer les données pour la prédiction
-        x = prepare_data_for_prediction(df_5min, df_1h, df_4h, df_1d, sequence_length=SEQUENCE_LENGTH)
-        return x
-    else:
-        logger.warning("Données manquantes pour un ou plusieurs timeframes")
+    min_window = 14  # Fenêtre minimale pour les indicateurs techniques
+    manquants = [tf for tf in ['5min', '1h', '4h', '1d'] if len(historical_data[tf]) < min_window]
+    if manquants:
+        logger.warning(f"Données insuffisantes pour les timeframes suivants (au moins {min_window} lignes requises) : {', '.join(manquants)}")
         return None
+
+    # Vérification supplémentaire pour chaque DataFrame
+    for tf in ['5min', '1h', '4h', '1d']:
+        if len(historical_data[tf]) < min_window:
+            logger.error(f"Le DataFrame {tf} n'a que {len(historical_data[tf])} lignes, minimum requis : {min_window}")
+            return None
+
+    # Convertir les DataFrames en types attendus
+    df_5min = historical_data['5min'].copy()
+    df_5min = preprocess_features(df_5min)
+
+    df_1h = historical_data['1h'].copy()
+    df_1h = preprocess_features_light(df_1h)
+
+    df_4h = historical_data['4h'].copy()
+    df_4h = preprocess_features_light(df_4h)
+
+    df_1d = historical_data['1d'].copy()
+    df_1d = preprocess_features_light(df_1d)
+
+    # Préparer les données pour la prédiction
+    x = prepare_data_for_prediction(df_5min, df_1h, df_4h, df_1d, sequence_length=SEQUENCE_LENGTH)
+    return x
 
 
 

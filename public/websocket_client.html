@@ -24,13 +24,14 @@
                 </div>
                 <button id="sendDataBtn" class="control-button send-button" disabled>Envoyer les données</button>
             </div>
-            
-            <div class="timeframe-selector">
-                <button class="timeframe-button active" data-timeframe="5min">5 min</button>
-                <button class="timeframe-button" data-timeframe="1h">1 h</button>
-                <button class="timeframe-button" data-timeframe="4h">4 h</button>
-                <button class="timeframe-button" data-timeframe="1d">1 jour</button>
-            </div>
+
+            <section class="chart-container">
+                <h2>Évolution du cours</h2>
+                <div class="period-selector">
+                    <button data-period="1d" class="active">5m</button>
+                </div>
+                <canvas id="price-chart">Chargement du graphique...</canvas>
+            </section>
             
             <div id="predictionContainer" class="prediction-container">
                 <div id="predictionCard" class="prediction-card prediction-neutral">
@@ -77,6 +78,12 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <!-- Chargement des scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/app.browser.js"></script>
 </body>
 </html>
