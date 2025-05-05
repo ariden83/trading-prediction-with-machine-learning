@@ -216,13 +216,20 @@ selected_features = [
 ]
 
 
-
-
 def compute_cci(df, period=20):
+    """
+    Calcule le Commodity Channel Index (CCI) pour un DataFrame OHLC.
+    Args:
+        df (pd.DataFrame): Doit contenir les colonnes 'High', 'Low', 'Close'.
+        period (int): Période de calcul du CCI.
+    Returns:
+        pd.Series: Valeurs du CCI.
+    """
     tp = (df['High'] + df['Low'] + df['Close']) / 3
-    sma_tp = tp.rolling(window=period).mean()
-    mad_tp = (tp - sma_tp).abs().rolling(window=period).mean()
+    sma_tp = tp.rolling(window=period, min_periods=period).mean()
+    mad_tp = (tp - sma_tp).abs().rolling(window=period, min_periods=period).mean()
     cci = (tp - sma_tp) / (0.015 * mad_tp)
+    cci = cci.replace([np.inf, -np.inf], np.nan)
     return cci
 
 
@@ -568,10 +575,374 @@ def add_candle_features(df):
     return df
 
 
-def add_doji(df, tolerance=0.01):
-    # Définir un Doji comme une bougie où la différence entre Open et Close est très faible par rapport à la plage
-    df['doji'] = (abs(df['Close'] - df['Open']) / df['candle_range'] < tolerance).astype(int)
-    return df
+
+def add_doji(
+        df,
+        four_price_tolerance=0.01,
+        body_to_range_ratio=0.1,
+        dragonfly_threshold=0.5,
+        gravestone_threshold=0.5,
+        long_legged_threshold=0.25,
+        perfect_doji_ratio=0.02,
+        high_wave_threshold=0.4,
+        spinning_top_ratio=0.3,
+        cross_doji_ratio=0.005,
+        inverted_dragonfly_threshold=0.5,
+        inverted_gravestone_threshold=0.5,
+        tri_star_window=3
+):
+    """
+    Identifie et qualifie les bougies Doji et d'autres patterns japonais dans un DataFrame OHLC.
+    Retourne un DataFrame enrichi de colonnes doji_type, doji, doji_strength, perfect_doji, upper_wick, lower_wick, ratio_corps, doji_invalid, pattern_type.
+    """
+    result = df.copy()
+
+    # Calculs robustes
+    if 'candle_range' not in result.columns:
+        result['candle_range'] = result['High'] - result['Low']
+
+    zero_range_mask = result['candle_range'] < 1e-9
+    result.loc[zero_range_mask, 'candle_range'] = 1e-9
+
+    body_size = (result['Close'] - result['Open']).abs()
+    body_range_ratio = body_size / result['candle_range']
+
+    doji_mask = body_range_ratio < body_to_range_ratio
+
+    upper_wick = (result['High'] - result[['Open', 'Close']].max(axis=1)).clip(lower=0)
+    lower_wick = (result[['Open', 'Close']].min(axis=1) - result['Low']).clip(lower=0)
+
+    upper_wick_ratio = upper_wick / result['candle_range']
+    lower_wick_ratio = lower_wick / result['candle_range']
+
+    four_price_mask = (result['High'] - result['Low'] < four_price_tolerance) & (body_size < four_price_tolerance)
+    dragonfly_mask = (lower_wick_ratio > dragonfly_threshold) & (upper_wick_ratio < 0.1)
+    gravestone_mask = (upper_wick_ratio > gravestone_threshold) & (lower_wick_ratio < 0.1)
+    long_legged_mask = (upper_wick_ratio > long_legged_threshold) & (lower_wick_ratio > long_legged_threshold)
+    high_wave_mask = ((upper_wick_ratio > high_wave_threshold) | (lower_wick_ratio > high_wave_threshold)) & doji_mask
+    spinning_top_mask = (
+            (body_range_ratio < spinning_top_ratio)
+            & (body_range_ratio >= body_to_range_ratio)
+            & (upper_wick_ratio > 0.1)
+            & (lower_wick_ratio > 0.1)
+    )
+    # Définition améliorée pour le hammer (ajustée pour une meilleure distinction)
+    hammer_mask = (
+            (lower_wick_ratio > 2 * body_range_ratio)
+            & (upper_wick_ratio < 0.1)
+            & (body_range_ratio < 0.3)
+            & (result['Close'] > result['Open'])  # Ajout d'une condition pour différencier du hanging_man
+    )
+    shooting_star_mask = (
+            (upper_wick_ratio > 2 * body_range_ratio)
+            & (lower_wick_ratio < 0.1)
+            & (body_range_ratio < 0.3)
+    )
+
+    # cross_doji_mask = (body_range_ratio < cross_doji_ratio) & (upper_wick_ratio > 0.2) & (lower_wick_ratio > 0.2)
+    # inverted_dragonfly_mask = (upper_wick_ratio > inverted_dragonfly_threshold) & (lower_wick_ratio < 0.1) & doji_mask
+    # inverted_gravestone_mask = (lower_wick_ratio > inverted_gravestone_threshold) & (upper_wick_ratio < 0.1) & doji_mask
+
+
+    # Cross Doji avec une définition plus souple
+    # Réduction du seuil pour les mèches (0.2 -> 0.1) et augmentation du ratio du corps (0.005 -> 0.01)
+    cross_doji_mask = (body_range_ratio < cross_doji_ratio) & (upper_wick_ratio > 0.1) & (lower_wick_ratio > 0.1)
+
+    # Clarification des types inversés (simplification et renommage pour éviter la confusion)
+    # Utilisation d'une formulation plus directe et abandonnant l'utilisation du terme "inversé"
+    upper_wick_doji_mask = (upper_wick_ratio > inverted_dragonfly_threshold) & (lower_wick_ratio < 0.1)
+    lower_wick_doji_mask = (lower_wick_ratio > inverted_gravestone_threshold) & (upper_wick_ratio < 0.1)
+
+    # Ajout de nouveaux types de bougies
+    hanging_man_mask = (
+            (lower_wick_ratio > 2 * body_range_ratio)
+            & (upper_wick_ratio < 0.1)
+            & (body_range_ratio < 0.3)
+            & (result['Close'] < result['Open'])  # Corps baissier
+    )
+
+    # Umbrella (parapluie) pattern
+    umbrella_mask = (
+            (lower_wick_ratio > 0.6)
+            & (upper_wick_ratio < 0.1)
+            & (body_range_ratio < 0.4)
+    )
+
+    # Belt Hold
+    belt_hold_bull_mask = (
+            (result['Open'] == result['Low'])
+            & (result['Close'] > result['Open'])
+            & (body_range_ratio > 0.7)
+            & (upper_wick_ratio < 0.1)
+    )
+
+    belt_hold_bear_mask = (
+            (result['Open'] == result['High'])
+            & (result['Close'] < result['Open'])
+            & (body_range_ratio > 0.7)
+            & (lower_wick_ratio < 0.1)
+    )
+
+    # Bougie à corps plein (Marubozu complet)
+    full_marubozu_bull_mask = (
+            (result['Open'] == result['Low'])
+            & (result['Close'] == result['High'])
+    )
+
+    full_marubozu_bear_mask = (
+            (result['Open'] == result['High'])
+            & (result['Close'] == result['Low'])
+    )
+
+    # Bougie à corps long (Long Body)
+    long_body_mask = (body_range_ratio > 0.7)
+    long_body_bull_mask = long_body_mask & (result['Close'] > result['Open'])
+    long_body_bear_mask = long_body_mask & (result['Close'] < result['Open'])
+
+    # Tri-Star Doji (3 doji consécutifs)
+    tri_star_mask = pd.Series(False, index=result.index)
+    if len(result) >= tri_star_window:
+        rolling_doji = doji_mask.rolling(window=tri_star_window, min_periods=tri_star_window).sum()
+        tri_star_mask = (rolling_doji == tri_star_window)
+        tri_star_mask = tri_star_mask.shift(-(tri_star_window - 1)).fillna(False)
+
+    # --- Ajout d'autres patterns classiques ---
+    # Engulfing (Avalement)
+    engulfing_bull = ((result['Open'] < result['Close'].shift(1)) &
+                      (result['Close'] > result['Open'].shift(1)) &
+                      (result['Open'] < result['Close']) &
+                      (result['Close'].shift(1) < result['Open'].shift(1)))
+    engulfing_bear = ((result['Open'] > result['Close'].shift(1)) &
+                      (result['Close'] < result['Open'].shift(1)) &
+                      (result['Open'] > result['Close']) &
+                      (result['Close'].shift(1) > result['Open'].shift(1)))
+    harami_bull = ((result['Open'] > result['Open'].shift(1)) &
+                   (result['Close'] < result['Close'].shift(1)) &
+                   (result['Open'] < result['Close']) &
+                   (result['Open'] > result['Close'].shift(1)) &
+                   (result['Close'] < result['Open'].shift(1)))
+    harami_bear = ((result['Open'] < result['Open'].shift(1)) &
+                   (result['Close'] > result['Close'].shift(1)) &
+                   (result['Open'] > result['Close']) &
+                   (result['Open'] < result['Close'].shift(1)) &
+                   (result['Close'] > result['Open'].shift(1)))
+    marubozu_bull = ((result['Open'] == result['Low']) & (result['Close'] == result['High']))
+    marubozu_bear = ((result['Open'] == result['High']) & (result['Close'] == result['Low']))
+
+    # Morning Star / Evening Star (3 bougies)
+    morning_star = pd.Series(False, index=result.index)
+    evening_star = pd.Series(False, index=result.index)
+    if len(result) >= 3:
+        prev = result.shift(1)
+        prev2 = result.shift(2)
+        # Morning Star: baissière, petite bougie, haussière
+        morning_star = (
+                (prev2['Close'] < prev2['Open']) &
+                (prev['Close'] < prev['Open']) &
+                (result['Close'] > result['Open']) &
+                (result['Close'] > prev2['Open'])
+        )
+        # Evening Star: haussière, petite bougie, baissière
+        evening_star = (
+                (prev2['Close'] > prev2['Open']) &
+                (prev['Close'] > prev['Open']) &
+                (result['Close'] < result['Open']) &
+                (result['Close'] < prev2['Open'])
+        )
+
+        # Abandoned Baby (bébé abandonné) pattern
+        abandoned_baby_bull = (
+                (prev2['Close'] < prev2['Open']) &  # Première bougie baissière
+                (prev['Low'] > prev2['Low']) &      # Gap baissier
+                (prev['High'] < result['Low']) &    # Gap haussier
+                (result['Close'] > result['Open'])  # Dernière bougie haussière
+        )
+
+        abandoned_baby_bear = (
+                (prev2['Close'] > prev2['Open']) &  # Première bougie haussière
+                (prev['High'] < prev2['High']) &    # Gap haussier
+                (prev['Low'] > result['High']) &    # Gap baissier
+                (result['Close'] < result['Open'])  # Dernière bougie baissière
+        )
+
+        # Three Inside Up/Down
+        three_inside_up = (
+                harami_bull.shift(1) &              # Harami haussier
+                (result['Close'] > prev['Close'])   # Confirmation haussière
+        )
+
+        three_inside_down = (
+                harami_bear.shift(1) &              # Harami baissier
+                (result['Close'] < prev['Close'])   # Confirmation baissière
+        )
+
+    # Piercing Line / Dark Cloud Cover (2 bougies)
+    piercing_line = ((result['Open'] < result['Close'].shift(1)) &
+                     (result['Close'] > (result['Open'].shift(1) + result['Close'].shift(1)) / 2) &
+                     (result['Close'] > result['Open']))
+    dark_cloud = ((result['Open'] > result['Close'].shift(1)) &
+                  (result['Close'] < (result['Open'].shift(1) + result['Close'].shift(1)) / 2) &
+                  (result['Close'] < result['Open']))
+
+    # Kicking patterns (2 bougies marubozu avec gap)
+    if len(result) >= 2:
+        kicking_bull = (
+                marubozu_bear.shift(1) &           # Première bougie marubozu baissière
+                marubozu_bull &                    # Deuxième bougie marubozu haussière
+                (result['Low'] > result['Close'].shift(1))  # Gap haussier
+        )
+
+        kicking_bear = (
+                marubozu_bull.shift(1) &           # Première bougie marubozu haussière
+                marubozu_bear &                    # Deuxième bougie marubozu baissière
+                (result['High'] < result['Close'].shift(1))  # Gap baissier
+        )
+
+        # Tasuki Gaps
+        rising_window = (result['Low'] > result['High'].shift(1))
+        falling_window = (result['High'] < result['Low'].shift(1))
+
+        up_tasuki_gap = (
+                (result['Close'].shift(2) < result['Open'].shift(2)) &  # Première bougie baissière
+                (result['Close'].shift(1) > result['Open'].shift(1)) &  # Deuxième bougie haussière
+                rising_window.shift(1) &                                # Gap haussier
+                (result['Close'] < result['Open']) &                    # Troisième bougie baissière
+                (result['Open'] > result['Close'].shift(1)) &           # Ouverture dans le corps de la deuxième bougie
+                (result['Close'] > result['Open'].shift(1))             # Fermeture au-dessus de l'ouverture de la deuxième bougie
+        )
+
+        down_tasuki_gap = (
+                (result['Close'].shift(2) > result['Open'].shift(2)) &  # Première bougie haussière
+                (result['Close'].shift(1) < result['Open'].shift(1)) &  # Deuxième bougie baissière
+                falling_window.shift(1) &                               # Gap baissier
+                (result['Close'] > result['Open']) &                    # Troisième bougie haussière
+                (result['Open'] < result['Close'].shift(1)) &           # Ouverture dans le corps de la deuxième bougie
+                (result['Close'] < result['Open'].shift(1))             # Fermeture sous l'ouverture de la deuxième bougie
+        )
+
+    # Three White Soldiers / Three Black Crows (3 bougies)
+    three_white_soldiers = pd.Series(False, index=result.index)
+    three_black_crows = pd.Series(False, index=result.index)
+    if len(result) >= 3:
+        three_white_soldiers = (
+                (result['Close'] > result['Open']) &
+                (result['Close'].shift(1) > result['Open'].shift(1)) &
+                (result['Close'].shift(2) > result['Open'].shift(2)) &
+                (result['Open'] > result['Open'].shift(1)) &  # Critère d'ouverture progressive
+                (result['Open'].shift(1) > result['Open'].shift(2))
+        )
+        three_black_crows = (
+                (result['Close'] < result['Open']) &
+                (result['Close'].shift(1) < result['Open'].shift(1)) &
+                (result['Close'].shift(2) < result['Open'].shift(2)) &
+                (result['Open'] < result['Open'].shift(1)) &  # Critère d'ouverture progressive
+                (result['Open'].shift(1) < result['Open'].shift(2))
+        )
+
+        # Mat Hold pattern (tendance haussière qui continue)
+        mat_hold = (
+                (result['Close'].shift(4) > result['Open'].shift(4)) &  # Première bougie haussière
+                (result['Close'].shift(3) < result['Open'].shift(3)) &  # Deuxième bougie baissière
+                (result['Close'].shift(2) < result['Open'].shift(2)) &  # Troisième bougie baissière
+                (result['Close'].shift(1) < result['Open'].shift(1)) &  # Quatrième bougie baissière
+                (result['Close'] > result['Open']) &                    # Cinquième bougie haussière
+                (result['Close'] > result['Close'].shift(4))            # Clôture au-dessus de la première bougie
+        )
+
+    # Ordre de priorité des types de doji
+    conditions = [
+        four_price_mask & doji_mask,
+        dragonfly_mask & doji_mask & ~four_price_mask,
+        gravestone_mask & doji_mask & ~four_price_mask,
+        long_legged_mask & doji_mask & ~four_price_mask,
+        cross_doji_mask & ~four_price_mask,  # Déplacé plus haut dans l'ordre de priorité
+        high_wave_mask & ~four_price_mask & ~long_legged_mask,
+        spinning_top_mask,
+        hammer_mask & ~dragonfly_mask,
+        hanging_man_mask,
+        shooting_star_mask & ~gravestone_mask,
+        # Renommage des types pour plus de clarté (éviter confusion avec inverted_*)
+        upper_wick_doji_mask & ~gravestone_mask,
+        lower_wick_doji_mask & ~dragonfly_mask,
+        umbrella_mask,
+        belt_hold_bull_mask,
+        belt_hold_bear_mask,
+        full_marubozu_bull_mask,
+        full_marubozu_bear_mask,
+        long_body_bull_mask,
+        long_body_bear_mask,
+        tri_star_mask,
+        doji_mask  # Doji standard comme dernier recours
+    ]
+    choices = [
+        'four_price',
+        'dragonfly',
+        'gravestone',
+        'long_legged',
+        'cross',  # Déplacé plus haut pour correspondre à la nouvelle priorité
+        'high_wave',
+        'spinning_top',
+        'hammer',
+        'hanging_man',
+        'shooting_star',
+        'upper_wick_doji',  # Renommé pour éviter la confusion (précédemment inverted_dragonfly)
+        'lower_wick_doji',  # Renommé pour éviter la confusion (précédemment inverted_gravestone)
+        'umbrella',
+        'belt_hold_bull',
+        'belt_hold_bear',
+        'full_marubozu_bull',
+        'full_marubozu_bear',
+        'long_body_bull',
+        'long_body_bear',
+        'tri_star',
+        'standard'
+    ]
+
+    result['doji_type'] = np.select(conditions, choices, default='none')
+    result['doji'] = (result['doji_type'] != 'none').astype(int)
+    result['doji_strength'] = np.where(
+        doji_mask,
+        1 - np.clip(body_range_ratio / body_to_range_ratio, 0, 1),
+        0
+    )
+    result['perfect_doji'] = ((result['doji'] == 1) & (body_range_ratio < perfect_doji_ratio)).astype(int)
+    result['upper_wick'] = upper_wick
+    result['lower_wick'] = lower_wick
+    result['ratio_corps'] = body_range_ratio
+    result['doji_invalid'] = zero_range_mask.astype(int)
+
+    # Ajout d'une colonne pattern_type pour les autres patterns
+    result['pattern_type'] = 'none'
+    result.loc[engulfing_bull, 'pattern_type'] = 'engulfing_bull'
+    result.loc[engulfing_bear, 'pattern_type'] = 'engulfing_bear'
+    result.loc[harami_bull, 'pattern_type'] = 'harami_bull'
+    result.loc[harami_bear, 'pattern_type'] = 'harami_bear'
+    result.loc[marubozu_bull, 'pattern_type'] = 'marubozu_bull'
+    result.loc[marubozu_bear, 'pattern_type'] = 'marubozu_bear'
+    result.loc[morning_star, 'pattern_type'] = 'morning_star'
+    result.loc[evening_star, 'pattern_type'] = 'evening_star'
+    result.loc[piercing_line, 'pattern_type'] = 'piercing_line'
+    result.loc[dark_cloud, 'pattern_type'] = 'dark_cloud'
+    result.loc[three_white_soldiers, 'pattern_type'] = 'three_white_soldiers'
+    result.loc[three_black_crows, 'pattern_type'] = 'three_black_crows'
+
+    # Ajout des nouveaux patterns
+    if len(result) >= 2:
+        result.loc[kicking_bull, 'pattern_type'] = 'kicking_bull'
+        result.loc[kicking_bear, 'pattern_type'] = 'kicking_bear'
+
+    if len(result) >= 3:
+        result.loc[abandoned_baby_bull, 'pattern_type'] = 'abandoned_baby_bull'
+        result.loc[abandoned_baby_bear, 'pattern_type'] = 'abandoned_baby_bear'
+        result.loc[three_inside_up, 'pattern_type'] = 'three_inside_up'
+        result.loc[three_inside_down, 'pattern_type'] = 'three_inside_down'
+        result.loc[up_tasuki_gap, 'pattern_type'] = 'up_tasuki_gap'
+        result.loc[down_tasuki_gap, 'pattern_type'] = 'down_tasuki_gap'
+
+    if len(result) >= 5:
+        result.loc[mat_hold, 'pattern_type'] = 'mat_hold'
+
+    return result
 
 
 def add_candle_trend_relation(df):
@@ -1306,6 +1677,42 @@ def adl(df):
 
     return df
 
+
+def pvt(df):
+    """
+    Calcule l'indicateur Price Volume Trend (PVT) et ses dérivés.
+    Le PVT relie le changement de prix au volume, pondérant le volume par le pourcentage de variation du prix.
+    """
+    # Calcul du PVT de base
+    df['PVT_change'] = df['Close'].pct_change().fillna(0) * df['Volume']
+    df['PVT'] = df['PVT_change'].cumsum()
+
+    # Normalisation du PVT pour une meilleure interprétation
+    pvt_min, pvt_max = df['PVT'].min(), df['PVT'].max()
+    if pvt_max > pvt_min:
+        df['PVT_norm'] = 2 * (df['PVT'] - pvt_min) / (pvt_max - pvt_min) - 1
+    else:
+        df['PVT_norm'] = 0
+
+    # Moyennes mobiles du PVT
+    df['PVT_SMA10'] = df['PVT'].rolling(window=10, min_periods=1).mean()
+    df['PVT_SMA30'] = df['PVT'].rolling(window=30, min_periods=1).mean()
+
+    # Signal de tendance basé sur le croisement des moyennes mobiles
+    df['PVT_signal'] = 0
+    df.loc[df['PVT_SMA10'] > df['PVT_SMA30'], 'PVT_signal'] = 1
+    df.loc[df['PVT_SMA10'] < df['PVT_SMA30'], 'PVT_signal'] = -1
+
+    # Ajout d'un signal de croisement (1 si croisement haussier, -1 si baissier, 0 sinon)
+    df['PVT_cross'] = df['PVT_SMA10'] - df['PVT_SMA30']
+    df['PVT_cross_signal'] = df['PVT_cross'].apply(lambda x: 1 if x > 0 else (-1 if x < 0 else 0))
+
+    # Ajout d'une variation du PVT sur 5 périodes pour détecter les accélérations
+    df['PVT_delta5'] = df['PVT'].diff(5).fillna(0)
+
+    return df
+
+
 def add_volume_indicators(df):
 
     df['Volume'] = df['Volume'].replace(0, 1e-6)
@@ -1348,17 +1755,14 @@ def add_volume_indicators(df):
     df['CMF_20'] = df['MFV'].rolling(window=20).sum() / df['Volume'].rolling(window=20).sum()
 
     # Price-Volume Trend
-    df['PVT'] = df['Close'].pct_change() * df['Volume']
-    df['PVT'] = df['PVT'].cumsum()
-    df['PVT'] = df['PVT'].clip(-0.1, 0.1)
-    df['PVT'] = df['PVT'].replace([np.inf, -np.inf], np.nan)
-
+    df = pvt(df)
 
     df['CCI_5'] = compute_cci(df, 5)
     df['CCI_10'] = compute_cci(df, 10)
-    df['CCI_20'] = compute_cci(df, 20)
-    df['CCI_40'] = compute_cci(df, 40)
-    df['CCI_80'] = compute_cci(df, 80)
+    df['CCI_15'] = compute_cci(df, 15)
+    # df['CCI_20'] = compute_cci(df, 20)
+    # df['CCI_40'] = compute_cci(df, 40)
+    # df['CCI_80'] = compute_cci(df, 80)
 
     #print(df[['Close', 'Volume', 'PVT']].head())
     #print("NaN dans 'Close':", df['Close'].isna().sum())
@@ -2029,8 +2433,10 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
                             'SuperTrend_Trend', 'SuperTrend_Direction',
                             'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'ATR_14',
                             'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width',  'MFM', 'MFV', 'CMF_20',
-                            'CCI_5', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10',
-                            'CCI_10', 'corps_candle_prev', 'corps_sum', 'ratio_corps', 'EMA_12',
+                            'CCI_5',
+                            'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10',
+                            'CCI_10', 'CCI_15',
+                            'corps_candle_prev', 'corps_sum', 'ratio_corps', 'EMA_12',
                             'EMA_26', 'upper_wick', 'lower_wick', 'same_direction', 'candle_trend',
                             'meche_basse', 'meche_haute', 'corps_candle', 'candle_range', 'direction',
                             'future_direction_2', 'RSI_Crossover_EMA', 'RSI_Crossover_SMA', 'RSI_Trend_Direction',
@@ -2045,6 +2451,8 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
                             'OBV_Trend_long', 'OBV_Trend',
                             'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend',
                             'Price_Trend', 'ADL_Divergence',
+                            'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross',
+                            'PVT_cross_signal', 'PVT_delta5',
                             'Keltner_Low', 'Keltner_Mid', 'Keltner_Width'], axis=1).tail(20))
     features_df['ADX'] = ta.trend.adx(
         high=features_df['High'],
