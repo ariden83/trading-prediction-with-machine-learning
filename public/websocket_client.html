@@ -79,11 +79,16 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- Chargement des scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/app.browser.js"></script>
+    <script>
+        // Générer un timestamp aléatoire pour éviter le cache
+        const randomParam = Date.now() + Math.random().toString(36).substr(2, 9);
+        document.write('<script src="js/app.browser.js?v=' + randomParam + '"><\/script>');
+    </script>
 </body>
 </html>

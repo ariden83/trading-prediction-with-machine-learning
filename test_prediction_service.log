@@ -1,0 +1,129 @@
+2025-06-02 08:49:13,817 - test_prediction_service - INFO - Démarrage du serveur WebSocket de test sur 0.0.0.0:8765
+2025-06-02 08:49:13,825 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-02 10:02:20,256 - websockets.server - INFO - connection open
+2025-06-02 10:02:20,256 - test_prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 33982)
+2025-06-02 10:02:23,632 - test_prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 10:02:23,632 - test_prediction_service - INFO - Données stockées pour 5min: 50 barres
+2025-06-02 10:02:23,633 - test_prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-02 10:02:23,633 - test_prediction_service - INFO - Données stockées pour 1h: 50 barres
+2025-06-02 10:02:23,634 - test_prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-02 10:02:23,634 - test_prediction_service - INFO - Données stockées pour 4h: 50 barres
+2025-06-02 10:02:23,634 - test_prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-02 10:02:23,634 - test_prediction_service - INFO - Données stockées pour 1d: 50 barres
+2025-06-02 10:02:23,634 - test_prediction_service - INFO - Prédiction générée: 0.7380232386284096
+2025-06-02 10:12:55,130 - websockets.server - INFO - connection open
+2025-06-02 10:12:55,131 - test_prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 52728)
+2025-06-02 10:12:58,545 - test_prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 10:12:58,545 - test_prediction_service - INFO - Données stockées pour 5min: 50 barres
+2025-06-02 10:12:58,545 - test_prediction_service - INFO - Prédiction générée: 0.185959447978989
+2025-06-02 10:12:58,546 - test_prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-02 10:12:58,546 - test_prediction_service - INFO - Données stockées pour 1h: 50 barres
+2025-06-02 10:12:58,546 - test_prediction_service - INFO - Prédiction générée: 0.24085716035649296
+2025-06-02 10:12:58,546 - test_prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-02 10:12:58,546 - test_prediction_service - INFO - Données stockées pour 4h: 50 barres
+2025-06-02 10:12:58,546 - test_prediction_service - INFO - Prédiction générée: 0.7815286943497839
+2025-06-02 10:12:58,546 - test_prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-02 10:12:58,547 - test_prediction_service - INFO - Données stockées pour 1d: 50 barres
+2025-06-02 10:12:58,547 - test_prediction_service - INFO - Prédiction générée: 0.9048029758019227
+2025-06-02 11:23:44,652 - test_prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 11:23:44,652 - test_prediction_service - INFO - Données stockées pour 5min: 50 barres
+2025-06-02 11:23:44,652 - test_prediction_service - INFO - Prédiction générée: 0.9537822364359974
+2025-06-02 11:23:44,654 - test_prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-02 11:23:44,654 - test_prediction_service - INFO - Données stockées pour 1h: 50 barres
+2025-06-02 11:23:44,654 - test_prediction_service - INFO - Prédiction générée: 0.803160466364678
+2025-06-02 11:23:44,655 - test_prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-02 11:23:44,655 - test_prediction_service - INFO - Données stockées pour 4h: 50 barres
+2025-06-02 11:23:44,655 - test_prediction_service - INFO - Prédiction générée: 0.8180828405329945
+2025-06-02 11:23:44,656 - test_prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-02 11:23:44,656 - test_prediction_service - INFO - Données stockées pour 1d: 50 barres
+2025-06-02 11:23:44,656 - test_prediction_service - INFO - Prédiction générée: 0.728330272287591
+2025-06-02 11:23:46,811 - test_prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 11:23:46,811 - test_prediction_service - INFO - Données stockées pour 5min: 50 barres
+2025-06-02 11:23:46,811 - test_prediction_service - INFO - Prédiction générée: 0.4489565544526173
+2025-06-02 11:23:46,812 - test_prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-02 11:23:46,813 - test_prediction_service - INFO - Données stockées pour 1h: 50 barres
+2025-06-02 11:23:46,813 - test_prediction_service - INFO - Prédiction générée: 0.325573692743534
+2025-06-02 11:23:46,814 - test_prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-02 11:23:46,814 - test_prediction_service - INFO - Données stockées pour 4h: 50 barres
+2025-06-02 11:23:46,814 - test_prediction_service - INFO - Prédiction générée: 0.09535190467032306
+2025-06-02 11:23:46,816 - test_prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-02 11:23:46,816 - test_prediction_service - INFO - Données stockées pour 1d: 50 barres
+2025-06-02 11:23:46,816 - test_prediction_service - INFO - Prédiction générée: 0.49971104295251356
+2025-06-02 11:23:49,110 - test_prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 11:23:49,110 - test_prediction_service - INFO - Données stockées pour 5min: 50 barres
+2025-06-02 11:23:49,110 - test_prediction_service - INFO - Prédiction générée: 0.8431608980757118
+2025-06-02 11:23:49,111 - test_prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-02 11:23:49,112 - test_prediction_service - INFO - Données stockées pour 1h: 50 barres
+2025-06-02 11:23:49,112 - test_prediction_service - INFO - Prédiction générée: 0.5471220404272759
+2025-06-02 11:23:49,113 - test_prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-02 11:23:49,113 - test_prediction_service - INFO - Données stockées pour 4h: 50 barres
+2025-06-02 11:23:49,113 - test_prediction_service - INFO - Prédiction générée: 0.3095298239289421
+2025-06-02 11:23:49,114 - test_prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-02 11:23:49,114 - test_prediction_service - INFO - Données stockées pour 1d: 50 barres
+2025-06-02 11:23:49,114 - test_prediction_service - INFO - Prédiction générée: 0.30853483930753833
+2025-06-02 18:13:51,774 - test_prediction_service - INFO - Connexion fermée: ('127.0.0.1', 52728)
+2025-06-02 20:52:21,405 - websockets.server - INFO - connection open
+2025-06-02 20:52:21,406 - test_prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 37440)
+2025-06-02 20:53:43,301 - websockets.server - INFO - connection open
+2025-06-02 20:53:43,301 - test_prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 50234)
+2025-06-02 20:53:45,558 - test_prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 20:53:45,559 - test_prediction_service - INFO - Données stockées pour 5min: 50 barres
+2025-06-02 20:53:45,560 - test_prediction_service - INFO - Prédiction générée: 0.4575790175712299
+2025-06-02 20:53:45,560 - test_prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-02 20:53:45,560 - test_prediction_service - INFO - Données stockées pour 1h: 50 barres
+2025-06-02 20:53:45,560 - test_prediction_service - INFO - Prédiction générée: 0.06627086124795212
+2025-06-02 20:53:45,561 - test_prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-02 20:53:45,561 - test_prediction_service - INFO - Données stockées pour 4h: 50 barres
+2025-06-02 20:53:45,561 - test_prediction_service - INFO - Prédiction générée: 0.18193384911608645
+2025-06-02 20:53:45,561 - test_prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-02 20:53:45,561 - test_prediction_service - INFO - Données stockées pour 1d: 50 barres
+2025-06-02 20:53:45,561 - test_prediction_service - INFO - Prédiction générée: 0.16985549166296787
+2025-06-02 20:55:17,478 - websockets.server - INFO - connection open
+2025-06-02 20:55:17,478 - test_prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 45128)
+2025-06-02 20:55:18,877 - test_prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 20:55:18,877 - test_prediction_service - INFO - Données stockées pour 5min: 50 barres
+2025-06-02 20:55:18,877 - test_prediction_service - INFO - Prédiction générée: 0.22900847423822868
+2025-06-02 20:55:18,877 - test_prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-02 20:55:18,877 - test_prediction_service - INFO - Données stockées pour 1h: 50 barres
+2025-06-02 20:55:18,877 - test_prediction_service - INFO - Prédiction générée: 0.41301234237908113
+2025-06-02 20:55:18,878 - test_prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-02 20:55:18,878 - test_prediction_service - INFO - Données stockées pour 4h: 50 barres
+2025-06-02 20:55:18,878 - test_prediction_service - INFO - Prédiction générée: 0.5421928680802951
+2025-06-02 20:55:18,878 - test_prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-02 20:55:18,878 - test_prediction_service - INFO - Données stockées pour 1d: 50 barres
+2025-06-02 20:55:18,878 - test_prediction_service - INFO - Prédiction générée: 0.33654840909535744
+2025-06-02 20:55:22,734 - websockets.server - INFO - connection open
+2025-06-02 20:55:22,734 - test_prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 45138)
+2025-06-02 20:55:23,781 - test_prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 20:55:23,781 - test_prediction_service - INFO - Données stockées pour 5min: 50 barres
+2025-06-02 20:55:23,781 - test_prediction_service - INFO - Prédiction générée: 0.7298443990792911
+2025-06-02 20:55:23,781 - test_prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-02 20:55:23,782 - test_prediction_service - INFO - Données stockées pour 1h: 50 barres
+2025-06-02 20:55:23,782 - test_prediction_service - INFO - Prédiction générée: 0.38995903353985883
+2025-06-02 20:55:23,782 - test_prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-02 20:55:23,782 - test_prediction_service - INFO - Données stockées pour 4h: 50 barres
+2025-06-02 20:55:23,782 - test_prediction_service - INFO - Prédiction générée: 0.0480603897740014
+2025-06-02 20:55:23,782 - test_prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-02 20:55:23,782 - test_prediction_service - INFO - Données stockées pour 1d: 50 barres
+2025-06-02 20:55:23,783 - test_prediction_service - INFO - Prédiction générée: 0.37459289205595736
+2025-06-02 20:55:26,502 - websockets.server - INFO - connection open
+2025-06-02 20:55:26,502 - test_prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 45154)
+2025-06-02 20:55:27,676 - test_prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 20:55:27,677 - test_prediction_service - INFO - Données stockées pour 5min: 50 barres
+2025-06-02 20:55:27,677 - test_prediction_service - INFO - Prédiction générée: 0.4389519158679438
+2025-06-02 20:55:27,677 - test_prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-02 20:55:27,677 - test_prediction_service - INFO - Données stockées pour 1h: 50 barres
+2025-06-02 20:55:27,677 - test_prediction_service - INFO - Prédiction générée: 0.027418897571309886
+2025-06-02 20:55:27,677 - test_prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-02 20:55:27,677 - test_prediction_service - INFO - Données stockées pour 4h: 50 barres
+2025-06-02 20:55:27,677 - test_prediction_service - INFO - Prédiction générée: 0.8333360884870304
+2025-06-02 20:55:27,678 - test_prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-02 20:55:27,678 - test_prediction_service - INFO - Données stockées pour 1d: 50 barres
+2025-06-02 20:55:27,678 - test_prediction_service - INFO - Prédiction générée: 0.7662805919144672
+2025-06-02 21:48:34,146 - test_prediction_service - INFO - Connexion fermée: ('127.0.0.1', 45154)
+2025-06-03 15:40:28,805 - websockets.server - INFO - connection open
+2025-06-03 15:40:28,806 - test_prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 40718)
+2025-06-03 15:40:30,116 - test_prediction_service - INFO - Message reçu: 5min - 0 barres
+2025-06-03 15:40:30,117 - test_prediction_service - INFO - Message reçu: 1h - 0 barres
+2025-06-03 15:40:30,118 - test_prediction_service - INFO - Message reçu: 4h - 0 barres
+2025-06-03 15:40:30,118 - test_prediction_service - INFO - Message reçu: 1d - 0 barres

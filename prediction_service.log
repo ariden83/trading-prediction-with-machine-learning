@@ -1,0 +1,460 @@
+2025-06-02 00:09:04,101 - prediction_service - INFO - Modèle chargé avec succès depuis ./model/best_model.h5
+2025-06-02 00:09:04,101 - prediction_service - INFO - Démarrage du serveur WebSocket sur 0.0.0.0:8765
+2025-06-02 00:09:04,108 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-02 00:11:43,172 - websockets.server - INFO - connection open
+2025-06-02 00:11:43,172 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 37616)
+2025-06-02 00:11:43,367 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-02 00:11:43,373 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-02 00:11:44,921 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 00:11:44,926 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-03-11 15:45:00 au 2025-03-11 19:50:00
+2025-06-02 00:11:44,926 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-02 00:11:44,927 - prediction_service - INFO - Message reçu: 1h - 0 barres
+2025-06-02 00:11:44,927 - prediction_service - INFO - Message reçu: 4h - 0 barres
+2025-06-02 00:11:44,927 - prediction_service - INFO - Message reçu: 1d - 0 barres
+2025-06-02 00:19:34,078 - websockets.server - INFO - connection open
+2025-06-02 00:19:34,078 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 55996)
+2025-06-02 00:19:34,106 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-02 00:19:34,108 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-02 00:19:35,220 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 00:19:35,222 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-03-11 15:45:00 au 2025-03-11 19:50:00
+2025-06-02 00:19:35,222 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-02 00:19:35,223 - prediction_service - INFO - Message reçu: 1h - 0 barres
+2025-06-02 00:19:35,223 - prediction_service - INFO - Message reçu: 4h - 0 barres
+2025-06-02 00:19:35,223 - prediction_service - INFO - Message reçu: 1d - 0 barres
+2025-06-02 00:19:48,821 - websockets.server - INFO - connection open
+2025-06-02 00:19:48,821 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 38554)
+2025-06-02 00:19:48,835 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-02 00:19:48,836 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-02 00:19:49,957 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 00:19:49,961 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-03-11 15:45:00 au 2025-03-11 19:50:00
+2025-06-02 00:19:49,961 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-02 00:19:49,961 - prediction_service - INFO - Message reçu: 1h - 0 barres
+2025-06-02 00:19:49,962 - prediction_service - INFO - Message reçu: 4h - 0 barres
+2025-06-02 00:19:49,962 - prediction_service - INFO - Message reçu: 1d - 0 barres
+2025-06-02 00:22:05,867 - websockets.server - INFO - connection open
+2025-06-02 00:22:05,867 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 35910)
+2025-06-02 00:22:05,901 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-02 00:22:05,904 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-02 00:22:07,186 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 00:22:07,188 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-03-11 15:45:00 au 2025-03-11 19:50:00
+2025-06-02 00:22:07,188 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-02 00:22:07,189 - prediction_service - INFO - Message reçu: 1h - 0 barres
+2025-06-02 00:22:07,189 - prediction_service - INFO - Message reçu: 4h - 0 barres
+2025-06-02 00:22:07,189 - prediction_service - INFO - Message reçu: 1d - 0 barres
+2025-06-02 08:22:02,233 - websockets.server - INFO - connection open
+2025-06-02 08:22:02,233 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 40918)
+2025-06-02 08:22:02,267 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-02 08:22:02,268 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-02 08:22:04,212 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 08:22:04,213 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-03-11 15:55:00 au 2025-03-11 20:00:00
+2025-06-02 08:22:04,213 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-02 08:22:04,213 - prediction_service - INFO - Message reçu: 1h - 0 barres
+2025-06-02 08:22:04,213 - prediction_service - INFO - Message reçu: 4h - 0 barres
+2025-06-02 08:22:04,213 - prediction_service - INFO - Message reçu: 1d - 0 barres
+2025-06-02 08:23:45,525 - websockets.server - INFO - connection open
+2025-06-02 08:23:45,526 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 38058)
+2025-06-02 08:23:45,562 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-02 08:23:45,565 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-02 08:23:47,324 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 08:23:47,326 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-03-11 15:55:00 au 2025-03-11 20:00:00
+2025-06-02 08:23:47,327 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-02 08:23:47,327 - prediction_service - INFO - Message reçu: 1h - 0 barres
+2025-06-02 08:23:47,327 - prediction_service - INFO - Message reçu: 4h - 0 barres
+2025-06-02 08:23:47,327 - prediction_service - INFO - Message reçu: 1d - 0 barres
+2025-06-02 08:23:57,246 - websockets.server - INFO - connection open
+2025-06-02 08:23:57,246 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 57544)
+2025-06-02 08:23:57,279 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-02 08:23:57,281 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-02 08:23:58,671 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 08:23:58,678 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-03-11 15:55:00 au 2025-03-11 20:00:00
+2025-06-02 08:23:58,678 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-02 08:23:58,679 - prediction_service - INFO - Message reçu: 1h - 0 barres
+2025-06-02 08:23:58,680 - prediction_service - INFO - Message reçu: 4h - 0 barres
+2025-06-02 08:23:58,680 - prediction_service - INFO - Message reçu: 1d - 0 barres
+2025-06-02 08:44:01,847 - websockets.server - INFO - connection open
+2025-06-02 08:44:01,849 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 42490)
+2025-06-02 08:44:01,906 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-02 08:44:01,915 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-02 08:44:03,634 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-02 08:44:03,646 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-03-11 15:55:00 au 2025-03-11 20:00:00
+2025-06-02 08:44:03,647 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-02 08:44:03,648 - prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-02 08:44:03,667 - prediction_service - INFO - Données historiques mises à jour pour 1h: 50 barres du 2024-04-17 19:00:00 au 2024-04-19 23:00:00
+2025-06-02 08:44:03,668 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 4h, 1d
+2025-06-02 08:44:03,677 - prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-02 08:44:03,693 - prediction_service - INFO - Données historiques mises à jour pour 4h: 50 barres du 2024-04-09 16:00:00 au 2024-04-19 20:00:00
+2025-06-02 08:44:03,699 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1d
+2025-06-02 08:44:03,701 - prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-02 08:44:03,711 - prediction_service - INFO - Données historiques mises à jour pour 1d: 50 barres du 2025-01-06 00:00:00 au 2025-03-14 00:00:00
+2025-06-02 08:44:04,299 - prediction_service - WARNING - Pas assez de données pour la prédiction après le nettoyage. Nécessite 16 points de données, seulement 1 disponibles.
+2025-06-03 16:04:31,118 - prediction_service - INFO - Modèle chargé avec succès depuis ./model/best_model.h5
+2025-06-03 16:04:31,118 - prediction_service - INFO - Démarrage du serveur WebSocket sur 0.0.0.0:8765
+2025-06-03 16:04:31,128 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-03 16:12:49,664 - websockets.server - INFO - server closing
+2025-06-03 16:12:49,665 - websockets.server - INFO - server closed
+2025-06-03 16:12:53,067 - prediction_service - INFO - Modèle chargé avec succès depuis ./model/best_model.h5
+2025-06-03 16:12:53,067 - prediction_service - INFO - Démarrage du serveur WebSocket sur 0.0.0.0:8765
+2025-06-03 16:12:53,072 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-03 16:13:24,619 - websockets.server - INFO - connection open
+2025-06-03 16:13:24,619 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 56290)
+2025-06-03 16:13:24,774 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:13:24,776 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-03 16:13:25,359 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-03 16:13:25,364 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-06-02 07:20:00 au 2025-06-02 11:25:00
+2025-06-03 16:13:25,364 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-03 16:13:25,365 - prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-03 16:13:25,366 - prediction_service - INFO - Données historiques mises à jour pour 1h: 50 barres du 2025-05-29 09:00:00 au 2025-06-02 13:00:00
+2025-06-03 16:13:25,366 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 4h, 1d
+2025-06-03 16:13:25,366 - prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-03 16:13:25,367 - prediction_service - INFO - Données historiques mises à jour pour 4h: 50 barres du 2025-05-21 15:00:00 au 2025-06-02 11:00:00
+2025-06-03 16:13:25,367 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1d
+2025-06-03 16:13:25,367 - prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-03 16:13:25,368 - prediction_service - INFO - Données historiques mises à jour pour 1d: 50 barres du 2025-03-23 23:00:00 au 2025-06-01 22:00:00
+2025-06-03 16:13:25,372 - prediction_service - INFO - DEBUG - Entrées dans prepare_data_for_prediction:
+2025-06-03 16:13:25,372 - prediction_service - INFO -   5min: 49 lignes
+2025-06-03 16:13:25,372 - prediction_service - INFO -   1h: 50 lignes
+2025-06-03 16:13:25,372 - prediction_service - INFO -   4h: 50 lignes
+2025-06-03 16:13:25,372 - prediction_service - INFO -   1d: 50 lignes
+2025-06-03 16:13:25,590 - prediction_service - INFO - DEBUG - Après create_parquet: 1 lignes
+2025-06-03 16:13:25,591 - prediction_service - INFO - DEBUG - Features disponibles: ['RSI_14', 'MACD', 'Bollinger_High', 'SuperTrend_Trend']
+2025-06-03 16:13:25,591 - prediction_service - INFO - DEBUG - NaN dans les 10 dernières lignes: {'RSI_14': 0, 'MACD': 0, 'Bollinger_High': 0, 'SuperTrend_Trend': 0}
+2025-06-03 16:13:25,591 - prediction_service - WARNING - Pas assez de données pour la prédiction après le nettoyage. Nécessite 16 points de données, seulement 1 disponibles.
+2025-06-03 16:23:03,230 - websockets.server - INFO - server closing
+2025-06-03 16:23:03,230 - websockets.server - INFO - server closed
+2025-06-03 16:23:06,494 - prediction_service - INFO - Modèle chargé avec succès depuis ./model/best_model.h5
+2025-06-03 16:23:06,494 - prediction_service - INFO - Démarrage du serveur WebSocket sur 0.0.0.0:8765
+2025-06-03 16:23:06,500 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-03 16:24:01,857 - websockets.server - INFO - connection open
+2025-06-03 16:24:01,857 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 46904)
+2025-06-03 16:24:01,984 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:24:01,986 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-03 16:24:02,757 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-03 16:24:02,762 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-06-02 07:20:00 au 2025-06-02 11:25:00
+2025-06-03 16:24:02,763 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-03 16:24:02,764 - prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-03 16:24:02,767 - prediction_service - INFO - Données historiques mises à jour pour 1h: 50 barres du 2025-05-29 09:00:00 au 2025-06-02 13:00:00
+2025-06-03 16:24:02,767 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 4h, 1d
+2025-06-03 16:24:02,768 - prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-03 16:24:02,770 - prediction_service - INFO - Données historiques mises à jour pour 4h: 50 barres du 2025-05-21 15:00:00 au 2025-06-02 11:00:00
+2025-06-03 16:24:02,770 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1d
+2025-06-03 16:24:02,771 - prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-03 16:24:02,773 - prediction_service - INFO - Données historiques mises à jour pour 1d: 50 barres du 2025-03-23 23:00:00 au 2025-06-01 22:00:00
+2025-06-03 16:24:02,781 - prediction_service - INFO - DEBUG - Entrées dans prepare_data_for_prediction:
+2025-06-03 16:24:02,781 - prediction_service - INFO -   5min: 49 lignes
+2025-06-03 16:24:02,781 - prediction_service - INFO -   1h: 50 lignes
+2025-06-03 16:24:02,781 - prediction_service - INFO -   4h: 50 lignes
+2025-06-03 16:24:02,781 - prediction_service - INFO -   1d: 50 lignes
+2025-06-03 16:24:03,016 - prediction_service - INFO - DEBUG - Après create_parquet: 30 lignes
+2025-06-03 16:24:03,016 - prediction_service - INFO - DEBUG - Features disponibles: ['RSI_14', 'MACD', 'Bollinger_High', 'SuperTrend_Trend']
+2025-06-03 16:24:03,017 - prediction_service - INFO - DEBUG - NaN dans les 10 dernières lignes: {'RSI_14': 0, 'MACD': 0, 'Bollinger_High': 0, 'SuperTrend_Trend': 0}
+2025-06-03 16:24:03,018 - prediction_service - INFO - Séquences conservées pour la prédiction (shape=(16, 161)): [[6483.5 6483.5 6472.6 ... 292.1999999999998 -9.799999999999272
+  6474.902324730002]
+ [6473.5 6475.6 6469.7 ... 292.1999999999998 -3.100000000000364
+  6477.920567174761]
+ [6470.6 6474.6 6468.6 ... 292.1999999999998 2.100000000000364
+  6478.3695364557025]
+ ...
+ [6500.1 6502.1 6494.2 ... 292.1999999999998 -2.899999999999636
+  6499.7406043285155]
+ [6497.2 6499.1 6496.1 ... 292.1999999999998 1.0999999999994543
+  6501.018842003302]
+ [6498.1 6499.2 6497.2 ... 292.1999999999998 0.0 6502.606433149137]]
+2025-06-03 16:24:03,043 - prediction_service - INFO - Normalisation des données avec StandardScaler (shape=(1, 16, 161))
+2025-06-03 16:24:03,043 - prediction_service - ERROR - Erreur: could not convert string to float: '02/06/2025 12:10:00'
+Traceback (most recent call last):
+  File "/home/parrochia/go/src/github.com/trading-prediction-with-machine-learning/src/prediction_service.py", line 146, in handle_websocket
+    x = prepare_prediction_data()
+  File "/home/parrochia/go/src/github.com/trading-prediction-with-machine-learning/src/prediction_service.py", line 236, in prepare_prediction_data
+    x = prepare_data_for_prediction(df_5min, df_1h, df_4h, df_1d, sequence_length=SEQUENCE_LENGTH)
+  File "/home/parrochia/go/src/github.com/trading-prediction-with-machine-learning/src/prediction_service.py", line 112, in prepare_data_for_prediction
+    return scaler.fit_transform(x.reshape(-1, x.shape[-1])).reshape(x.shape)
+  File "/home/parrochia/.local/lib/python3.10/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/home/parrochia/.local/lib/python3.10/site-packages/sklearn/base.py", line 918, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+  File "/home/parrochia/.local/lib/python3.10/site-packages/sklearn/preprocessing/_data.py", line 894, in fit
+    return self.partial_fit(X, y, sample_weight)
+  File "/home/parrochia/.local/lib/python3.10/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/parrochia/.local/lib/python3.10/site-packages/sklearn/preprocessing/_data.py", line 930, in partial_fit
+    X = validate_data(
+  File "/home/parrochia/.local/lib/python3.10/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "/home/parrochia/.local/lib/python3.10/site-packages/sklearn/utils/validation.py", line 1055, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/home/parrochia/.local/lib/python3.10/site-packages/sklearn/utils/_array_api.py", line 839, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+ValueError: could not convert string to float: '02/06/2025 12:10:00'
+2025-06-03 16:24:43,926 - prediction_service - INFO - Connexion fermée: ('127.0.0.1', 46904)
+2025-06-03 16:28:48,457 - websockets.server - INFO - server closing
+2025-06-03 16:28:48,458 - websockets.server - INFO - server closed
+2025-06-03 16:28:51,736 - prediction_service - INFO - Modèle chargé avec succès depuis ./model/best_model.h5
+2025-06-03 16:28:51,736 - prediction_service - INFO - Démarrage du serveur WebSocket sur 0.0.0.0:8765
+2025-06-03 16:28:51,741 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-03 16:28:52,290 - websockets.server - INFO - connection open
+2025-06-03 16:28:52,291 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 36054)
+2025-06-03 16:28:52,409 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:28:52,411 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-03 16:28:52,936 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-03 16:28:52,941 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-06-02 07:20:00 au 2025-06-02 11:25:00
+2025-06-03 16:28:52,941 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-03 16:28:52,942 - prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-03 16:28:52,945 - prediction_service - INFO - Données historiques mises à jour pour 1h: 50 barres du 2025-05-29 09:00:00 au 2025-06-02 13:00:00
+2025-06-03 16:28:52,945 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 4h, 1d
+2025-06-03 16:28:52,946 - prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-03 16:28:52,948 - prediction_service - INFO - Données historiques mises à jour pour 4h: 50 barres du 2025-05-21 15:00:00 au 2025-06-02 11:00:00
+2025-06-03 16:28:52,948 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1d
+2025-06-03 16:28:52,948 - prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-03 16:28:52,952 - prediction_service - INFO - Données historiques mises à jour pour 1d: 50 barres du 2025-03-23 23:00:00 au 2025-06-01 22:00:00
+2025-06-03 16:28:52,963 - prediction_service - INFO - DEBUG - Entrées dans prepare_data_for_prediction:
+2025-06-03 16:28:52,963 - prediction_service - INFO -   5min: 49 lignes
+2025-06-03 16:28:52,963 - prediction_service - INFO -   1h: 50 lignes
+2025-06-03 16:28:52,964 - prediction_service - INFO -   4h: 50 lignes
+2025-06-03 16:28:52,964 - prediction_service - INFO -   1d: 50 lignes
+2025-06-03 16:28:53,240 - prediction_service - INFO - DEBUG - Après create_parquet: 30 lignes
+2025-06-03 16:28:53,240 - prediction_service - INFO - DEBUG - Features disponibles: ['RSI_14', 'MACD', 'Bollinger_High', 'SuperTrend_Trend']
+2025-06-03 16:28:53,241 - prediction_service - INFO - DEBUG - NaN dans les 10 dernières lignes: {'RSI_14': 0, 'MACD': 0, 'Bollinger_High': 0, 'SuperTrend_Trend': 0}
+2025-06-03 16:28:53,241 - prediction_service - INFO - DEBUG - Colonnes avant nettoyage: ['FromDate', 'Open', 'High', 'Low', 'Close', 'Volume', 'date', 'prev_date', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji_type', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'pattern_type', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-03 16:28:53,241 - prediction_service - INFO - DEBUG - Colonnes non-numériques détectées: ['FromDate', 'date', 'prev_date', 'doji_type', 'pattern_type']
+2025-06-03 16:28:53,242 - prediction_service - INFO - DEBUG - Colonnes finales: ['Open', 'High', 'Low', 'Close', 'Volume', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-03 16:28:53,250 - prediction_service - INFO - DEBUG - Types de données: [dtype('float64') dtype('int64') dtype('int32') dtype('bool')]
+2025-06-03 16:28:53,251 - prediction_service - INFO - Séquences conservées pour la prédiction (shape=(16, 158)): [[6483.5 6483.5 6472.6 ... 292.1999999999998 -9.799999999999272
+  6474.902324730002]
+ [6473.5 6475.6 6469.7 ... 292.1999999999998 -3.100000000000364
+  6477.920567174761]
+ [6470.6 6474.6 6468.6 ... 292.1999999999998 2.100000000000364
+  6478.3695364557025]
+ ...
+ [6500.1 6502.1 6494.2 ... 292.1999999999998 -2.899999999999636
+  6499.7406043285155]
+ [6497.2 6499.1 6496.1 ... 292.1999999999998 1.0999999999994543
+  6501.018842003302]
+ [6498.1 6499.2 6497.2 ... 292.1999999999998 0.0 6502.606433149137]]
+2025-06-03 16:28:53,284 - prediction_service - INFO - Normalisation des données avec StandardScaler (shape=(1, 16, 158))
+2025-06-03 16:28:53,285 - prediction_service - INFO - prepare prediction data done: make prediction
+2025-06-03 16:28:53,354 - prediction_service - ERROR - Erreur: Exception encountered when calling LSTMCell.call().
+
+[1mDimensions must be equal, but are 158 and 20 for '{{node sequential_1/lstm_1/lstm_cell_1/MatMul}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](sequential_1/lstm_1/strided_slice_1, sequential_1/lstm_1/lstm_cell_1/Cast/ReadVariableOp)' with input shapes: [1,158], [20,200].[0m
+
+Arguments received by LSTMCell.call():
+  • inputs=tf.Tensor(shape=(1, 158), dtype=float32)
+  • states=('tf.Tensor(shape=(1, 50), dtype=float32)', 'tf.Tensor(shape=(1, 50), dtype=float32)')
+  • training=False
+Traceback (most recent call last):
+  File "/home/parrochia/go/src/github.com/trading-prediction-with-machine-learning/src/prediction_service.py", line 168, in handle_websocket
+    prediction = make_prediction(model, x)
+  File "/home/parrochia/go/src/github.com/trading-prediction-with-machine-learning/src/prediction_service.py", line 264, in make_prediction
+    y_proba = model.predict(x)
+  File "/home/parrochia/.local/lib/python3.10/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/parrochia/.local/lib/python3.10/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+ValueError: Exception encountered when calling LSTMCell.call().
+
+[1mDimensions must be equal, but are 158 and 20 for '{{node sequential_1/lstm_1/lstm_cell_1/MatMul}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](sequential_1/lstm_1/strided_slice_1, sequential_1/lstm_1/lstm_cell_1/Cast/ReadVariableOp)' with input shapes: [1,158], [20,200].[0m
+
+Arguments received by LSTMCell.call():
+  • inputs=tf.Tensor(shape=(1, 158), dtype=float32)
+  • states=('tf.Tensor(shape=(1, 50), dtype=float32)', 'tf.Tensor(shape=(1, 50), dtype=float32)')
+  • training=False
+2025-06-03 16:36:45,670 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:36:45,833 - prediction_service - WARNING - Modèle incompatible (Exception encountered when calling LSTMCell.call().
+
+[1mDimensions must be equal, but are 158 and 20 for '{{node sequential_1/lstm_1/lstm_cell_1/MatMul}} = MatMul[T=DT_FLOAT, grad_a=false, grad_b=false, transpose_a=false, transpose_b=false](sequential_1/lstm_1/strided_slice_1, sequential_1/lstm_1/lstm_cell_1/Cast/ReadVariableOp)' with input shapes: [1,158], [20,200].[0m
+
+Arguments received by LSTMCell.call():
+  • inputs=tf.Tensor(shape=(1, 158), dtype=float32)
+  • states=('tf.Tensor(shape=(1, 50), dtype=float32)', 'tf.Tensor(shape=(1, 50), dtype=float32)')
+  • training=False), création d'un nouveau modèle...
+2025-06-03 16:36:45,853 - absl - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-03 16:36:45,873 - prediction_service - INFO - Nouveau modèle factice créé avec 158 features et sauvé dans ./model/best_model.h5
+2025-06-03 16:36:45,873 - prediction_service - INFO - Démarrage du serveur WebSocket sur 0.0.0.0:8765
+2025-06-03 16:36:45,883 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-03 16:36:47,293 - websockets.server - INFO - connection open
+2025-06-03 16:36:47,293 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 52056)
+2025-06-03 16:36:47,320 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:36:47,321 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-03 16:36:48,067 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-03 16:36:48,071 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-06-02 07:20:00 au 2025-06-02 11:25:00
+2025-06-03 16:36:48,071 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-03 16:36:48,071 - prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-03 16:36:48,072 - prediction_service - INFO - Données historiques mises à jour pour 1h: 50 barres du 2025-05-29 09:00:00 au 2025-06-02 13:00:00
+2025-06-03 16:36:48,072 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 4h, 1d
+2025-06-03 16:36:48,073 - prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-03 16:36:48,074 - prediction_service - INFO - Données historiques mises à jour pour 4h: 50 barres du 2025-05-21 15:00:00 au 2025-06-02 11:00:00
+2025-06-03 16:36:48,074 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1d
+2025-06-03 16:36:48,075 - prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-03 16:36:48,076 - prediction_service - INFO - Données historiques mises à jour pour 1d: 50 barres du 2025-03-23 23:00:00 au 2025-06-01 22:00:00
+2025-06-03 16:36:48,081 - prediction_service - INFO - DEBUG - Entrées dans prepare_data_for_prediction:
+2025-06-03 16:36:48,081 - prediction_service - INFO -   5min: 49 lignes
+2025-06-03 16:36:48,081 - prediction_service - INFO -   1h: 50 lignes
+2025-06-03 16:36:48,081 - prediction_service - INFO -   4h: 50 lignes
+2025-06-03 16:36:48,081 - prediction_service - INFO -   1d: 50 lignes
+2025-06-03 16:36:48,204 - prediction_service - INFO - DEBUG - Après create_parquet: 30 lignes
+2025-06-03 16:36:48,204 - prediction_service - INFO - DEBUG - Features disponibles: ['RSI_14', 'MACD', 'Bollinger_High', 'SuperTrend_Trend']
+2025-06-03 16:36:48,205 - prediction_service - INFO - DEBUG - NaN dans les 10 dernières lignes: {'RSI_14': 0, 'MACD': 0, 'Bollinger_High': 0, 'SuperTrend_Trend': 0}
+2025-06-03 16:36:48,205 - prediction_service - INFO - DEBUG - Colonnes avant nettoyage: ['FromDate', 'Open', 'High', 'Low', 'Close', 'Volume', 'date', 'prev_date', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji_type', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'pattern_type', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-03 16:36:48,205 - prediction_service - INFO - DEBUG - Colonnes non-numériques détectées: ['FromDate', 'date', 'prev_date', 'doji_type', 'pattern_type']
+2025-06-03 16:36:48,206 - prediction_service - INFO - DEBUG - Colonnes finales: ['Open', 'High', 'Low', 'Close', 'Volume', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-03 16:36:48,206 - prediction_service - INFO - DEBUG - Types de données: [dtype('float64') dtype('int64') dtype('int32') dtype('bool')]
+2025-06-03 16:36:48,206 - prediction_service - INFO - Séquences conservées pour la prédiction (shape=(16, 158)): [[6483.5 6483.5 6472.6 ... 292.1999999999998 -9.799999999999272
+  6474.902324730002]
+ [6473.5 6475.6 6469.7 ... 292.1999999999998 -3.100000000000364
+  6477.920567174761]
+ [6470.6 6474.6 6468.6 ... 292.1999999999998 2.100000000000364
+  6478.3695364557025]
+ ...
+ [6500.1 6502.1 6494.2 ... 292.1999999999998 -2.899999999999636
+  6499.7406043285155]
+ [6497.2 6499.1 6496.1 ... 292.1999999999998 1.0999999999994543
+  6501.018842003302]
+ [6498.1 6499.2 6497.2 ... 292.1999999999998 0.0 6502.606433149137]]
+2025-06-03 16:36:48,240 - prediction_service - INFO - Normalisation des données avec StandardScaler (shape=(1, 16, 158))
+2025-06-03 16:36:48,241 - prediction_service - INFO - prepare prediction data done: make prediction
+2025-06-03 16:41:56,687 - websockets.server - INFO - server closing
+2025-06-03 16:41:56,688 - websockets.server - INFO - server closed
+2025-06-03 16:42:00,032 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:42:00,261 - prediction_service - INFO - Modèle existant compatible avec 158 features
+2025-06-03 16:42:00,261 - prediction_service - INFO - Démarrage du serveur WebSocket sur 0.0.0.0:8765
+2025-06-03 16:42:00,266 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-03 16:42:00,327 - websockets.server - INFO - connection open
+2025-06-03 16:42:00,327 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 47816)
+2025-06-03 16:42:00,379 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:42:00,380 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-03 16:42:01,007 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-03 16:42:01,012 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-06-02 07:20:00 au 2025-06-02 11:25:00
+2025-06-03 16:42:01,013 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-03 16:42:01,013 - prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-03 16:42:01,015 - prediction_service - INFO - Données historiques mises à jour pour 1h: 50 barres du 2025-05-29 09:00:00 au 2025-06-02 13:00:00
+2025-06-03 16:42:01,015 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 4h, 1d
+2025-06-03 16:42:01,015 - prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-03 16:42:01,017 - prediction_service - INFO - Données historiques mises à jour pour 4h: 50 barres du 2025-05-21 15:00:00 au 2025-06-02 11:00:00
+2025-06-03 16:42:01,017 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1d
+2025-06-03 16:42:01,017 - prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-03 16:42:01,019 - prediction_service - INFO - Données historiques mises à jour pour 1d: 50 barres du 2025-03-23 23:00:00 au 2025-06-01 22:00:00
+2025-06-03 16:42:01,023 - prediction_service - INFO - DEBUG - Entrées dans prepare_data_for_prediction:
+2025-06-03 16:42:01,023 - prediction_service - INFO -   5min: 49 lignes
+2025-06-03 16:42:01,023 - prediction_service - INFO -   1h: 50 lignes
+2025-06-03 16:42:01,023 - prediction_service - INFO -   4h: 50 lignes
+2025-06-03 16:42:01,023 - prediction_service - INFO -   1d: 50 lignes
+2025-06-03 16:42:01,155 - prediction_service - INFO - DEBUG - Après create_parquet: 30 lignes
+2025-06-03 16:42:01,155 - prediction_service - INFO - DEBUG - Features disponibles: ['RSI_14', 'MACD', 'Bollinger_High', 'SuperTrend_Trend']
+2025-06-03 16:42:01,156 - prediction_service - INFO - DEBUG - NaN dans les 10 dernières lignes: {'RSI_14': 0, 'MACD': 0, 'Bollinger_High': 0, 'SuperTrend_Trend': 0}
+2025-06-03 16:42:01,156 - prediction_service - INFO - DEBUG - Colonnes avant nettoyage: ['FromDate', 'Open', 'High', 'Low', 'Close', 'Volume', 'date', 'prev_date', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji_type', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'pattern_type', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-03 16:42:01,156 - prediction_service - INFO - DEBUG - Colonnes non-numériques détectées: ['FromDate', 'date', 'prev_date', 'doji_type', 'pattern_type']
+2025-06-03 16:42:01,158 - prediction_service - INFO - DEBUG - Colonnes finales: ['Open', 'High', 'Low', 'Close', 'Volume', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-03 16:42:01,158 - prediction_service - INFO - DEBUG - Types de données: [dtype('float64') dtype('int64') dtype('int32') dtype('bool')]
+2025-06-03 16:42:01,159 - prediction_service - INFO - Séquences conservées pour la prédiction (shape=(16, 158)): [[6483.5 6483.5 6472.6 ... 292.1999999999998 -9.799999999999272
+  6474.902324730002]
+ [6473.5 6475.6 6469.7 ... 292.1999999999998 -3.100000000000364
+  6477.920567174761]
+ [6470.6 6474.6 6468.6 ... 292.1999999999998 2.100000000000364
+  6478.3695364557025]
+ ...
+ [6500.1 6502.1 6494.2 ... 292.1999999999998 -2.899999999999636
+  6499.7406043285155]
+ [6497.2 6499.1 6496.1 ... 292.1999999999998 1.0999999999994543
+  6501.018842003302]
+ [6498.1 6499.2 6497.2 ... 292.1999999999998 0.0 6502.606433149137]]
+2025-06-03 16:42:01,211 - prediction_service - INFO - DEBUG - Analyse NaN détaillée: {}
+2025-06-03 16:42:01,211 - prediction_service - INFO - DEBUG - Analyse valeurs infinies détaillée: {}
+2025-06-03 16:42:01,211 - prediction_service - INFO - Normalisation des données avec StandardScaler (shape=(1, 16, 158))
+2025-06-03 16:42:01,212 - prediction_service - INFO - prepare prediction data done: make prediction
+2025-06-03 16:42:23,850 - websockets.server - INFO - server closing
+2025-06-03 16:42:23,851 - websockets.server - INFO - server closed
+2025-06-03 16:42:26,925 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:42:27,166 - prediction_service - INFO - Modèle existant compatible avec 158 features
+2025-06-03 16:42:27,167 - prediction_service - INFO - Démarrage du serveur WebSocket sur 0.0.0.0:8765
+2025-06-03 16:42:27,172 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-03 16:42:27,502 - websockets.server - INFO - connection open
+2025-06-03 16:42:27,502 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 50182)
+2025-06-03 16:42:27,539 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:42:27,541 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-03 16:42:28,095 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-03 16:42:28,101 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-06-02 07:20:00 au 2025-06-02 11:25:00
+2025-06-03 16:42:28,101 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-03 16:42:28,101 - prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-03 16:42:28,102 - prediction_service - INFO - Données historiques mises à jour pour 1h: 50 barres du 2025-05-29 09:00:00 au 2025-06-02 13:00:00
+2025-06-03 16:42:28,102 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 4h, 1d
+2025-06-03 16:42:28,103 - prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-03 16:42:28,103 - prediction_service - INFO - Données historiques mises à jour pour 4h: 50 barres du 2025-05-21 15:00:00 au 2025-06-02 11:00:00
+2025-06-03 16:42:28,103 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1d
+2025-06-03 16:42:28,104 - prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-03 16:42:28,104 - prediction_service - INFO - Données historiques mises à jour pour 1d: 50 barres du 2025-03-23 23:00:00 au 2025-06-01 22:00:00
+2025-06-03 16:42:28,106 - prediction_service - INFO - DEBUG - Entrées dans prepare_data_for_prediction:
+2025-06-03 16:42:28,107 - prediction_service - INFO -   5min: 49 lignes
+2025-06-03 16:42:28,107 - prediction_service - INFO -   1h: 50 lignes
+2025-06-03 16:42:28,107 - prediction_service - INFO -   4h: 50 lignes
+2025-06-03 16:42:28,107 - prediction_service - INFO -   1d: 50 lignes
+2025-06-03 16:42:28,253 - prediction_service - INFO - DEBUG - Après create_parquet: 30 lignes
+2025-06-03 16:42:28,253 - prediction_service - INFO - DEBUG - Features disponibles: ['RSI_14', 'MACD', 'Bollinger_High', 'SuperTrend_Trend']
+2025-06-03 16:42:28,253 - prediction_service - INFO - DEBUG - NaN dans les 10 dernières lignes: {'RSI_14': 0, 'MACD': 0, 'Bollinger_High': 0, 'SuperTrend_Trend': 0}
+2025-06-03 16:42:28,253 - prediction_service - INFO - DEBUG - Colonnes avant nettoyage: ['FromDate', 'Open', 'High', 'Low', 'Close', 'Volume', 'date', 'prev_date', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji_type', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'pattern_type', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-03 16:42:28,253 - prediction_service - INFO - DEBUG - Colonnes non-numériques détectées: ['FromDate', 'date', 'prev_date', 'doji_type', 'pattern_type']
+2025-06-03 16:42:28,254 - prediction_service - INFO - DEBUG - Colonnes finales: ['Open', 'High', 'Low', 'Close', 'Volume', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-03 16:42:28,254 - prediction_service - INFO - DEBUG - Types de données: [dtype('float64') dtype('int64') dtype('int32') dtype('bool')]
+2025-06-03 16:42:28,255 - prediction_service - INFO - Séquences conservées pour la prédiction (shape=(16, 158)): [[6483.5 6483.5 6472.6 ... 292.1999999999998 -9.799999999999272
+  6474.902324730002]
+ [6473.5 6475.6 6469.7 ... 292.1999999999998 -3.100000000000364
+  6477.920567174761]
+ [6470.6 6474.6 6468.6 ... 292.1999999999998 2.100000000000364
+  6478.3695364557025]
+ ...
+ [6500.1 6502.1 6494.2 ... 292.1999999999998 -2.899999999999636
+  6499.7406043285155]
+ [6497.2 6499.1 6496.1 ... 292.1999999999998 1.0999999999994543
+  6501.018842003302]
+ [6498.1 6499.2 6497.2 ... 292.1999999999998 0.0 6502.606433149137]]
+2025-06-03 16:42:28,295 - prediction_service - INFO - DEBUG - Analyse NaN détaillée: {}
+2025-06-03 16:42:28,295 - prediction_service - INFO - DEBUG - Analyse valeurs infinies détaillée: {}
+2025-06-03 16:42:28,295 - prediction_service - INFO - Normalisation des données avec StandardScaler (shape=(1, 16, 158))
+2025-06-03 16:42:28,296 - prediction_service - INFO - prepare prediction data done: make prediction
+2025-06-03 16:51:19,843 - websockets.server - INFO - server closing
+2025-06-03 16:51:19,843 - websockets.server - INFO - server closed
+2025-06-03 16:51:23,485 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:51:23,727 - prediction_service - INFO - Modèle existant compatible avec 158 features
+2025-06-03 16:51:23,727 - prediction_service - INFO - Démarrage du serveur WebSocket sur 0.0.0.0:8765
+2025-06-03 16:51:23,733 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-03 16:51:24,804 - websockets.server - INFO - connection open
+2025-06-03 16:51:24,804 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 45772)
+2025-06-03 16:51:24,835 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-03 16:51:24,839 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-03 16:51:25,592 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-03 16:51:25,597 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-06-02 07:20:00 au 2025-06-02 11:25:00
+2025-06-03 16:51:25,597 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-03 16:51:25,597 - prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-03 16:51:25,599 - prediction_service - INFO - Données historiques mises à jour pour 1h: 50 barres du 2025-05-29 09:00:00 au 2025-06-02 13:00:00
+2025-06-03 16:51:25,599 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 4h, 1d
+2025-06-03 16:51:25,599 - prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-03 16:51:25,600 - prediction_service - INFO - Données historiques mises à jour pour 4h: 50 barres du 2025-05-21 15:00:00 au 2025-06-02 11:00:00
+2025-06-03 16:51:25,600 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1d
+2025-06-03 16:51:25,600 - prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-03 16:51:25,601 - prediction_service - INFO - Données historiques mises à jour pour 1d: 50 barres du 2025-03-23 23:00:00 au 2025-06-01 22:00:00
+2025-06-03 16:51:25,604 - prediction_service - INFO - DEBUG - Entrées dans prepare_data_for_prediction:
+2025-06-03 16:51:25,604 - prediction_service - INFO -   5min: 49 lignes
+2025-06-03 16:51:25,604 - prediction_service - INFO -   1h: 50 lignes
+2025-06-03 16:51:25,604 - prediction_service - INFO -   4h: 50 lignes
+2025-06-03 16:51:25,604 - prediction_service - INFO -   1d: 50 lignes
+2025-06-03 16:51:25,730 - prediction_service - INFO - DEBUG - Après create_parquet: 30 lignes
+2025-06-03 16:51:25,730 - prediction_service - INFO - DEBUG - Features disponibles: ['RSI_14', 'MACD', 'Bollinger_High', 'SuperTrend_Trend']
+2025-06-03 16:51:25,731 - prediction_service - INFO - DEBUG - NaN dans les 10 dernières lignes: {'RSI_14': 0, 'MACD': 0, 'Bollinger_High': 0, 'SuperTrend_Trend': 0}
+2025-06-03 16:51:25,731 - prediction_service - INFO - DEBUG - Colonnes avant nettoyage: ['FromDate', 'Open', 'High', 'Low', 'Close', 'Volume', 'date', 'prev_date', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji_type', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'pattern_type', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-03 16:51:25,731 - prediction_service - INFO - DEBUG - Colonnes non-numériques détectées: ['FromDate', 'date', 'prev_date', 'doji_type', 'pattern_type']
+2025-06-03 16:51:25,732 - prediction_service - INFO - DEBUG - Colonnes finales: ['Open', 'High', 'Low', 'Close', 'Volume', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-03 16:51:25,732 - prediction_service - INFO - DEBUG - Types de données: [dtype('float64') dtype('int64') dtype('int32') dtype('bool')]
+2025-06-03 16:51:25,732 - prediction_service - INFO - Séquences conservées pour la prédiction (shape=(16, 158)): [[6483.5 6483.5 6472.6 ... 292.1999999999998 -9.799999999999272
+  6474.902324730002]
+ [6473.5 6475.6 6469.7 ... 292.1999999999998 -3.100000000000364
+  6477.920567174761]
+ [6470.6 6474.6 6468.6 ... 292.1999999999998 2.100000000000364
+  6478.3695364557025]
+ ...
+ [6500.1 6502.1 6494.2 ... 292.1999999999998 -2.899999999999636
+  6499.7406043285155]
+ [6497.2 6499.1 6496.1 ... 292.1999999999998 1.0999999999994543
+  6501.018842003302]
+ [6498.1 6499.2 6497.2 ... 292.1999999999998 0.0 6502.606433149137]]
+2025-06-03 16:51:25,774 - prediction_service - INFO - DEBUG - Analyse NaN détaillée: {}
+2025-06-03 16:51:25,774 - prediction_service - INFO - DEBUG - Analyse valeurs infinies détaillée: {}
+2025-06-03 16:51:25,774 - prediction_service - INFO - Normalisation des données avec StandardScaler (shape=(1, 16, 158))
+2025-06-03 16:51:25,775 - prediction_service - INFO - prepare prediction data done: make prediction

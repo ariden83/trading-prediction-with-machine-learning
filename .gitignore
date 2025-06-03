@@ -4,3 +4,5 @@ model/*
 cache/*.parquet
 cache/*.parquet_1
 wrong_prediction/*.csv
+
+**/.claude/settings.local.json

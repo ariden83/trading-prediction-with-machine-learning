@@ -102,9 +102,51 @@ make feature-importance
 make evaluate
 ```
 
-- **Start the WebSocket prediction service**:
+### Service WebSocket de prédiction en temps réel
+
+Le projet inclut un service WebSocket pour les prédictions en temps réel.
+
+- **Démarrer le serveur WebSocket**:
 ```bash
+# Méthode 1: Avec make
 make start-service
+
+# Méthode 2: Directement avec Python
+python src/prediction_service.py
+
+# Méthode 3: En arrière-plan
+python src/prediction_service.py &
+```
+
+- **Arrêter le serveur WebSocket**:
+```bash
+# Si démarré en premier plan: Ctrl+C
+
+# Si démarré en arrière-plan, trouver le processus:
+ps aux | grep prediction_service
+
+# Puis l'arrêter avec son PID:
+kill <PID>
+
+# Ou arrêter tous les processus Python:
+pkill -f prediction_service.py
+```
+
+- **Interface Web**:
+  - Ouvrir `public/websocket_client.html` dans un navigateur
+  - Se connecter à `ws://localhost:8765`
+  - Le serveur écoute sur le port 8765 par défaut
+
+- **Vérifier que le serveur fonctionne**:
+```bash
+# Vérifier le processus
+ps aux | grep prediction_service
+
+# Vérifier le port
+netstat -tlnp | grep 8765
+
+# Tester la connexion
+curl -i -N -H "Connection: Upgrade" -H "Upgrade: websocket" -H "Sec-WebSocket-Key: test" -H "Sec-WebSocket-Version: 13" http://localhost:8765/
 ```
 
 - **Personalized training**:

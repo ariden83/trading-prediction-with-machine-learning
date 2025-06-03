@@ -2420,14 +2420,14 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
         high=features_df['High'],
         low=features_df['Low'],
         close=features_df['Close'],
-        window=10,  # Période
+        length=10,  # Période (fixed: was 'window', should be 'length')
         multiplier=3  # Facteur de volatilité
     )
 
-    features_df['SuperTrend_Trend'] = supertrend_result['SUPERT_7_3.0']  # Trend
-    features_df['SuperTrend_Direction'] = supertrend_result['SUPERTd_7_3.0']  # Direction
-    features_df['SuperTrend_Long'] = supertrend_result['SUPERTl_7_3.0']  # Long
-    features_df['SuperTrend_Short'] = supertrend_result['SUPERTs_7_3.0']  # Short
+    features_df['SuperTrend_Trend'] = supertrend_result['SUPERT_10_3.0']  # Trend (fixed: was 7_3.0, should be 10_3.0)
+    features_df['SuperTrend_Direction'] = supertrend_result['SUPERTd_10_3.0']  # Direction (fixed: was 7_3.0, should be 10_3.0)
+    features_df['SuperTrend_Long'] = supertrend_result['SUPERTl_10_3.0']  # Long (fixed: was 7_3.0, should be 10_3.0)
+    features_df['SuperTrend_Short'] = supertrend_result['SUPERTs_10_3.0']  # Short (fixed: was 7_3.0, should be 10_3.0)
 
     features_df['Stoch_RSI'] = ta.momentum.StochRSIIndicator(
         close=features_df['Close'],
@@ -2540,25 +2540,25 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
     for period in ['morning', 'afternoon', 'evening', 'night']:
         features_df[f'volatility_{period}'] = features_df[features_df['period_of_day'] == period]['hourly_return'].rolling(window=6).std()
 
-    # Caractéristiques de retour logarithmique
+    # Caractéristiques de retour logarithmique - CORRECTEMENT avec les bons timeframes
     features_df['log_return_5m'] = np.log(features_df['Close'] / features_df['Close'].shift(1))
-    features_df['log_return_1h'] = np.log(features_df['Close'] / features_df['Close'].shift(12))
-    features_df['log_return_4h'] = np.log(features_df['Close'] / features_df['Close'].shift(48))
+    
+    # Calculer les features sur les vrais DataFrames multi-timeframes
+    features_df = add_multi_timeframe_features_corrected(features_df, df_1h, df_4h, df_1d)
 
-    # Momentum
-    momentum_window_5m = 1  # Momentum sur 5 minutes
-    momentum_window_1h = 12  # Momentum sur 1 heure (12 bougies)
-    momentum_window_4h = 48  # Momentum sur 4 heures (48 bougies)
+    # Momentum 5 minutes seulement (les autres sont calculés dans add_multi_timeframe_features_corrected)
+    features_df['momentum_5m'] = features_df['Close'] - features_df['Close'].shift(1)
 
-    # Momentum à différentes périodes
-    features_df[f'momentum_5m'] = features_df['Close'] - features_df['Close'].shift(momentum_window_5m)
-    features_df[f'momentum_1h'] = features_df['Close'] - features_df['Close'].shift(momentum_window_1h)
-    features_df[f'momentum_4h'] = features_df['Close'] - features_df['Close'].shift(momentum_window_4h)
-
-
-    # Supprimer les lignes avec des valeurs manquantes pour certaines caractéristiques
+    # Nettoyage final plus intelligent - on garde plus de données
     features_df = features_df.infer_objects()  # Infère les types des colonnes d'objets
-    features_df = features_df.dropna(subset=['log_return_1h', 'log_return_4h', 'momentum_1h', 'momentum_4h'])
+    
+    # Ne plus exiger log_return_1h/4h et momentum_1h/4h car ils sont optionnels selon disponibilité des timeframes
+    # Au lieu de dropna strict, on remplit les NaN par des valeurs par défaut
+    multi_timeframe_columns = ['log_return_1h', 'log_return_4h', 'momentum_1h', 'momentum_4h']
+    for col in multi_timeframe_columns:
+        if col in features_df.columns:
+            features_df[col] = features_df[col].fillna(0)  # Remplacer NaN par 0 au lieu de supprimer les lignes
+    
     features_df = features_df.fillna(0)  # Remplir les valeurs manquantes restantes
 
 
@@ -2580,7 +2580,94 @@ def create_parquet(features_df, df_1h, df_4h, df_1d):
         if col in features_df.columns:
             features_df[col] = features_df[col].astype(bool)
 
+    # Supprimer les lignes où la plupart des données n'ont pas pu être mises à jour
+    # car il n'y a pas assez de données précédentes pour les calculer
+    non_zero_threshold = 0.7  # Exiger qu'au moins 70% des features calculées ne soient pas nulles ou zéro
+    
+    # Liste des features importantes à vérifier
+    all_features_to_check = [
+        'RSI_14', 'RSI_SMA_7', 'momentum_1h', 'momentum_4h', 
+        'log_return_1h', 'log_return_4h', 'log_return_5m',
+        'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20',
+        'ATR_14', 'MACD', 'MACD_Signal', 'Bollinger_Width', 
+        'Bollinger_High', 'Bollinger_Low', 'Stoch_RSI',
+        'hourly_volatility', 'volatility_6h', 'volatility_12h',
+        'SuperTrend_Trend', 'Keltner_Width', 'ADX'
+    ]
+    
+    # Ne garder que les features qui existent dans le DataFrame
+    features_to_check = [feature for feature in all_features_to_check if feature in features_df.columns]
+    print(f"Vérification de {len(features_to_check)} features sur {len(all_features_to_check)} proposées")
+    
+    if features_to_check:  # S'assurer qu'il y a au moins une feature à vérifier
+        # Compter combien de features sont différentes de zéro et non-NaN pour chaque ligne
+        valid_features = features_df[features_to_check].replace([0, np.nan], np.nan).notna().sum(axis=1)
+        min_valid_features = int(len(features_to_check) * non_zero_threshold)
+        
+        # Garder uniquement les lignes avec suffisamment de données valides
+        rows_before = len(features_df)
+        features_df = features_df[valid_features >= min_valid_features]
+        rows_after = len(features_df)
+        
+        print(f"Nettoyage des lignes avec données insuffisantes: {rows_before - rows_after} lignes supprimées")
+        print(f"Nombre final de lignes dans le DataFrame: {rows_after}")
+    else:
+        print("Attention: Aucune feature trouvée pour le nettoyage des données insuffisantes")
+
     return features_df
+
+
+def add_multi_timeframe_features_corrected(features_df_5m, df_1h, df_4h, df_1d):
+    """
+    Ajoute correctement les features multi-timeframes en utilisant les vrais DataFrames 1h, 4h, 1d
+    au lieu de simuler avec des shifts sur le DataFrame 5min.
+    """
+    print("Calcul des features multi-timeframes corrigées...")
+    
+    # Préparer les DataFrames multi-timeframes avec leurs features
+    timeframes_data = {}
+    
+    # Traitement 1h
+    if df_1h is not None and len(df_1h) > 1:
+        df_1h_processed = df_1h.copy()
+        df_1h_processed['FromDate'] = pd.to_datetime(df_1h_processed['FromDate'])
+        df_1h_processed['log_return_1h'] = np.log(df_1h_processed['Close'] / df_1h_processed['Close'].shift(1))
+        df_1h_processed['momentum_1h'] = df_1h_processed['Close'] - df_1h_processed['Close'].shift(1)
+        timeframes_data['1h'] = df_1h_processed[['FromDate', 'log_return_1h', 'momentum_1h']].dropna()
+        print(f"Données 1h préparées: {len(timeframes_data['1h'])} lignes")
+    
+    # Traitement 4h  
+    if df_4h is not None and len(df_4h) > 1:
+        df_4h_processed = df_4h.copy()
+        df_4h_processed['FromDate'] = pd.to_datetime(df_4h_processed['FromDate'])
+        df_4h_processed['log_return_4h'] = np.log(df_4h_processed['Close'] / df_4h_processed['Close'].shift(1))
+        df_4h_processed['momentum_4h'] = df_4h_processed['Close'] - df_4h_processed['Close'].shift(1)
+        timeframes_data['4h'] = df_4h_processed[['FromDate', 'log_return_4h', 'momentum_4h']].dropna()
+        print(f"Données 4h préparées: {len(timeframes_data['4h'])} lignes")
+    
+    # Traitement 1d
+    if df_1d is not None and len(df_1d) > 1:
+        df_1d_processed = df_1d.copy() 
+        df_1d_processed['FromDate'] = pd.to_datetime(df_1d_processed['FromDate'])
+        df_1d_processed['log_return_1d'] = np.log(df_1d_processed['Close'] / df_1d_processed['Close'].shift(1))
+        df_1d_processed['momentum_1d'] = df_1d_processed['Close'] - df_1d_processed['Close'].shift(1)
+        timeframes_data['1d'] = df_1d_processed[['FromDate', 'log_return_1d', 'momentum_1d']].dropna()
+        print(f"Données 1d préparées: {len(timeframes_data['1d'])} lignes")
+    
+    # Fusionner avec le DataFrame 5min par correspondance temporelle la plus proche
+    for timeframe, tf_data in timeframes_data.items():
+        if len(tf_data) > 0:
+            # Fusionner par correspondance temporelle (merge_asof pour la correspondance la plus proche)
+            features_df_5m = pd.merge_asof(
+                features_df_5m.sort_values('FromDate'),
+                tf_data.sort_values('FromDate'),
+                on='FromDate',
+                direction='backward'  # Prendre la valeur la plus récente disponible
+            )
+            print(f"Fusion {timeframe} terminée: {len(features_df_5m)} lignes dans le DataFrame final")
+    
+    print(f"Features multi-timeframes ajoutées. DataFrame final: {len(features_df_5m)} lignes")
+    return features_df_5m
 
 
 def assign_multi_timeframe_features(features):

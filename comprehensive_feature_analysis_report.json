@@ -1,0 +1,448 @@
+{
+  "analysis_metadata": {
+    "timestamp": "2025-06-03T17:01:00.915560",
+    "analyzer_version": "1.0.0",
+    "total_expected_features": 121,
+    "total_categories": 16
+  },
+  "dataset_info": {
+    "sample_size": 261,
+    "date_range": {
+      "start": "2025-03-11T01:00:00",
+      "end": "2025-03-11T22:45:00"
+    },
+    "memory_usage_mb": 0.034969329833984375
+  },
+  "feature_categories": {
+    "Time & Cyclical": {
+      "count": 13,
+      "features": [
+        "minute",
+        "day",
+        "hour",
+        "day_of_week",
+        "day_of_year",
+        "sin_day",
+        "cos_day",
+        "sin_hour",
+        "cos_hour",
+        "market_open_hour",
+        "stock_open_hour",
+        "is_summer",
+        "period_of_day"
+      ],
+      "description": "Time-based and cyclical encoding features"
+    },
+    "Basic OHLCV": {
+      "count": 5,
+      "features": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "description": "Core price and volume data"
+    },
+    "Volume Analysis": {
+      "count": 23,
+      "features": [
+        "Volume_SMA_5",
+        "Volume_SMA_10",
+        "Volume_SMA_20",
+        "Volume_Ratio_SMA5",
+        "Volume_Ratio_SMA10",
+        "Volume_Ratio_SMA20",
+        "Volume_Change_1",
+        "Volume_Change_5",
+        "PV_Ratio",
+        "PV_Change",
+        "OBV",
+        "ADL",
+        "MFM",
+        "CMF_20",
+        "PVT",
+        "Volume_Oscillator",
+        "VWAP_10",
+        "VWMA_10",
+        "VWMA_20",
+        "Vol_Weighted_Up",
+        "Vol_Weighted_Down",
+        "Vol_Weighted_Down_Avg",
+        "Vol_Weighted_RSI",
+        "Vol_Weighted_RSI_SMA"
+      ],
+      "description": "Volume-based indicators and analysis"
+    },
+    "RSI & Momentum": {
+      "count": 8,
+      "features": [
+        "RSI_14",
+        "RSI_SMA_7",
+        "RSI_Trend",
+        "RSI",
+        "SMA_RSI",
+        "Vol_Weighted_RSI",
+        "Vol_Weighted_RSI_SMA",
+        "Stoch_RSI"
+      ],
+      "description": "RSI variations and momentum indicators"
+    },
+    "Technical Indicators": {
+      "count": 7,
+      "features": [
+        "MACD",
+        "MACD_Signal",
+        "ATR_14",
+        "ADX",
+        "Williams_R",
+        "SMA_10",
+        "EMA_10"
+      ],
+      "description": "Classic technical analysis indicators"
+    },
+    "Bollinger Bands": {
+      "count": 3,
+      "features": [
+        "Bollinger_High",
+        "Bollinger_Low",
+        "Bollinger_Width"
+      ],
+      "description": "Bollinger Band volatility indicators"
+    },
+    "Keltner Channels": {
+      "count": 3,
+      "features": [
+        "Keltner_High",
+        "Keltner_Low",
+        "Keltner_Width"
+      ],
+      "description": "Keltner Channel volatility indicators"
+    },
+    "SuperTrend": {
+      "count": 3,
+      "features": [
+        "SuperTrend_Trend",
+        "SuperTrend_Long",
+        "SuperTrend_Short"
+      ],
+      "description": "SuperTrend trend-following indicators"
+    },
+    "CCI Multi-Period": {
+      "count": 5,
+      "features": [
+        "CCI_5",
+        "CCI_10",
+        "CCI_20",
+        "CCI_40",
+        "CCI_80"
+      ],
+      "description": "Commodity Channel Index across multiple periods"
+    },
+    "Money Flow Analysis": {
+      "count": 5,
+      "features": [
+        "Force_Index_1",
+        "Force_Index_13",
+        "Typical_Price",
+        "Raw_Money_Flow",
+        "Typical_Price_Prev",
+        "Money_Flow_Positive"
+      ],
+      "description": "Money flow and force index indicators"
+    },
+    "Candlestick Patterns": {
+      "count": 8,
+      "features": [
+        "candle_trend",
+        "candle_range",
+        "corps_candle",
+        "meche_haute",
+        "meche_basse",
+        "ratio_corps",
+        "upper_wick",
+        "lower_wick"
+      ],
+      "description": "Candlestick pattern analysis features"
+    },
+    "Volatility & Returns": {
+      "count": 13,
+      "features": [
+        "hourly_return",
+        "hourly_volatility",
+        "volatility_by_period",
+        "volatility_6h",
+        "volatility_12h",
+        "volatility_period_0",
+        "volatility_period_1",
+        "volatility_period_2",
+        "volatility_period_3",
+        "log_return_5m",
+        "log_return_1h",
+        "log_return_4h",
+        "momentum_1h",
+        "momentum_4h"
+      ],
+      "description": "Return calculations and volatility measures"
+    },
+    "Multi-timeframe Price": {
+      "count": 9,
+      "features": [
+        "1h_price_change_pct",
+        "4h_price_change_pct",
+        "1d_price_change_pct",
+        "1h_range",
+        "1h_position",
+        "4h_range",
+        "4h_position",
+        "1d_range",
+        "1d_position"
+      ],
+      "description": "Price analysis across multiple timeframes"
+    },
+    "Multi-timeframe Volume": {
+      "count": 3,
+      "features": [
+        "1h_volume_ratio",
+        "4h_volume_ratio",
+        "1d_volume_ratio"
+      ],
+      "description": "Volume analysis across multiple timeframes"
+    },
+    "Multi-timeframe Trend": {
+      "count": 8,
+      "features": [
+        "close_over_1h_SMA",
+        "close_over_4h_SMA",
+        "close_over_1d_SMA",
+        "1h_trend",
+        "4h_trend",
+        "1d_trend",
+        "bullish_alignment",
+        "bearish_alignment",
+        "mixed_trend_signals"
+      ],
+      "description": "Trend analysis across multiple timeframes"
+    },
+    "Target Variable": {
+      "count": 1,
+      "features": [
+        "future_direction_2"
+      ],
+      "description": "Prediction target (future price direction)"
+    }
+  },
+  "expected_features": [
+    "minute",
+    "day",
+    "hour",
+    "day_of_week",
+    "day_of_year",
+    "sin_day",
+    "cos_day",
+    "sin_hour",
+    "cos_hour",
+    "market_open_hour",
+    "stock_open_hour",
+    "is_summer",
+    "period_of_day",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume",
+    "Volume_SMA_5",
+    "Volume_SMA_10",
+    "Volume_SMA_20",
+    "Volume_Ratio_SMA5",
+    "Volume_Ratio_SMA10",
+    "Volume_Ratio_SMA20",
+    "Volume_Change_1",
+    "Volume_Change_5",
+    "PV_Ratio",
+    "PV_Change",
+    "OBV",
+    "ADL",
+    "MFM",
+    "CMF_20",
+    "PVT",
+    "Volume_Oscillator",
+    "VWAP_10",
+    "VWMA_10",
+    "VWMA_20",
+    "Vol_Weighted_Up",
+    "Vol_Weighted_Down",
+    "Vol_Weighted_Down_Avg",
+    "Vol_Weighted_RSI",
+    "Vol_Weighted_RSI_SMA",
+    "RSI_14",
+    "RSI_SMA_7",
+    "RSI_Trend",
+    "RSI",
+    "SMA_RSI",
+    "Vol_Weighted_RSI",
+    "Vol_Weighted_RSI_SMA",
+    "Stoch_RSI",
+    "MACD",
+    "MACD_Signal",
+    "ATR_14",
+    "ADX",
+    "Williams_R",
+    "SMA_10",
+    "EMA_10",
+    "Bollinger_High",
+    "Bollinger_Low",
+    "Bollinger_Width",
+    "Keltner_High",
+    "Keltner_Low",
+    "Keltner_Width",
+    "SuperTrend_Trend",
+    "SuperTrend_Long",
+    "SuperTrend_Short",
+    "CCI_5",
+    "CCI_10",
+    "CCI_20",
+    "CCI_40",
+    "CCI_80",
+    "Force_Index_1",
+    "Force_Index_13",
+    "Typical_Price",
+    "Raw_Money_Flow",
+    "Typical_Price_Prev",
+    "Money_Flow_Positive",
+    "candle_trend",
+    "candle_range",
+    "corps_candle",
+    "meche_haute",
+    "meche_basse",
+    "ratio_corps",
+    "upper_wick",
+    "lower_wick",
+    "hourly_return",
+    "hourly_volatility",
+    "volatility_by_period",
+    "volatility_6h",
+    "volatility_12h",
+    "volatility_period_0",
+    "volatility_period_1",
+    "volatility_period_2",
+    "volatility_period_3",
+    "log_return_5m",
+    "log_return_1h",
+    "log_return_4h",
+    "momentum_1h",
+    "momentum_4h",
+    "1h_price_change_pct",
+    "4h_price_change_pct",
+    "1d_price_change_pct",
+    "1h_range",
+    "1h_position",
+    "4h_range",
+    "4h_position",
+    "1d_range",
+    "1d_position",
+    "1h_volume_ratio",
+    "4h_volume_ratio",
+    "1d_volume_ratio",
+    "close_over_1h_SMA",
+    "close_over_4h_SMA",
+    "close_over_1d_SMA",
+    "1h_trend",
+    "4h_trend",
+    "1d_trend",
+    "bullish_alignment",
+    "bearish_alignment",
+    "mixed_trend_signals",
+    "future_direction_2"
+  ],
+  "complexity_breakdown": {
+    "Basic (Direct calculation)": [
+      "Open",
+      "High",
+      "Low",
+      "Close",
+      "Volume",
+      "candle_range",
+      "corps_candle",
+      "upper_wick",
+      "lower_wick",
+      "hour",
+      "minute",
+      "day",
+      "day_of_week"
+    ],
+    "Simple (Rolling calculations)": [
+      "SMA_10",
+      "EMA_10",
+      "Volume_SMA_5",
+      "Volume_SMA_10",
+      "Volume_SMA_20",
+      "hourly_return",
+      "log_return_5m",
+      "momentum_5m"
+    ],
+    "Moderate (Technical indicators)": [
+      "RSI_14",
+      "RSI_SMA_7",
+      "MACD",
+      "MACD_Signal",
+      "ATR_14",
+      "Bollinger_High",
+      "Bollinger_Low",
+      "Bollinger_Width",
+      "hourly_volatility",
+      "volatility_6h",
+      "volatility_12h"
+    ],
+    "Complex (Advanced indicators)": [
+      "ADX",
+      "Stoch_RSI",
+      "Williams_R",
+      "SuperTrend_Trend",
+      "Keltner_High",
+      "Keltner_Low",
+      "Keltner_Width",
+      "CCI_5",
+      "CCI_10",
+      "CCI_20",
+      "CCI_40",
+      "CCI_80"
+    ],
+    "Advanced (Volume analysis)": [
+      "OBV",
+      "ADL",
+      "CMF_20",
+      "PVT",
+      "Force_Index_1",
+      "Force_Index_13",
+      "VWAP_10",
+      "VWMA_10",
+      "VWMA_20",
+      "Vol_Weighted_RSI"
+    ],
+    "Multi-timeframe (Requires additional data)": [
+      "1h_price_change_pct",
+      "4h_price_change_pct",
+      "1d_price_change_pct",
+      "1h_trend",
+      "4h_trend",
+      "1d_trend",
+      "bullish_alignment",
+      "log_return_1h",
+      "log_return_4h",
+      "momentum_1h",
+      "momentum_4h"
+    ]
+  },
+  "issues": [],
+  "analysis_results": {
+    "feature_completeness": 80.16528925619835,
+    "data_quality_score": 1.0
+  },
+  "recommendations": [
+    "All CCI periods (5-80) can be calculated with current data size",
+    "Implement proper multi-timeframe data loading for 1h, 4h, 1d features",
+    "Consider feature selection to reduce from 158 features to most predictive subset",
+    "Implement incremental feature calculation for real-time prediction"
+  ]
+}

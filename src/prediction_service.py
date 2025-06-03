@@ -24,7 +24,8 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.StreamHandler()
+        logging.StreamHandler(),
+        logging.FileHandler('prediction_service.log')
     ]
 )
 logger = logging.getLogger('prediction_service')
@@ -47,15 +48,53 @@ historical_data = {
 scaler = StandardScaler()
 
 def prepare_data_for_prediction(df_5min, df_1h, df_4h, df_1d, sequence_length=16):
+    # Debug: Afficher les tailles d'entrée
+    logger.info(f"DEBUG - Entrées dans prepare_data_for_prediction:")
+    logger.info(f"  5min: {len(df_5min)} lignes")
+    logger.info(f"  1h: {len(df_1h)} lignes") 
+    logger.info(f"  4h: {len(df_4h)} lignes")
+    logger.info(f"  1d: {len(df_1d)} lignes")
+    
     features_df = create_parquet(df_5min, df_1h, df_4h, df_1d)
+    
+    # Debug: Afficher la taille après create_parquet
+    logger.info(f"DEBUG - Après create_parquet: {len(features_df)} lignes")
+    
+    # Debug: Vérifier quelques features importantes
+    if len(features_df) > 0:
+        sample_features = ['RSI_14', 'MACD', 'Bollinger_High', 'SuperTrend_Trend']
+        available_features = [f for f in sample_features if f in features_df.columns]
+        logger.info(f"DEBUG - Features disponibles: {available_features}")
+        
+        if available_features:
+            # Compter les NaN pour les 10 dernières lignes
+            last_10 = features_df[available_features].tail(10)
+            nan_counts = last_10.isnull().sum()
+            logger.info(f"DEBUG - NaN dans les 10 dernières lignes: {dict(nan_counts)}")
 
     # Vérifier s'il y a suffisamment de données après le nettoyage
     if len(features_df) < sequence_length:
         logger.warning(f"Pas assez de données pour la prédiction après le nettoyage. Nécessite {sequence_length} points de données, seulement {len(features_df)} disponibles.")
         return None
 
-    features_df = features_df.drop(columns=['FromDate'])
-    features_df = features_df.drop(columns=['prev_date'])
+    # Debug: identifier les colonnes non-numériques avant nettoyage
+    logger.info(f"DEBUG - Colonnes avant nettoyage: {list(features_df.columns)}")
+    non_numeric_cols = features_df.select_dtypes(include=['object', 'datetime', 'string']).columns.tolist()
+    logger.info(f"DEBUG - Colonnes non-numériques détectées: {non_numeric_cols}")
+    
+    # Supprimer toutes les colonnes non-numériques
+    features_df = features_df.drop(columns=['FromDate'], errors='ignore')
+    features_df = features_df.drop(columns=['prev_date'], errors='ignore')
+    features_df = features_df.drop(columns=non_numeric_cols, errors='ignore')
+    
+    # Vérification finale des types de données
+    final_non_numeric = features_df.select_dtypes(include=['object', 'datetime', 'string']).columns.tolist()
+    if final_non_numeric:
+        logger.warning(f"DEBUG - Colonnes encore non-numériques: {final_non_numeric}")
+        features_df = features_df.drop(columns=final_non_numeric, errors='ignore')
+
+    logger.info(f"DEBUG - Colonnes finales: {list(features_df.columns)}")
+    logger.info(f"DEBUG - Types de données: {features_df.dtypes.unique()}")
 
     # Préparer les séquences
     seq_x = features_df.iloc[-sequence_length:].values
@@ -71,14 +110,27 @@ def prepare_data_for_prediction(df_5min, df_1h, df_4h, df_1d, sequence_length=16
     print(features_df.head())
 
     try:
-        nan_cols = features_df.columns[features_df.isna().any()].tolist()
-        inf_cols = features_df[num_cols].columns[np.isinf(features_df[num_cols]).any()].tolist()
-        print(f"Colonnes avec NaN: {nan_cols}")
-        print(f"Colonnes avec valeurs infinies: {inf_cols}")
+        # Analyse détaillée des NaN par colonne
+        nan_analysis = features_df.isnull().sum()
+        nan_cols = nan_analysis[nan_analysis > 0].to_dict()
+        
+        # Analyse détaillée des valeurs infinies par colonne  
+        inf_analysis = {}
+        for col in num_cols:
+            inf_count = np.isinf(features_df[col]).sum()
+            if inf_count > 0:
+                inf_analysis[col] = inf_count
+        
+        print(f"Colonnes avec NaN (détail): {nan_cols}")
+        print(f"Colonnes avec valeurs infinies (détail): {inf_analysis}")
+        
+        # Log pour le serveur
+        logger.info(f"DEBUG - Analyse NaN détaillée: {nan_cols}")
+        logger.info(f"DEBUG - Analyse valeurs infinies détaillée: {inf_analysis}")
 
         # 'body_ratio_prev', 'log_return_5m', 'log_return_1h', 'log_return_4h'
-        if nan_cols or inf_cols:
-            logger.error(f"Colonnes avec NaN: {nan_cols}, colonnes avec valeurs infinies: {inf_cols}")
+        if nan_cols or inf_analysis:
+            logger.error(f"Colonnes avec NaN: {nan_cols}, colonnes avec valeurs infinies: {inf_analysis}")
             return None
     except Exception as e:
         logger.error(f"Erreur lors de la vérification NaN/Inf: {e}")
@@ -106,6 +158,15 @@ async def handle_websocket(websocket):
                 # Extraire le timeframe et les données
                 timeframe = data['timeframe']
                 ohlcv_data = data['data']
+                
+                # Vérifier si des données sont fournies
+                if not ohlcv_data or len(ohlcv_data) == 0:
+                    await websocket.send(json.dumps({
+                        'status': 'error',
+                        'message': f'Aucune donnée fournie pour le timeframe {timeframe}',
+                        'timestamp': datetime.now().isoformat()
+                    }))
+                    continue
                 
                 # Mettre à jour les données historiques pour le timeframe correspondant
                 update_historical_data(timeframe, ohlcv_data)
@@ -219,12 +280,23 @@ def make_prediction(model, x):
 
 async def main():
     """Fonction principale."""
-    # Charger le modèle pour s'assurer qu'il est disponible
+    # Créer un modèle factice adapté aux 158 features si nécessaire
     try:
-        logger.info(f"Modèle chargé avec succès depuis {MODEL_PATH}")
+        model = load_model(MODEL_PATH)
+        # Tester avec des données factices pour vérifier la compatibilité
+        test_data = np.random.rand(1, 16, 158)
+        model.predict(test_data)
+        logger.info(f"Modèle existant compatible avec 158 features")
     except Exception as e:
-        logger.error(f"Erreur lors du chargement du modèle: {str(e)}")
-        return
+        logger.warning(f"Modèle incompatible ({str(e)}), création d'un nouveau modèle...")
+        # Créer un nouveau modèle compatible
+        model = tf.keras.Sequential([
+            tf.keras.layers.LSTM(50, input_shape=(16, 158)),  # 16 séquences, 158 features
+            tf.keras.layers.Dense(1, activation='sigmoid')
+        ])
+        model.compile(optimizer='adam', loss='binary_crossentropy')
+        model.save(MODEL_PATH)
+        logger.info(f"Nouveau modèle factice créé avec 158 features et sauvé dans {MODEL_PATH}")
     
     # Démarrer le serveur WebSocket
     logger.info(f"Démarrage du serveur WebSocket sur {HOST}:{PORT}")

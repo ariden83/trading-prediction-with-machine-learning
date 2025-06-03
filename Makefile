@@ -1,7 +1,9 @@
 # Makefile for training and evaluating machine learning models
 
 # Python interpreter
-PYTHON = python3
+PYTHON ?= python3.10
+# Add Conda path to PYTHONPATH
+export PYTHONPATH := $(PYTHONPATH):$(shell pwd)
 
 # Main script
 SCRIPT = src/model_trainer.py

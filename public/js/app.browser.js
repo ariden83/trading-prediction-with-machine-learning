@@ -30,53 +30,159 @@ const config = {
 };
 
 
-// loadData pour charger les données 1d depuis un fichier JSON.
+// loadData pour charger les données depuis un fichier JSON.
 async function loadData(jsonFile) {
     try {
+        console.log(`Tentative de chargement: ${jsonFile}`);
         const response = await fetch(jsonFile);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
         logMessage('success', `Load JSON file (${jsonFile})`);
         const json = await response.json();
-        // Supposons que les données sont dans json.dataPoints ou adapter selon la structure
-        // Ici, on extrait les OHLCV pour chaque dataPoints
+        console.log(`Contenu JSON pour ${jsonFile}:`, json);
+        
+        // Extraire les OHLCV - gérer trois structures différentes
         const ohlcvData = [];
+        
+        // Structure 1: {intervalsDataPoints: [...]} (anciens fichiers 5min)
         if (json && Array.isArray(json.intervalsDataPoints)) {
-            json.intervalsDataPoints.forEach(day => {
-                if (Array.isArray(day.dataPoints)) {
-                    day.dataPoints.forEach(point => {
-                        ohlcvData.push({
-                            timestamp: point.timestamp,
-                            open: point.openPrice.ask,
-                            high: point.highPrice.ask,
-                            low: point.lowPrice.ask,
-                            close: point.closePrice.ask,
-                            volume: point.lastTradedVolume || 0
-                        });
+            console.log('Structure détectée: intervalsDataPoints');
+            json.intervalsDataPoints.forEach((interval, intervalIndex) => {
+                console.log(`Interval ${intervalIndex}: ${interval.dataPoints ? interval.dataPoints.length : 0} points`);
+                
+                if (Array.isArray(interval.dataPoints) && interval.dataPoints.length > 0) {
+                    interval.dataPoints.forEach((point, pointIndex) => {
+                        // Vérifier que le point a les données nécessaires
+                        if (point.openPrice && point.highPrice && point.lowPrice && point.closePrice) {
+                            ohlcvData.push({
+                                timestamp: point.timestamp,
+                                open: point.openPrice.ask || point.openPrice.bid || point.openPrice,
+                                high: point.highPrice.ask || point.highPrice.bid || point.highPrice,
+                                low: point.lowPrice.ask || point.lowPrice.bid || point.lowPrice,
+                                close: point.closePrice.ask || point.closePrice.bid || point.closePrice,
+                                volume: point.lastTradedVolume || 0
+                            });
+                        } else {
+                            console.log(`Point ${pointIndex} dans interval ${intervalIndex} manque des données OHLC`);
+                        }
                     });
                 }
             });
         }
+        // Structure 2: {Interval: '...', Candles: [{InstrumentId: 17, Candles: [...]}]} (anciens fichiers 1h, 4h, 1d)
+        else if (json && Array.isArray(json.Candles)) {
+            console.log('Structure détectée: Candles avec imbrication');
+            console.log(`Nombre d'instruments: ${json.Candles.length}`);
+            
+            json.Candles.forEach((instrument, instrumentIndex) => {
+                console.log(`Instrument ${instrumentIndex} (ID: ${instrument.InstrumentId}): ${instrument.Candles ? instrument.Candles.length : 0} candles`);
+                
+                if (Array.isArray(instrument.Candles)) {
+                    instrument.Candles.forEach((candle, candleIndex) => {
+                        // Vérifier que la bougie a les données nécessaires
+                        if (candle.Open !== undefined && candle.High !== undefined && 
+                            candle.Low !== undefined && candle.Close !== undefined) {
+                            
+                            // Convertir la date en timestamp
+                            let timestamp = candle.FromDate;
+                            if (typeof timestamp === 'string') {
+                                timestamp = new Date(timestamp).getTime();
+                            }
+                            
+                            ohlcvData.push({
+                                timestamp: timestamp,
+                                open: candle.Open,
+                                high: candle.High,
+                                low: candle.Low,
+                                close: candle.Close,
+                                volume: candle.Volume || 0
+                            });
+                        } else {
+                            console.log(`Candle ${candleIndex} de l'instrument ${instrumentIndex} manque des données OHLC`);
+                        }
+                    });
+                }
+            });
+        }
+        // Structure 3: {timestamp: {timestamp, openPrice: {ask, bid}, ...}} (nouveaux fichiers live)
+        else if (json && typeof json === 'object' && !Array.isArray(json)) {
+            console.log('Structure détectée: Live data (timestamp as keys)');
+            const timestamps = Object.keys(json);
+            console.log(`Nombre de points de données live: ${timestamps.length}`);
+            
+            timestamps.forEach(timestampKey => {
+                const point = json[timestampKey];
+                
+                // Vérifier que le point a les données nécessaires
+                if (point.openPrice && point.highPrice && point.lowPrice && point.closePrice) {
+                    ohlcvData.push({
+                        timestamp: parseInt(timestampKey),
+                        open: point.openPrice.ask || point.openPrice.bid,
+                        high: point.highPrice.ask || point.highPrice.bid,
+                        low: point.lowPrice.ask || point.lowPrice.bid,
+                        close: point.closePrice.ask || point.closePrice.bid,
+                        volume: point.lastTradedVolume || 0
+                    });
+                } else {
+                    console.log(`Point ${timestampKey} manque des données OHLC`);
+                }
+            });
+            
+            // Trier par timestamp
+            ohlcvData.sort((a, b) => a.timestamp - b.timestamp);
+        }
+        else {
+            console.log('Structure JSON non reconnue:', Object.keys(json));
+        }
         logMessage('success', `Données chargées (${ohlcvData.length} barres)`);
         return ohlcvData;
     } catch (error) {
-        logMessage('error', `Erreur lors du chargement des données 1d: ${error.message}`);
+        logMessage('error', `Erreur lors du chargement de ${jsonFile}: ${error.message}`);
+        return null;
     }
 }
 
 (async () => {
-    sampleData['1d'] = (await loadData('../../../brent/1d/all_v2.json'));
-    sampleData['4h'] = (await loadData('../../../brent/4h/all_v2.json'));
-    sampleData['1h'] = (await loadData('../../../brent/1h/all_v2.json'));
-    sampleData['5min'] = (await loadData('../../../brent/5min/2025-03-11-23.json'))
+    // Charger et filtrer les données pour tous les timeframes
+    const rawData1d = await loadData('../brent/live/1d_2025-6-2.json');
+    sampleData['1d'] = rawData1d ? rawData1d
         .filter(d => d.close !== undefined && d.open !== undefined)
-        .slice(0, -22) // Retirer les 20 dernières données
-        .slice(-50) // Garder les 20 dernières données
-        .map(d => ({ ...d, date: new Date(d.timestamp).toLocaleString() }));
+        .slice(-50) // Garder les 50 dernières données
+        : [];
 
-    console.table( sampleData['5min']);
-    //console.table( sampleData['1h']);
-    //console.table( sampleData['4h']);
-    //console.table( sampleData['1d']);
-    recreateChartWithData(sampleData['5min'])
+    const rawData4h = await loadData('../brent/live/4h_2025-6-2.json');
+    sampleData['4h'] = rawData4h ? rawData4h
+        .filter(d => d.close !== undefined && d.open !== undefined)
+        .slice(-50) // Garder les 50 dernières données
+        : [];
+
+    const rawData1h = await loadData('../brent/live/1h_2025-6-2.json');
+    sampleData['1h'] = rawData1h ? rawData1h
+        .filter(d => d.close !== undefined && d.open !== undefined)
+        .slice(-50) // Garder les 50 dernières données
+        : [];
+
+    const rawData5min = await loadData('../brent/live/5m_2025-6-2.json');
+    sampleData['5min'] = rawData5min ? rawData5min
+        .filter(d => d.close !== undefined && d.open !== undefined)
+        .slice(0, -22) // Retirer les 22 dernières données
+        .slice(-50) // Garder les 50 dernières données
+        .map(d => ({ ...d, date: new Date(d.timestamp).toLocaleString() }))
+        : [];
+
+    // Afficher les statistiques de chargement
+    console.log('Données chargées:');
+    console.log(`1d: ${sampleData['1d'].length} barres`);
+    console.log(`4h: ${sampleData['4h'].length} barres`);
+    console.log(`1h: ${sampleData['1h'].length} barres`);
+    console.log(`5min: ${sampleData['5min'].length} barres`);
+
+    if (sampleData['5min'].length > 0) {
+        recreateChartWithData(sampleData['5min']);
+    }
 })();
 
 
@@ -130,6 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fonction pour se connecter au serveur WebSocket
 function connectToServer() {
     const serverUrl = serverUrlInput.value;
+    
+    logMessage('info', `Clic sur le bouton "Se connecter" - URL: ${serverUrl}`);
 
     try {
         // Mettre à jour l'état
@@ -188,14 +296,29 @@ function sendDataToServer() {
 
 // Envoyer les données pour un timeframe spécifique
 function sendTimeframeData(timeframe) {
+    const timeframeData = sampleData[timeframe];
+    
+    // Debug: afficher les données avant envoi
+    console.log(`DEBUG sendTimeframeData - ${timeframe}:`, {
+        'sampleData[timeframe]': timeframeData,
+        'longueur': timeframeData ? timeframeData.length : 'undefined',
+        'type': typeof timeframeData
+    });
+
     const data = {
         timeframe: timeframe,
-        data: sampleData[timeframe]
+        data: timeframeData || []
     };
 
-    logMessage('info', `Aperçu des premières valeurs pour ${timeframe}: ${JSON.stringify(data.data.slice(0, 3), null, 2)}`);
+    logMessage('info', `Envoi ${timeframe}: ${data.data.length} barres`);
+    
+    if (data.data.length > 0) {
+        logMessage('info', `Aperçu ${timeframe}: ${JSON.stringify(data.data.slice(0, 2), null, 2)}`);
+    } else {
+        logMessage('warning', `Aucune donnée disponible pour ${timeframe}`);
+    }
+    
     socket.send(JSON.stringify(data));
-    logMessage('info', `Données envoyées pour le timeframe ${timeframe}: ${data.data.length} barres`);
 }
 
 // Gestion des événements WebSocket
@@ -306,19 +429,21 @@ function logMessage(type, message) {
     logEntry.className = `log-entry log-${type}`;
     logEntry.innerHTML = `<span class="log-time">${timeString}</span> ${message}`;
 
-    logContainer.prepend(logEntry);
+    if (logContainer) {
+        logContainer.prepend(logEntry);
 
-    // Limiter le nombre d'entrées de journal
-    if (logContainer.children.length > 50) {
-        logContainer.removeChild(logContainer.lastChild);
+        // Limiter le nombre d'entrées de journal
+        if (logContainer.children.length > 50) {
+            logContainer.removeChild(logContainer.lastChild);
+        }
+    } else {
+        console.error('logContainer non trouvé!');
     }
 }
 
 function recreateChartWithData(data) {
     let chart; // Instance du graphique
     let currentPeriod = '5min'; // Période d'affichage par défaut
-    // console.log('Recréation complète du graphique avec période:', currentPeriod);
-    // console.log('Données pour la recréation:', data);
 
     // Récupération du canvas
     const chartContainer = document.querySelector('.chart-container');
@@ -343,84 +468,81 @@ function recreateChartWithData(data) {
     newCanvas.id = 'price-chart';
     chartContainer.appendChild(newCanvas);
 
-    // Formatage des dates pour meilleure lisibilité
-    const formattedData = [];
-    for (let i = 0; i < data.length; i++) {
-        formattedData.push({
-            ...data[i],
-            formattedDate: formatDate(data[i].timestamp, currentPeriod)
-        });
-    }
-
-
-    console.table(formattedData);
+    // Formatage des données pour le graphique en chandeliers
+    const formattedData = data.map(item => ({
+        t: new Date(item.timestamp),
+        o: item.open,
+        h: item.high,
+        l: item.low,
+        c: item.close
+    }));
 
     // Tri des données par date (croissant)
-    formattedData.sort((a, b) => {
-        return new Date(a.date) - new Date(b.date);
-    });
-
-    // Préparation des données pour le graphique
-    const labels = formattedData.map(item => item.formattedDate);
-    const prices = formattedData.map(item => item.close);
-
-    console.log(`Préparation du graphique avec ${labels.length} labels et ${prices.length} prix.`);
-
-    // Adapter le nombre de ticks en fonction de la période
-    let ticksConfig = {};
-    if (currentPeriod === '1m') {
-        ticksConfig = {maxTicksLimit: 6};
-    } else if (currentPeriod === '5min') {
-        ticksConfig = { maxTicksLimit: 6 };
-    } else if (currentPeriod === '5d') {
-        ticksConfig = { maxTicksLimit: 10 };
-    } else if (currentPeriod === '1mo') {
-        ticksConfig = { maxTicksLimit: 15 };
-    } else {
-        ticksConfig = { maxTicksLimit: 12 };
-    }
+    formattedData.sort((a, b) => a.t - b.t);
 
     // Création du nouveau graphique
     const ctx = newCanvas.getContext('2d');
     chart = new Chart(ctx, {
-        type: 'line',
+        type: 'candlestick',
         data: {
-            labels: labels,
             datasets: [{
                 label: 'Prix du Brent (USD)',
-                data: prices,
-                borderColor: '#3498db',
-                backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                borderWidth: 2,
-                tension: 0.4,
-                fill: true
+                data: formattedData,
+                color: {
+                    up: '#26a69a',
+                    down: '#ef5350',
+                    unchanged: '#888888',
+                }
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             animation: {
-                duration: 500 // Animation plus rapide
+                duration: 500
             },
             plugins: {
                 legend: {
-                    display: true // Afficher la légende pour distinguer les deux lignes
+                    display: true
                 },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const point = context.raw;
+                            return [
+                                `Open: ${point.o}`,
+                                `High: ${point.h}`,
+                                `Low: ${point.l}`,
+                                `Close: ${point.c}`
+                            ];
+                        }
+                    }
+                }
             },
             scales: {
-                y: {
-                    beginAtZero: false
-                },
                 x: {
+                    type: 'time',
+                    time: {
+                        unit: 'minute',
+                        displayFormats: {
+                            minute: 'HH:mm'
+                        }
+                    },
                     grid: {
                         display: false
+                    }
+                },
+                y: {
+                    position: 'right',
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)'
                     }
                 }
             }
         }
     });
 
-    console.log('Graphique créé avec succès pour la période:', currentPeriod);
+    console.log('Graphique en chandeliers créé avec succès pour la période:', currentPeriod);
 }
 
 // Formater la date en fonction de la période
