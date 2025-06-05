@@ -54,12 +54,10 @@ def prepare_data_for_prediction(df_5min, df_1h, df_4h, df_1d, sequence_length=16
     logger.info(f"  1h: {len(df_1h)} lignes") 
     logger.info(f"  4h: {len(df_4h)} lignes")
     logger.info(f"  1d: {len(df_1d)} lignes")
-    
+
     features_df = create_parquet(df_5min, df_1h, df_4h, df_1d)
-    
     # Debug: Afficher la taille après create_parquet
     logger.info(f"DEBUG - Après create_parquet: {len(features_df)} lignes")
-    
     # Debug: Vérifier quelques features importantes
     if len(features_df) > 0:
         sample_features = ['RSI_14', 'MACD', 'Bollinger_High', 'SuperTrend_Trend']
@@ -78,15 +76,15 @@ def prepare_data_for_prediction(df_5min, df_1h, df_4h, df_1d, sequence_length=16
         return None
 
     # Debug: identifier les colonnes non-numériques avant nettoyage
-    logger.info(f"DEBUG - Colonnes avant nettoyage: {list(features_df.columns)}")
+    # logger.info(f"DEBUG - Colonnes avant nettoyage: {list(features_df.columns)}")
     non_numeric_cols = features_df.select_dtypes(include=['object', 'datetime', 'string']).columns.tolist()
     logger.info(f"DEBUG - Colonnes non-numériques détectées: {non_numeric_cols}")
-    
+
     # Supprimer toutes les colonnes non-numériques
     features_df = features_df.drop(columns=['FromDate'], errors='ignore')
     features_df = features_df.drop(columns=['prev_date'], errors='ignore')
     features_df = features_df.drop(columns=non_numeric_cols, errors='ignore')
-    
+
     # Vérification finale des types de données
     final_non_numeric = features_df.select_dtypes(include=['object', 'datetime', 'string']).columns.tolist()
     if final_non_numeric:
@@ -98,29 +96,33 @@ def prepare_data_for_prediction(df_5min, df_1h, df_4h, df_1d, sequence_length=16
 
     # Préparer les séquences
     seq_x = features_df.iloc[-sequence_length:].values
+    logger.info(f"DEBUG - Colonnes finales: {list(features_df.columns)}")
+    logger.info(f"DEBUG - Statistiques descriptives des colonnes:")
+    logger.info(f"\n{features_df.describe().transpose()}")
     logger.info(f"Séquences conservées pour la prédiction (shape={seq_x.shape}): {seq_x}")
     x = np.array([seq_x])
-
 
     # Normaliser les données
     # for col, dtype in features_df.dtypes.items():
     #    print(f"{col}: {dtype}")
 
     num_cols = features_df.select_dtypes(include=[np.number]).columns
-    print(features_df.head())
+
+    features_df.to_csv('prediction_data.csv', index=False)
+    logger.info("Données sauvegardées dans 'prediction_data.csv'")
 
     try:
         # Analyse détaillée des NaN par colonne
         nan_analysis = features_df.isnull().sum()
         nan_cols = nan_analysis[nan_analysis > 0].to_dict()
-        
+
         # Analyse détaillée des valeurs infinies par colonne  
         inf_analysis = {}
         for col in num_cols:
-            inf_count = np.isinf(features_df[col]).sum()
+            inf_count = np.isinf(features_df[col].values).sum()  # Utiliser .values pour éviter les ambiguïtés
             if inf_count > 0:
-                inf_analysis[col] = inf_count
-        
+                inf_analysis[col] = int(inf_count)  # S'assurer que le résultat est un entier
+
         print(f"Colonnes avec NaN (détail): {nan_cols}")
         print(f"Colonnes avec valeurs infinies (détail): {inf_analysis}")
         
@@ -132,12 +134,14 @@ def prepare_data_for_prediction(df_5min, df_1h, df_4h, df_1d, sequence_length=16
         if nan_cols or inf_analysis:
             logger.error(f"Colonnes avec NaN: {nan_cols}, colonnes avec valeurs infinies: {inf_analysis}")
             return None
+
     except Exception as e:
         logger.error(f"Erreur lors de la vérification NaN/Inf: {e}")
         return None
 
     scaler = StandardScaler()
     logger.info(f"Normalisation des données avec StandardScaler (shape={x.shape})")
+
     return scaler.fit_transform(x.reshape(-1, x.shape[-1])).reshape(x.shape)
 
 
@@ -173,7 +177,6 @@ async def handle_websocket(websocket):
                 
                 # Préparer les données pour la prédiction
                 x = prepare_prediction_data()
-
                 if x is not None:
 
                     logger.info(f"prepare prediction data done: make prediction")
@@ -192,6 +195,7 @@ async def handle_websocket(websocket):
                         'message': 'Pas assez de données pour faire une prédiction',
                         'timestamp': datetime.now().isoformat()
                     }))
+
             except json.JSONDecodeError:
                 logger.error("Erreur de décodage JSON")
                 await websocket.send(json.dumps({
@@ -199,6 +203,7 @@ async def handle_websocket(websocket):
                     'message': 'Format JSON invalide',
                     'timestamp': datetime.now().isoformat()
                 }))
+
             except Exception as e:
                 logger.error(f"Erreur: {str(e)}", exc_info=True)
                 await websocket.send(json.dumps({
@@ -206,6 +211,7 @@ async def handle_websocket(websocket):
                     'message': str(e),
                     'timestamp': datetime.now().isoformat()
                 }))
+
     except websockets.exceptions.ConnectionClosed:
         logger.info(f"Connexion fermée: {websocket.remote_address}")
 
@@ -248,7 +254,6 @@ def prepare_prediction_data():
             logger.error(f"Le DataFrame {tf} n'a que {len(historical_data[tf])} lignes, minimum requis : {min_window}")
             return None
 
-    # Convertir les DataFrames en types attendus
     df_5min = historical_data['5min'].copy()
     df_5min = preprocess_features(df_5min)
 
@@ -297,7 +302,8 @@ async def main():
         model.compile(optimizer='adam', loss='binary_crossentropy')
         model.save(MODEL_PATH)
         logger.info(f"Nouveau modèle factice créé avec 158 features et sauvé dans {MODEL_PATH}")
-    
+
+
     # Démarrer le serveur WebSocket
     logger.info(f"Démarrage du serveur WebSocket sur {HOST}:{PORT}")
     async with websockets.serve(handle_websocket, HOST, PORT):
