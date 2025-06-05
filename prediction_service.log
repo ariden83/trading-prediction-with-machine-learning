@@ -458,3 +458,50 @@ Arguments received by LSTMCell.call():
 2025-06-03 16:51:25,774 - prediction_service - INFO - DEBUG - Analyse valeurs infinies détaillée: {}
 2025-06-03 16:51:25,774 - prediction_service - INFO - Normalisation des données avec StandardScaler (shape=(1, 16, 158))
 2025-06-03 16:51:25,775 - prediction_service - INFO - prepare prediction data done: make prediction
+2025-06-05 09:59:32,984 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-05 09:59:33,304 - prediction_service - INFO - Modèle existant compatible avec 158 features
+2025-06-05 09:59:33,305 - prediction_service - INFO - Démarrage du serveur WebSocket sur 0.0.0.0:8765
+2025-06-05 09:59:33,315 - websockets.server - INFO - server listening on 0.0.0.0:8765
+2025-06-05 09:59:40,968 - websockets.server - INFO - connection open
+2025-06-05 09:59:40,968 - prediction_service - INFO - Nouvelle connexion WebSocket: ('127.0.0.1', 54668)
+2025-06-05 09:59:41,008 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-05 09:59:41,011 - prediction_service - INFO - Modèle chargé depuis ./model/best_model.h5
+2025-06-05 09:59:42,038 - prediction_service - INFO - Message reçu: 5min - 50 barres
+2025-06-05 09:59:42,043 - prediction_service - INFO - Données historiques mises à jour pour 5min: 50 barres du 2025-06-02 07:20:00 au 2025-06-02 11:25:00
+2025-06-05 09:59:42,043 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1h, 4h, 1d
+2025-06-05 09:59:42,044 - prediction_service - INFO - Message reçu: 1h - 50 barres
+2025-06-05 09:59:42,046 - prediction_service - INFO - Données historiques mises à jour pour 1h: 50 barres du 2025-05-29 09:00:00 au 2025-06-02 13:00:00
+2025-06-05 09:59:42,046 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 4h, 1d
+2025-06-05 09:59:42,047 - prediction_service - INFO - Message reçu: 4h - 50 barres
+2025-06-05 09:59:42,049 - prediction_service - INFO - Données historiques mises à jour pour 4h: 50 barres du 2025-05-21 15:00:00 au 2025-06-02 11:00:00
+2025-06-05 09:59:42,049 - prediction_service - WARNING - Données insuffisantes pour les timeframes suivants (au moins 14 lignes requises) : 1d
+2025-06-05 09:59:42,050 - prediction_service - INFO - Message reçu: 1d - 50 barres
+2025-06-05 09:59:42,052 - prediction_service - INFO - Données historiques mises à jour pour 1d: 50 barres du 2025-03-23 23:00:00 au 2025-06-01 22:00:00
+2025-06-05 09:59:42,059 - prediction_service - INFO - DEBUG - Entrées dans prepare_data_for_prediction:
+2025-06-05 09:59:42,059 - prediction_service - INFO -   5min: 49 lignes
+2025-06-05 09:59:42,059 - prediction_service - INFO -   1h: 50 lignes
+2025-06-05 09:59:42,059 - prediction_service - INFO -   4h: 50 lignes
+2025-06-05 09:59:42,059 - prediction_service - INFO -   1d: 50 lignes
+2025-06-05 09:59:42,357 - prediction_service - INFO - DEBUG - Après create_parquet: 30 lignes
+2025-06-05 09:59:42,357 - prediction_service - INFO - DEBUG - Features disponibles: ['RSI_14', 'MACD', 'Bollinger_High', 'SuperTrend_Trend']
+2025-06-05 09:59:42,358 - prediction_service - INFO - DEBUG - NaN dans les 10 dernières lignes: {'RSI_14': 0, 'MACD': 0, 'Bollinger_High': 0, 'SuperTrend_Trend': 0}
+2025-06-05 09:59:42,358 - prediction_service - INFO - DEBUG - Colonnes avant nettoyage: ['FromDate', 'Open', 'High', 'Low', 'Close', 'Volume', 'date', 'prev_date', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji_type', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'pattern_type', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-05 09:59:42,358 - prediction_service - INFO - DEBUG - Colonnes non-numériques détectées: ['FromDate', 'date', 'prev_date', 'doji_type', 'pattern_type']
+2025-06-05 09:59:42,360 - prediction_service - INFO - DEBUG - Colonnes finales: ['Open', 'High', 'Low', 'Close', 'Volume', 'time_diff', 'Volume_SMA_5', 'Volume_SMA_10', 'Volume_SMA_20', 'Volume_Ratio_SMA5', 'Volume_Ratio_SMA10', 'Volume_Ratio_SMA20', 'Volume_Change_1', 'Volume_Change_5', 'PV_Ratio', 'PV_Change', 'OBV', 'OBV_normalized', 'OBV_norm_minmax', 'OBV_SMA_short', 'OBV_SMA_medium', 'OBV_SMA_long', 'OBV_Trend_short', 'OBV_Trend_medium', 'OBV_Trend_long', 'OBV_Trend', 'MFV', 'ADL', 'ADL_norm', 'ADL_SMA5', 'ADL_SMA15', 'ADL_SMA30', 'ADL_Trend', 'Price_Trend', 'ADL_Divergence', 'MFM', 'CMF_20', 'PVT_change', 'PVT', 'PVT_norm', 'PVT_SMA10', 'PVT_SMA30', 'PVT_signal', 'PVT_cross', 'PVT_cross_signal', 'PVT_delta5', 'CCI_5', 'CCI_10', 'CCI_15', 'Volume_Oscillator', 'VWAP', 'VWMA_10', 'VWMA_20', 'Force_Index_1', 'Force_Index_13', 'Typical_Price', 'Raw_Money_Flow', 'Typical_Price_Prev', 'Money_Flow_Positive', 'Money_Flow_Negative', 'MFI_14', 'Vol_Weighted_Up', 'Vol_Weighted_Down', 'Vol_Weighted_Up_Avg', 'Vol_Weighted_Down_Avg', 'Vol_Weighted_RSI', 'year', 'month', 'day', 'hour', 'minute', 'day_of_week', 'market_open_hour', 'stock_open_hour', 'is_summer', 'RSI_14', 'RSI_SMA_7', 'RSI_SMA_14', 'RSI', 'SMA_RSI', 'Vol_Weighted_RSI_SMA', 'RSI_EMA_7', 'RSI_EMA_14', 'RSI_Trend', 'RSI_Trend_Direction', 'RSI_Crossover_SMA', 'RSI_Crossover_EMA', 'future_direction_2', 'direction', 'candle_range', 'corps_candle', 'meche_haute', 'meche_basse', 'candle_trend', 'doji', 'doji_strength', 'perfect_doji', 'upper_wick', 'lower_wick', 'ratio_corps', 'doji_invalid', 'same_direction', 'bullish_engulfing', 'bearish_engulfing', 'engulfing_strength', 'corps_candle_prev', 'corps_sum', 'EMA_12', 'EMA_26', 'MACD', 'MACD_Signal', 'body_ratio_prev', 'SMA_10', 'EMA_10', 'ATR_14', 'Bollinger_High', 'Bollinger_Low', 'Bollinger_Width', 'SuperTrend_Trend', 'SuperTrend_Direction', 'SuperTrend_Long', 'SuperTrend_Short', 'Stoch_RSI', 'Keltner_High', 'Keltner_Low', 'Keltner_Mid', 'Keltner_Width', 'ADX', 'Williams_R', 'day_of_year', 'sin_day', 'cos_day', 'sin_hour', 'cos_hour', 'period_of_day', 'hourly_return', 'hourly_volatility', 'volatility_by_period', 'volatility_6h', 'volatility_12h', 'volatility_24h', 'volatility_period_0', 'volatility_period_1', 'volatility_period_2', 'volatility_period_3', 'volatility_morning', 'volatility_afternoon', 'volatility_evening', 'volatility_night', 'log_return_5m', 'log_return_1h', 'momentum_1h', 'log_return_4h', 'momentum_4h', 'log_return_1d', 'momentum_1d', 'momentum_5m', 'VWAP_10']
+2025-06-05 09:59:42,360 - prediction_service - INFO - DEBUG - Types de données: [dtype('float64') dtype('int64') dtype('int32') dtype('bool')]
+2025-06-05 09:59:42,360 - prediction_service - INFO - Séquences conservées pour la prédiction (shape=(16, 158)): [[6483.5 6483.5 6472.6 ... 292.1999999999998 -9.799999999999272
+  6474.902324730002]
+ [6473.5 6475.6 6469.7 ... 292.1999999999998 -3.100000000000364
+  6477.920567174761]
+ [6470.6 6474.6 6468.6 ... 292.1999999999998 2.100000000000364
+  6478.3695364557025]
+ ...
+ [6500.1 6502.1 6494.2 ... 292.1999999999998 -2.899999999999636
+  6499.7406043285155]
+ [6497.2 6499.1 6496.1 ... 292.1999999999998 1.0999999999994543
+  6501.018842003302]
+ [6498.1 6499.2 6497.2 ... 292.1999999999998 0.0 6502.606433149137]]
+2025-06-05 09:59:42,425 - prediction_service - INFO - DEBUG - Analyse NaN détaillée: {}
+2025-06-05 09:59:42,425 - prediction_service - INFO - DEBUG - Analyse valeurs infinies détaillée: {}
+2025-06-05 09:59:42,425 - prediction_service - INFO - Normalisation des données avec StandardScaler (shape=(1, 16, 158))
+2025-06-05 09:59:42,426 - prediction_service - INFO - prepare prediction data done: make prediction

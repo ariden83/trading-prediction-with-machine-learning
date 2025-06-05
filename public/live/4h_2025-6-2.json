@@ -1,0 +1,6002 @@
+{
+    "1742889600000": {
+        "timestamp": 1742889600000,
+        "openPrice": {
+            "ask": 7276.6,
+            "bid": 7273.8
+        },
+        "closePrice": {
+            "ask": 7296.4,
+            "bid": 7293.6
+        },
+        "highPrice": {
+            "ask": 7299,
+            "bid": 7295.8
+        },
+        "lowPrice": {
+            "ask": 7259,
+            "bid": 7256.2
+        },
+        "lastTradedVolume": 37447
+    },
+    "1742904000000": {
+        "timestamp": 1742904000000,
+        "openPrice": {
+            "ask": 7296.8,
+            "bid": 7294
+        },
+        "closePrice": {
+            "ask": 7242.5,
+            "bid": 7239.7
+        },
+        "highPrice": {
+            "ask": 7301.7,
+            "bid": 7298.5
+        },
+        "lowPrice": {
+            "ask": 7237.5,
+            "bid": 7234.3
+        },
+        "lastTradedVolume": 52077
+    },
+    "1742918400000": {
+        "timestamp": 1742918400000,
+        "openPrice": {
+            "ask": 7242.8,
+            "bid": 7240
+        },
+        "closePrice": {
+            "ask": 7261.7,
+            "bid": 7257.9
+        },
+        "highPrice": {
+            "ask": 7265.3,
+            "bid": 7262.1
+        },
+        "lowPrice": {
+            "ask": 7198.9,
+            "bid": 7196.1
+        },
+        "lastTradedVolume": 52990
+    },
+    "1742932800000": {
+        "timestamp": 1742932800000,
+        "openPrice": {
+            "ask": 7261.2,
+            "bid": 7258.9
+        },
+        "closePrice": {
+            "ask": 7264.1,
+            "bid": 7256.3
+        },
+        "highPrice": {
+            "ask": 7270.8,
+            "bid": 7267.5
+        },
+        "lowPrice": {
+            "ask": 7257.3,
+            "bid": 7254.4
+        },
+        "lastTradedVolume": 1415
+    },
+    "1742947200000": {
+        "timestamp": 1742947200000,
+        "openPrice": {
+            "ask": 7273,
+            "bid": 7269.2
+        },
+        "closePrice": {
+            "ask": 7265.6,
+            "bid": 7262.8
+        },
+        "highPrice": {
+            "ask": 7283.4,
+            "bid": 7280.1
+        },
+        "lowPrice": {
+            "ask": 7263.6,
+            "bid": 7260.3
+        },
+        "lastTradedVolume": 2867
+    },
+    "1742961600000": {
+        "timestamp": 1742961600000,
+        "openPrice": {
+            "ask": 7265.2,
+            "bid": 7262.4
+        },
+        "closePrice": {
+            "ask": 7259.3,
+            "bid": 7256.5
+        },
+        "highPrice": {
+            "ask": 7281.9,
+            "bid": 7278.7
+        },
+        "lowPrice": {
+            "ask": 7256.3,
+            "bid": 7252.9
+        },
+        "lastTradedVolume": 6930
+    },
+    "1742976000000": {
+        "timestamp": 1742976000000,
+        "openPrice": {
+            "ask": 7260.7,
+            "bid": 7256.9
+        },
+        "closePrice": {
+            "ask": 7308.1,
+            "bid": 7304.3
+        },
+        "highPrice": {
+            "ask": 7318.5,
+            "bid": 7315.3
+        },
+        "lowPrice": {
+            "ask": 7259.1,
+            "bid": 7255.8
+        },
+        "lastTradedVolume": 28265
+    },
+    "1742990400000": {
+        "timestamp": 1742990400000,
+        "openPrice": {
+            "ask": 7307.1,
+            "bid": 7304.1
+        },
+        "closePrice": {
+            "ask": 7346.7,
+            "bid": 7342.9
+        },
+        "highPrice": {
+            "ask": 7357.8,
+            "bid": 7354.4
+        },
+        "lowPrice": {
+            "ask": 7299.9,
+            "bid": 7296.7
+        },
+        "lastTradedVolume": 63988
+    },
+    "1743004800000": {
+        "timestamp": 1743004800000,
+        "openPrice": {
+            "ask": 7346.2,
+            "bid": 7342.4
+        },
+        "closePrice": {
+            "ask": 7320.6,
+            "bid": 7316.8
+        },
+        "highPrice": {
+            "ask": 7347.2,
+            "bid": 7343.9
+        },
+        "lowPrice": {
+            "ask": 7298.2,
+            "bid": 7294.9
+        },
+        "lastTradedVolume": 49017
+    },
+    "1743019200000": {
+        "timestamp": 1743019200000,
+        "openPrice": {
+            "ask": 7320.2,
+            "bid": 7317.4
+        },
+        "closePrice": {
+            "ask": 7342.1,
+            "bid": 7334.3
+        },
+        "highPrice": {
+            "ask": 7345.5,
+            "bid": 7340.8
+        },
+        "lowPrice": {
+            "ask": 7320.2,
+            "bid": 7317.4
+        },
+        "lastTradedVolume": 1448
+    },
+    "1743033600000": {
+        "timestamp": 1743033600000,
+        "openPrice": {
+            "ask": 7327.3,
+            "bid": 7319.5
+        },
+        "closePrice": {
+            "ask": 7322.9,
+            "bid": 7319.1
+        },
+        "highPrice": {
+            "ask": 7333.7,
+            "bid": 7329.9
+        },
+        "lowPrice": {
+            "ask": 7315.7,
+            "bid": 7312.9
+        },
+        "lastTradedVolume": 1162
+    },
+    "1743048000000": {
+        "timestamp": 1743048000000,
+        "openPrice": {
+            "ask": 7323.4,
+            "bid": 7319.6
+        },
+        "closePrice": {
+            "ask": 7290.8,
+            "bid": 7288
+        },
+        "highPrice": {
+            "ask": 7326.9,
+            "bid": 7323.1
+        },
+        "lowPrice": {
+            "ask": 7288,
+            "bid": 7284.7
+        },
+        "lastTradedVolume": 6229
+    },
+    "1743062400000": {
+        "timestamp": 1743062400000,
+        "openPrice": {
+            "ask": 7291.4,
+            "bid": 7287.6
+        },
+        "closePrice": {
+            "ask": 7302,
+            "bid": 7298.2
+        },
+        "highPrice": {
+            "ask": 7314.5,
+            "bid": 7311.7
+        },
+        "lowPrice": {
+            "ask": 7270.8,
+            "bid": 7267.5
+        },
+        "lastTradedVolume": 24397
+    },
+    "1743076800000": {
+        "timestamp": 1743076800000,
+        "openPrice": {
+            "ask": 7301.5,
+            "bid": 7298.7
+        },
+        "closePrice": {
+            "ask": 7305.2,
+            "bid": 7301.4
+        },
+        "highPrice": {
+            "ask": 7335.8,
+            "bid": 7332.6
+        },
+        "lowPrice": {
+            "ask": 7260.3,
+            "bid": 7257
+        },
+        "lastTradedVolume": 35127
+    },
+    "1743091200000": {
+        "timestamp": 1743091200000,
+        "openPrice": {
+            "ask": 7305.6,
+            "bid": 7301.8
+        },
+        "closePrice": {
+            "ask": 7328.1,
+            "bid": 7324.3
+        },
+        "highPrice": {
+            "ask": 7343.3,
+            "bid": 7340
+        },
+        "lowPrice": {
+            "ask": 7299.2,
+            "bid": 7295.8
+        },
+        "lastTradedVolume": 29328
+    },
+    "1743105600000": {
+        "timestamp": 1743105600000,
+        "openPrice": {
+            "ask": 7328.6,
+            "bid": 7324.8
+        },
+        "closePrice": {
+            "ask": 7341,
+            "bid": 7337.2
+        },
+        "highPrice": {
+            "ask": 7345,
+            "bid": 7339.7
+        },
+        "lowPrice": {
+            "ask": 7328.2,
+            "bid": 7324.8
+        },
+        "lastTradedVolume": 817
+    },
+    "1743120000000": {
+        "timestamp": 1743120000000,
+        "openPrice": {
+            "ask": 7339.8,
+            "bid": 7332
+        },
+        "closePrice": {
+            "ask": 7338.4,
+            "bid": 7334.6
+        },
+        "highPrice": {
+            "ask": 7353.1,
+            "bid": 7349.8
+        },
+        "lowPrice": {
+            "ask": 7329.5,
+            "bid": 7325.7
+        },
+        "lastTradedVolume": 2917
+    },
+    "1743134400000": {
+        "timestamp": 1743134400000,
+        "openPrice": {
+            "ask": 7337,
+            "bid": 7334.2
+        },
+        "closePrice": {
+            "ask": 7303.1,
+            "bid": 7299.3
+        },
+        "highPrice": {
+            "ask": 7337.4,
+            "bid": 7334.2
+        },
+        "lowPrice": {
+            "ask": 7301.5,
+            "bid": 7298.2
+        },
+        "lastTradedVolume": 6997
+    },
+    "1743148800000": {
+        "timestamp": 1743148800000,
+        "openPrice": {
+            "ask": 7304,
+            "bid": 7300.2
+        },
+        "closePrice": {
+            "ask": 7338.8,
+            "bid": 7335
+        },
+        "highPrice": {
+            "ask": 7350.1,
+            "bid": 7346.9
+        },
+        "lowPrice": {
+            "ask": 7299.5,
+            "bid": 7296.2
+        },
+        "lastTradedVolume": 15513
+    },
+    "1743163200000": {
+        "timestamp": 1743163200000,
+        "openPrice": {
+            "ask": 7338.3,
+            "bid": 7335.5
+        },
+        "closePrice": {
+            "ask": 7262.9,
+            "bid": 7259.1
+        },
+        "highPrice": {
+            "ask": 7350.8,
+            "bid": 7347.5
+        },
+        "lowPrice": {
+            "ask": 7260.5,
+            "bid": 7256.7
+        },
+        "lastTradedVolume": 21591
+    },
+    "1743177600000": {
+        "timestamp": 1743177600000,
+        "openPrice": {
+            "ask": 7262.4,
+            "bid": 7259.6
+        },
+        "closePrice": {
+            "ask": 7259.2,
+            "bid": 7256.4
+        },
+        "highPrice": {
+            "ask": 7286.8,
+            "bid": 7283.5
+        },
+        "lowPrice": {
+            "ask": 7240.5,
+            "bid": 7237.2
+        },
+        "lastTradedVolume": 24970
+    },
+    "1743192000000": {
+        "timestamp": 1743192000000,
+        "openPrice": {
+            "ask": 7259.7,
+            "bid": 7255.9
+        },
+        "closePrice": {
+            "ask": 7248.5,
+            "bid": 7244.7
+        },
+        "highPrice": {
+            "ask": 7266.1,
+            "bid": 7262.3
+        },
+        "lowPrice": {
+            "ask": 7246.5,
+            "bid": 7241.2
+        },
+        "lastTradedVolume": 295
+    },
+    "1743361200000": {
+        "timestamp": 1743361200000,
+        "openPrice": {
+            "ask": 7281.6,
+            "bid": 7273.8
+        },
+        "closePrice": {
+            "ask": 7290.5,
+            "bid": 7286.7
+        },
+        "highPrice": {
+            "ask": 7310.6,
+            "bid": 7307.7
+        },
+        "lowPrice": {
+            "ask": 7279.1,
+            "bid": 7271.3
+        },
+        "lastTradedVolume": 3097
+    },
+    "1743375600000": {
+        "timestamp": 1743375600000,
+        "openPrice": {
+            "ask": 7293,
+            "bid": 7289.2
+        },
+        "closePrice": {
+            "ask": 7248,
+            "bid": 7245.2
+        },
+        "highPrice": {
+            "ask": 7293,
+            "bid": 7289.2
+        },
+        "lowPrice": {
+            "ask": 7226.3,
+            "bid": 7223.5
+        },
+        "lastTradedVolume": 7456
+    },
+    "1743390000000": {
+        "timestamp": 1743390000000,
+        "openPrice": {
+            "ask": 7248.1,
+            "bid": 7245.3
+        },
+        "closePrice": {
+            "ask": 7271.7,
+            "bid": 7268.9
+        },
+        "highPrice": {
+            "ask": 7280.7,
+            "bid": 7277.9
+        },
+        "lowPrice": {
+            "ask": 7242,
+            "bid": 7238.2
+        },
+        "lastTradedVolume": 7882
+    },
+    "1743404400000": {
+        "timestamp": 1743404400000,
+        "openPrice": {
+            "ask": 7271.6,
+            "bid": 7267.9
+        },
+        "closePrice": {
+            "ask": 7292.1,
+            "bid": 7288.3
+        },
+        "highPrice": {
+            "ask": 7353.2,
+            "bid": 7350.4
+        },
+        "lowPrice": {
+            "ask": 7248.7,
+            "bid": 7245.9
+        },
+        "lastTradedVolume": 85848
+    },
+    "1743418800000": {
+        "timestamp": 1743418800000,
+        "openPrice": {
+            "ask": 7293,
+            "bid": 7289.3
+        },
+        "closePrice": {
+            "ask": 7417.6,
+            "bid": 7414.8
+        },
+        "highPrice": {
+            "ask": 7428.6,
+            "bid": 7425.7
+        },
+        "lowPrice": {
+            "ask": 7278.1,
+            "bid": 7275.3
+        },
+        "lastTradedVolume": 103616
+    },
+    "1743433200000": {
+        "timestamp": 1743433200000,
+        "openPrice": {
+            "ask": 7418.6,
+            "bid": 7415.8
+        },
+        "closePrice": {
+            "ask": 7477,
+            "bid": 7474.2
+        },
+        "highPrice": {
+            "ask": 7500.1,
+            "bid": 7497.3
+        },
+        "lowPrice": {
+            "ask": 7413.5,
+            "bid": 7410.7
+        },
+        "lastTradedVolume": 128419
+    },
+    "1743447600000": {
+        "timestamp": 1743447600000,
+        "openPrice": {
+            "ask": 7476,
+            "bid": 7473.2
+        },
+        "closePrice": {
+            "ask": 7468.7,
+            "bid": 7460.9
+        },
+        "highPrice": {
+            "ask": 7480,
+            "bid": 7477.1
+        },
+        "lowPrice": {
+            "ask": 7454.9,
+            "bid": 7451.1
+        },
+        "lastTradedVolume": 8164
+    },
+    "1743462000000": {
+        "timestamp": 1743462000000,
+        "openPrice": {
+            "ask": 7465.5,
+            "bid": 7457.7
+        },
+        "closePrice": {
+            "ask": 7492.2,
+            "bid": 7488.4
+        },
+        "highPrice": {
+            "ask": 7497.2,
+            "bid": 7494.4
+        },
+        "lowPrice": {
+            "ask": 7457.5,
+            "bid": 7454.7
+        },
+        "lastTradedVolume": 7435
+    },
+    "1743476400000": {
+        "timestamp": 1743476400000,
+        "openPrice": {
+            "ask": 7491.2,
+            "bid": 7489.4
+        },
+        "closePrice": {
+            "ask": 7493.7,
+            "bid": 7490.9
+        },
+        "highPrice": {
+            "ask": 7497.2,
+            "bid": 7494.4
+        },
+        "lowPrice": {
+            "ask": 7480.9,
+            "bid": 7477.1
+        },
+        "lastTradedVolume": 11508
+    },
+    "1743490800000": {
+        "timestamp": 1743490800000,
+        "openPrice": {
+            "ask": 7493.6,
+            "bid": 7490.8
+        },
+        "closePrice": {
+            "ask": 7489.2,
+            "bid": 7486.4
+        },
+        "highPrice": {
+            "ask": 7522.1,
+            "bid": 7519.3
+        },
+        "lowPrice": {
+            "ask": 7436.9,
+            "bid": 7434
+        },
+        "lastTradedVolume": 103332
+    },
+    "1743505200000": {
+        "timestamp": 1743505200000,
+        "openPrice": {
+            "ask": 7490.1,
+            "bid": 7486.3
+        },
+        "closePrice": {
+            "ask": 7478.5,
+            "bid": 7475.7
+        },
+        "highPrice": {
+            "ask": 7522.5,
+            "bid": 7519.7
+        },
+        "lowPrice": {
+            "ask": 7453.9,
+            "bid": 7450.1
+        },
+        "lastTradedVolume": 92971
+    },
+    "1743519600000": {
+        "timestamp": 1743519600000,
+        "openPrice": {
+            "ask": 7479.4,
+            "bid": 7476.6
+        },
+        "closePrice": {
+            "ask": 7434.9,
+            "bid": 7431.1
+        },
+        "highPrice": {
+            "ask": 7493.5,
+            "bid": 7490.7
+        },
+        "lowPrice": {
+            "ask": 7428,
+            "bid": 7425.2
+        },
+        "lastTradedVolume": 105401
+    },
+    "1743534000000": {
+        "timestamp": 1743534000000,
+        "openPrice": {
+            "ask": 7433.9,
+            "bid": 7431
+        },
+        "closePrice": {
+            "ask": 7443.1,
+            "bid": 7439.3
+        },
+        "highPrice": {
+            "ask": 7447.6,
+            "bid": 7444.8
+        },
+        "lowPrice": {
+            "ask": 7432.1,
+            "bid": 7427.8
+        },
+        "lastTradedVolume": 7839
+    },
+    "1743548400000": {
+        "timestamp": 1743548400000,
+        "openPrice": {
+            "ask": 7447.4,
+            "bid": 7444.6
+        },
+        "closePrice": {
+            "ask": 7453,
+            "bid": 7450.2
+        },
+        "highPrice": {
+            "ask": 7455,
+            "bid": 7452.2
+        },
+        "lowPrice": {
+            "ask": 7428.2,
+            "bid": 7424.4
+        },
+        "lastTradedVolume": 6292
+    },
+    "1743562800000": {
+        "timestamp": 1743562800000,
+        "openPrice": {
+            "ask": 7452.1,
+            "bid": 7449.3
+        },
+        "closePrice": {
+            "ask": 7423.8,
+            "bid": 7421
+        },
+        "highPrice": {
+            "ask": 7453,
+            "bid": 7449.3
+        },
+        "lowPrice": {
+            "ask": 7421.7,
+            "bid": 7418.9
+        },
+        "lastTradedVolume": 10389
+    },
+    "1743577200000": {
+        "timestamp": 1743577200000,
+        "openPrice": {
+            "ask": 7424.7,
+            "bid": 7420.9
+        },
+        "closePrice": {
+            "ask": 7392.2,
+            "bid": 7389.4
+        },
+        "highPrice": {
+            "ask": 7443.1,
+            "bid": 7440.3
+        },
+        "lowPrice": {
+            "ask": 7388.9,
+            "bid": 7386.1
+        },
+        "lastTradedVolume": 80228
+    },
+    "1743591600000": {
+        "timestamp": 1743591600000,
+        "openPrice": {
+            "ask": 7393.1,
+            "bid": 7389.3
+        },
+        "closePrice": {
+            "ask": 7443.7,
+            "bid": 7440.9
+        },
+        "highPrice": {
+            "ask": 7459.6,
+            "bid": 7456.7
+        },
+        "lowPrice": {
+            "ask": 7376.6,
+            "bid": 7373.8
+        },
+        "lastTradedVolume": 97393
+    },
+    "1743606000000": {
+        "timestamp": 1743606000000,
+        "openPrice": {
+            "ask": 7443.6,
+            "bid": 7439.8
+        },
+        "closePrice": {
+            "ask": 7489.3,
+            "bid": 7486.5
+        },
+        "highPrice": {
+            "ask": 7505.4,
+            "bid": 7502.1
+        },
+        "lowPrice": {
+            "ask": 7409,
+            "bid": 7406.2
+        },
+        "lastTradedVolume": 92574
+    },
+    "1743620400000": {
+        "timestamp": 1743620400000,
+        "openPrice": {
+            "ask": 7489.4,
+            "bid": 7486.6
+        },
+        "closePrice": {
+            "ask": 7328,
+            "bid": 7320.2
+        },
+        "highPrice": {
+            "ask": 7537.1,
+            "bid": 7534.2
+        },
+        "lowPrice": {
+            "ask": 7303.1,
+            "bid": 7298.2
+        },
+        "lastTradedVolume": 57139
+    },
+    "1743634800000": {
+        "timestamp": 1743634800000,
+        "openPrice": {
+            "ask": 7280.2,
+            "bid": 7272.4
+        },
+        "closePrice": {
+            "ask": 7319.4,
+            "bid": 7316.6
+        },
+        "highPrice": {
+            "ask": 7328.9,
+            "bid": 7325.7
+        },
+        "lowPrice": {
+            "ask": 7243.8,
+            "bid": 7240.9
+        },
+        "lastTradedVolume": 36987
+    },
+    "1743649200000": {
+        "timestamp": 1743649200000,
+        "openPrice": {
+            "ask": 7320.3,
+            "bid": 7317.5
+        },
+        "closePrice": {
+            "ask": 7268.3,
+            "bid": 7264.5
+        },
+        "highPrice": {
+            "ask": 7329.2,
+            "bid": 7326.4
+        },
+        "lowPrice": {
+            "ask": 7268.3,
+            "bid": 7264.5
+        },
+        "lastTradedVolume": 24599
+    },
+    "1743663600000": {
+        "timestamp": 1743663600000,
+        "openPrice": {
+            "ask": 7269.3,
+            "bid": 7265.5
+        },
+        "closePrice": {
+            "ask": 7153.4,
+            "bid": 7150.6
+        },
+        "highPrice": {
+            "ask": 7276.3,
+            "bid": 7273.4
+        },
+        "lowPrice": {
+            "ask": 7142.6,
+            "bid": 7139.8
+        },
+        "lastTradedVolume": 143193
+    },
+    "1743678000000": {
+        "timestamp": 1743678000000,
+        "openPrice": {
+            "ask": 7154.4,
+            "bid": 7151.6
+        },
+        "closePrice": {
+            "ask": 6946.9,
+            "bid": 6944.1
+        },
+        "highPrice": {
+            "ask": 7157.4,
+            "bid": 7154.6
+        },
+        "lowPrice": {
+            "ask": 6946.1,
+            "bid": 6943.1
+        },
+        "lastTradedVolume": 243701
+    },
+    "1743692400000": {
+        "timestamp": 1743692400000,
+        "openPrice": {
+            "ask": 6947,
+            "bid": 6944.2
+        },
+        "closePrice": {
+            "ask": 7000,
+            "bid": 6996.2
+        },
+        "highPrice": {
+            "ask": 7027.4,
+            "bid": 7024.6
+        },
+        "lowPrice": {
+            "ask": 6938.9,
+            "bid": 6936.1
+        },
+        "lastTradedVolume": 117313
+    },
+    "1743706800000": {
+        "timestamp": 1743706800000,
+        "openPrice": {
+            "ask": 6999.1,
+            "bid": 6996.3
+        },
+        "closePrice": {
+            "ask": 6976.7,
+            "bid": 6968.9
+        },
+        "highPrice": {
+            "ask": 6999.1,
+            "bid": 6996.3
+        },
+        "lowPrice": {
+            "ask": 6969.7,
+            "bid": 6966.9
+        },
+        "lastTradedVolume": 8680
+    },
+    "1743721200000": {
+        "timestamp": 1743721200000,
+        "openPrice": {
+            "ask": 6988,
+            "bid": 6980.2
+        },
+        "closePrice": {
+            "ask": 6960.2,
+            "bid": 6957.4
+        },
+        "highPrice": {
+            "ask": 7000.5,
+            "bid": 6996.7
+        },
+        "lowPrice": {
+            "ask": 6957.1,
+            "bid": 6953.4
+        },
+        "lastTradedVolume": 8672
+    },
+    "1743735600000": {
+        "timestamp": 1743735600000,
+        "openPrice": {
+            "ask": 6960.3,
+            "bid": 6957.5
+        },
+        "closePrice": {
+            "ask": 6897.5,
+            "bid": 6894.7
+        },
+        "highPrice": {
+            "ask": 6963.2,
+            "bid": 6959.4
+        },
+        "lowPrice": {
+            "ask": 6897.5,
+            "bid": 6894.5
+        },
+        "lastTradedVolume": 17637
+    },
+    "1743750000000": {
+        "timestamp": 1743750000000,
+        "openPrice": {
+            "ask": 6897.4,
+            "bid": 6894.6
+        },
+        "closePrice": {
+            "ask": 6577.7,
+            "bid": 6573.9
+        },
+        "highPrice": {
+            "ask": 6900.4,
+            "bid": 6897.5
+        },
+        "lowPrice": {
+            "ask": 6528,
+            "bid": 6525.2
+        },
+        "lastTradedVolume": 249340
+    },
+    "1743764400000": {
+        "timestamp": 1743764400000,
+        "openPrice": {
+            "ask": 6578.7,
+            "bid": 6574.9
+        },
+        "closePrice": {
+            "ask": 6468.6,
+            "bid": 6464.8
+        },
+        "highPrice": {
+            "ask": 6590.5,
+            "bid": 6587.6
+        },
+        "lowPrice": {
+            "ask": 6394,
+            "bid": 6391.2
+        },
+        "lastTradedVolume": 253623
+    },
+    "1743778800000": {
+        "timestamp": 1743778800000,
+        "openPrice": {
+            "ask": 6467.7,
+            "bid": 6464.9
+        },
+        "closePrice": {
+            "ask": 6584.6,
+            "bid": 6581.8
+        },
+        "highPrice": {
+            "ask": 6660.8,
+            "bid": 6658
+        },
+        "lowPrice": {
+            "ask": 6466.1,
+            "bid": 6462.8
+        },
+        "lastTradedVolume": 186987
+    },
+    "1743793200000": {
+        "timestamp": 1743793200000,
+        "openPrice": {
+            "ask": 6585.4,
+            "bid": 6582.6
+        },
+        "closePrice": {
+            "ask": 6587.3,
+            "bid": 6583.5
+        },
+        "highPrice": {
+            "ask": 6638.2,
+            "bid": 6634.9
+        },
+        "lowPrice": {
+            "ask": 6577.3,
+            "bid": 6574.5
+        },
+        "lastTradedVolume": 12908
+    },
+    "1743966000000": {
+        "timestamp": 1743966000000,
+        "openPrice": {
+            "ask": 6406,
+            "bid": 6398.2
+        },
+        "closePrice": {
+            "ask": 6329.9,
+            "bid": 6322.1
+        },
+        "highPrice": {
+            "ask": 6418.5,
+            "bid": 6410.7
+        },
+        "lowPrice": {
+            "ask": 6310.1,
+            "bid": 6305.4
+        },
+        "lastTradedVolume": 12449
+    },
+    "1743980400000": {
+        "timestamp": 1743980400000,
+        "openPrice": {
+            "ask": 6327.5,
+            "bid": 6323.7
+        },
+        "closePrice": {
+            "ask": 6376.6,
+            "bid": 6372.8
+        },
+        "highPrice": {
+            "ask": 6410.9,
+            "bid": 6407.9
+        },
+        "lowPrice": {
+            "ask": 6290.4,
+            "bid": 6286.7
+        },
+        "lastTradedVolume": 33654
+    },
+    "1743994800000": {
+        "timestamp": 1743994800000,
+        "openPrice": {
+            "ask": 6376.4,
+            "bid": 6373.6
+        },
+        "closePrice": {
+            "ask": 6326.3,
+            "bid": 6323.5
+        },
+        "highPrice": {
+            "ask": 6437.5,
+            "bid": 6434.7
+        },
+        "lowPrice": {
+            "ask": 6290.1,
+            "bid": 6287.2
+        },
+        "lastTradedVolume": 35252
+    },
+    "1744009200000": {
+        "timestamp": 1744009200000,
+        "openPrice": {
+            "ask": 6326.2,
+            "bid": 6323.4
+        },
+        "closePrice": {
+            "ask": 6378.6,
+            "bid": 6374.8
+        },
+        "highPrice": {
+            "ask": 6385.6,
+            "bid": 6382.7
+        },
+        "lowPrice": {
+            "ask": 6240.6,
+            "bid": 6237.8
+        },
+        "lastTradedVolume": 136559
+    },
+    "1744023600000": {
+        "timestamp": 1744023600000,
+        "openPrice": {
+            "ask": 6377.4,
+            "bid": 6374.6
+        },
+        "closePrice": {
+            "ask": 6457.8,
+            "bid": 6455
+        },
+        "highPrice": {
+            "ask": 6728.9,
+            "bid": 6724.5
+        },
+        "lowPrice": {
+            "ask": 6357,
+            "bid": 6354
+        },
+        "lastTradedVolume": 275623
+    },
+    "1744038000000": {
+        "timestamp": 1744038000000,
+        "openPrice": {
+            "ask": 6458.6,
+            "bid": 6454.8
+        },
+        "closePrice": {
+            "ask": 6420.4,
+            "bid": 6417.6
+        },
+        "highPrice": {
+            "ask": 6502,
+            "bid": 6498.3
+        },
+        "lowPrice": {
+            "ask": 6344.6,
+            "bid": 6341.3
+        },
+        "lastTradedVolume": 185301
+    },
+    "1744052400000": {
+        "timestamp": 1744052400000,
+        "openPrice": {
+            "ask": 6420.6,
+            "bid": 6416.8
+        },
+        "closePrice": {
+            "ask": 6424.6,
+            "bid": 6416.8
+        },
+        "highPrice": {
+            "ask": 6462.2,
+            "bid": 6458.6
+        },
+        "lowPrice": {
+            "ask": 6405.8,
+            "bid": 6402.9
+        },
+        "lastTradedVolume": 21495
+    },
+    "1744066800000": {
+        "timestamp": 1744066800000,
+        "openPrice": {
+            "ask": 6446.8,
+            "bid": 6444
+        },
+        "closePrice": {
+            "ask": 6497.3,
+            "bid": 6493.5
+        },
+        "highPrice": {
+            "ask": 6507.2,
+            "bid": 6504.4
+        },
+        "lowPrice": {
+            "ask": 6434.4,
+            "bid": 6431.3
+        },
+        "lastTradedVolume": 15521
+    },
+    "1744081200000": {
+        "timestamp": 1744081200000,
+        "openPrice": {
+            "ask": 6497.8,
+            "bid": 6494
+        },
+        "closePrice": {
+            "ask": 6481.2,
+            "bid": 6477.4
+        },
+        "highPrice": {
+            "ask": 6508.2,
+            "bid": 6505.4
+        },
+        "lowPrice": {
+            "ask": 6451.4,
+            "bid": 6447.8
+        },
+        "lastTradedVolume": 17963
+    },
+    "1744095600000": {
+        "timestamp": 1744095600000,
+        "openPrice": {
+            "ask": 6479.7,
+            "bid": 6476.9
+        },
+        "closePrice": {
+            "ask": 6406.8,
+            "bid": 6404
+        },
+        "highPrice": {
+            "ask": 6489.4,
+            "bid": 6486.3
+        },
+        "lowPrice": {
+            "ask": 6355.3,
+            "bid": 6351.6
+        },
+        "lastTradedVolume": 106496
+    },
+    "1744110000000": {
+        "timestamp": 1744110000000,
+        "openPrice": {
+            "ask": 6407,
+            "bid": 6404.2
+        },
+        "closePrice": {
+            "ask": 6409.6,
+            "bid": 6406.8
+        },
+        "highPrice": {
+            "ask": 6499.6,
+            "bid": 6496.8
+        },
+        "lowPrice": {
+            "ask": 6398.8,
+            "bid": 6395.2
+        },
+        "lastTradedVolume": 117108
+    },
+    "1744124400000": {
+        "timestamp": 1744124400000,
+        "openPrice": {
+            "ask": 6409.3,
+            "bid": 6406.5
+        },
+        "closePrice": {
+            "ask": 6222.3,
+            "bid": 6218.5
+        },
+        "highPrice": {
+            "ask": 6449.3,
+            "bid": 6446.3
+        },
+        "lowPrice": {
+            "ask": 6204.3,
+            "bid": 6201.4
+        },
+        "lastTradedVolume": 234358
+    },
+    "1744138800000": {
+        "timestamp": 1744138800000,
+        "openPrice": {
+            "ask": 6221.5,
+            "bid": 6218.7
+        },
+        "closePrice": {
+            "ask": 6149,
+            "bid": 6146.2
+        },
+        "highPrice": {
+            "ask": 6227.3,
+            "bid": 6224.5
+        },
+        "lowPrice": {
+            "ask": 6122.9,
+            "bid": 6120
+        },
+        "lastTradedVolume": 27910
+    },
+    "1744153200000": {
+        "timestamp": 1744153200000,
+        "openPrice": {
+            "ask": 6133.2,
+            "bid": 6125.4
+        },
+        "closePrice": {
+            "ask": 6087.3,
+            "bid": 6083.5
+        },
+        "highPrice": {
+            "ask": 6139.7,
+            "bid": 6135.9
+        },
+        "lowPrice": {
+            "ask": 6006.3,
+            "bid": 6002.5
+        },
+        "lastTradedVolume": 28135
+    },
+    "1744167600000": {
+        "timestamp": 1744167600000,
+        "openPrice": {
+            "ask": 6086.2,
+            "bid": 6083.4
+        },
+        "closePrice": {
+            "ask": 6128.4,
+            "bid": 6124.6
+        },
+        "highPrice": {
+            "ask": 6136.4,
+            "bid": 6133.5
+        },
+        "lowPrice": {
+            "ask": 6003.4,
+            "bid": 5999.8
+        },
+        "lastTradedVolume": 30349
+    },
+    "1744182000000": {
+        "timestamp": 1744182000000,
+        "openPrice": {
+            "ask": 6127.6,
+            "bid": 6124.8
+        },
+        "closePrice": {
+            "ask": 6037.6,
+            "bid": 6034.8
+        },
+        "highPrice": {
+            "ask": 6135.8,
+            "bid": 6133
+        },
+        "lowPrice": {
+            "ask": 5967.2,
+            "bid": 5963.4
+        },
+        "lastTradedVolume": 122817
+    },
+    "1744196400000": {
+        "timestamp": 1744196400000,
+        "openPrice": {
+            "ask": 6037.8,
+            "bid": 6034
+        },
+        "closePrice": {
+            "ask": 5922.1,
+            "bid": 5919.3
+        },
+        "highPrice": {
+            "ask": 6096.6,
+            "bid": 6092.8
+        },
+        "lowPrice": {
+            "ask": 5828,
+            "bid": 5825.2
+        },
+        "lastTradedVolume": 225662
+    },
+    "1744210800000": {
+        "timestamp": 1744210800000,
+        "openPrice": {
+            "ask": 5922.3,
+            "bid": 5918.5
+        },
+        "closePrice": {
+            "ask": 6446.8,
+            "bid": 6444
+        },
+        "highPrice": {
+            "ask": 6582.4,
+            "bid": 6579.1
+        },
+        "lowPrice": {
+            "ask": 5919.1,
+            "bid": 5915.5
+        },
+        "lastTradedVolume": 293689
+    },
+    "1744225200000": {
+        "timestamp": 1744225200000,
+        "openPrice": {
+            "ask": 6447.6,
+            "bid": 6443.8
+        },
+        "closePrice": {
+            "ask": 6551,
+            "bid": 6547.2
+        },
+        "highPrice": {
+            "ask": 6576,
+            "bid": 6573
+        },
+        "lowPrice": {
+            "ask": 6447.6,
+            "bid": 6443.8
+        },
+        "lastTradedVolume": 21349
+    },
+    "1744239600000": {
+        "timestamp": 1744239600000,
+        "openPrice": {
+            "ask": 6575.9,
+            "bid": 6568.1
+        },
+        "closePrice": {
+            "ask": 6458.3,
+            "bid": 6454.5
+        },
+        "highPrice": {
+            "ask": 6588.2,
+            "bid": 6584.6
+        },
+        "lowPrice": {
+            "ask": 6437.2,
+            "bid": 6434
+        },
+        "lastTradedVolume": 19193
+    },
+    "1744254000000": {
+        "timestamp": 1744254000000,
+        "openPrice": {
+            "ask": 6458.5,
+            "bid": 6454.7
+        },
+        "closePrice": {
+            "ask": 6493.4,
+            "bid": 6490.6
+        },
+        "highPrice": {
+            "ask": 6505.1,
+            "bid": 6502.3
+        },
+        "lowPrice": {
+            "ask": 6429.8,
+            "bid": 6426.1
+        },
+        "lastTradedVolume": 19381
+    },
+    "1744268400000": {
+        "timestamp": 1744268400000,
+        "openPrice": {
+            "ask": 6493.6,
+            "bid": 6490.8
+        },
+        "closePrice": {
+            "ask": 6369.2,
+            "bid": 6365.4
+        },
+        "highPrice": {
+            "ask": 6507.2,
+            "bid": 6504.4
+        },
+        "lowPrice": {
+            "ask": 6302.3,
+            "bid": 6299.5
+        },
+        "lastTradedVolume": 87582
+    },
+    "1744282800000": {
+        "timestamp": 1744282800000,
+        "openPrice": {
+            "ask": 6368.4,
+            "bid": 6365.6
+        },
+        "closePrice": {
+            "ask": 6225.5,
+            "bid": 6222.7
+        },
+        "highPrice": {
+            "ask": 6392.7,
+            "bid": 6389.1
+        },
+        "lowPrice": {
+            "ask": 6183.4,
+            "bid": 6180.1
+        },
+        "lastTradedVolume": 123398
+    },
+    "1744297200000": {
+        "timestamp": 1744297200000,
+        "openPrice": {
+            "ask": 6225.3,
+            "bid": 6222.5
+        },
+        "closePrice": {
+            "ask": 6342.6,
+            "bid": 6338.8
+        },
+        "highPrice": {
+            "ask": 6352.4,
+            "bid": 6349.4
+        },
+        "lowPrice": {
+            "ask": 6208.6,
+            "bid": 6205
+        },
+        "lastTradedVolume": 121250
+    },
+    "1744311600000": {
+        "timestamp": 1744311600000,
+        "openPrice": {
+            "ask": 6342.2,
+            "bid": 6338.4
+        },
+        "closePrice": {
+            "ask": 6321.5,
+            "bid": 6317.7
+        },
+        "highPrice": {
+            "ask": 6356.5,
+            "bid": 6353.5
+        },
+        "lowPrice": {
+            "ask": 6309.4,
+            "bid": 6306.4
+        },
+        "lastTradedVolume": 7409
+    },
+    "1744326000000": {
+        "timestamp": 1744326000000,
+        "openPrice": {
+            "ask": 6295.2,
+            "bid": 6287.4
+        },
+        "closePrice": {
+            "ask": 6277.2,
+            "bid": 6274.4
+        },
+        "highPrice": {
+            "ask": 6315.4,
+            "bid": 6311.8
+        },
+        "lowPrice": {
+            "ask": 6256.2,
+            "bid": 6253.2
+        },
+        "lastTradedVolume": 8731
+    },
+    "1744340400000": {
+        "timestamp": 1744340400000,
+        "openPrice": {
+            "ask": 6277.4,
+            "bid": 6273.6
+        },
+        "closePrice": {
+            "ask": 6397.9,
+            "bid": 6395.1
+        },
+        "highPrice": {
+            "ask": 6415.1,
+            "bid": 6412.1
+        },
+        "lowPrice": {
+            "ask": 6276.2,
+            "bid": 6272.6
+        },
+        "lastTradedVolume": 15233
+    },
+    "1744354800000": {
+        "timestamp": 1744354800000,
+        "openPrice": {
+            "ask": 6398.1,
+            "bid": 6394.3
+        },
+        "closePrice": {
+            "ask": 6318.9,
+            "bid": 6315.1
+        },
+        "highPrice": {
+            "ask": 6400.8,
+            "bid": 6398
+        },
+        "lowPrice": {
+            "ask": 6263.1,
+            "bid": 6260.1
+        },
+        "lastTradedVolume": 80486
+    },
+    "1744369200000": {
+        "timestamp": 1744369200000,
+        "openPrice": {
+            "ask": 6317.9,
+            "bid": 6314.7
+        },
+        "closePrice": {
+            "ask": 6307.2,
+            "bid": 6303.4
+        },
+        "highPrice": {
+            "ask": 6344.2,
+            "bid": 6341.4
+        },
+        "lowPrice": {
+            "ask": 6261.6,
+            "bid": 6258
+        },
+        "lastTradedVolume": 91179
+    },
+    "1744383600000": {
+        "timestamp": 1744383600000,
+        "openPrice": {
+            "ask": 6307.4,
+            "bid": 6303.6
+        },
+        "closePrice": {
+            "ask": 6445.2,
+            "bid": 6441.4
+        },
+        "highPrice": {
+            "ask": 6474.7,
+            "bid": 6471.9
+        },
+        "lowPrice": {
+            "ask": 6300.2,
+            "bid": 6297.4
+        },
+        "lastTradedVolume": 114228
+    },
+    "1744398000000": {
+        "timestamp": 1744398000000,
+        "openPrice": {
+            "ask": 6445,
+            "bid": 6441.2
+        },
+        "closePrice": {
+            "ask": 6440.9,
+            "bid": 6437.1
+        },
+        "highPrice": {
+            "ask": 6467.4,
+            "bid": 6463.8
+        },
+        "lowPrice": {
+            "ask": 6433.7,
+            "bid": 6430.9
+        },
+        "lastTradedVolume": 6172
+    },
+    "1744570800000": {
+        "timestamp": 1744570800000,
+        "openPrice": {
+            "ask": 6457.3,
+            "bid": 6449.5
+        },
+        "closePrice": {
+            "ask": 6415.2,
+            "bid": 6411.4
+        },
+        "highPrice": {
+            "ask": 6503.5,
+            "bid": 6498
+        },
+        "lowPrice": {
+            "ask": 6413.7,
+            "bid": 6409.6
+        },
+        "lastTradedVolume": 3041
+    },
+    "1744585200000": {
+        "timestamp": 1744585200000,
+        "openPrice": {
+            "ask": 6414.4,
+            "bid": 6410.6
+        },
+        "closePrice": {
+            "ask": 6418.8,
+            "bid": 6415
+        },
+        "highPrice": {
+            "ask": 6459.5,
+            "bid": 6456.7
+        },
+        "lowPrice": {
+            "ask": 6401.6,
+            "bid": 6398.1
+        },
+        "lastTradedVolume": 6081
+    },
+    "1744599600000": {
+        "timestamp": 1744599600000,
+        "openPrice": {
+            "ask": 6419,
+            "bid": 6416
+        },
+        "closePrice": {
+            "ask": 6435.3,
+            "bid": 6431.5
+        },
+        "highPrice": {
+            "ask": 6463.7,
+            "bid": 6460.4
+        },
+        "lowPrice": {
+            "ask": 6406.9,
+            "bid": 6403.9
+        },
+        "lastTradedVolume": 8730
+    },
+    "1744614000000": {
+        "timestamp": 1744614000000,
+        "openPrice": {
+            "ask": 6435.6,
+            "bid": 6431.8
+        },
+        "closePrice": {
+            "ask": 6524.6,
+            "bid": 6521.8
+        },
+        "highPrice": {
+            "ask": 6525.9,
+            "bid": 6522.3
+        },
+        "lowPrice": {
+            "ask": 6417.1,
+            "bid": 6414
+        },
+        "lastTradedVolume": 50731
+    },
+    "1744628400000": {
+        "timestamp": 1744628400000,
+        "openPrice": {
+            "ask": 6524.9,
+            "bid": 6522.1
+        },
+        "closePrice": {
+            "ask": 6466.8,
+            "bid": 6464
+        },
+        "highPrice": {
+            "ask": 6551.6,
+            "bid": 6548.6
+        },
+        "lowPrice": {
+            "ask": 6451.4,
+            "bid": 6448.3
+        },
+        "lastTradedVolume": 63880
+    },
+    "1744642800000": {
+        "timestamp": 1744642800000,
+        "openPrice": {
+            "ask": 6468.3,
+            "bid": 6464.5
+        },
+        "closePrice": {
+            "ask": 6457.1,
+            "bid": 6453.3
+        },
+        "highPrice": {
+            "ask": 6469.8,
+            "bid": 6467
+        },
+        "lowPrice": {
+            "ask": 6372.9,
+            "bid": 6369.1
+        },
+        "lastTradedVolume": 79907
+    },
+    "1744657200000": {
+        "timestamp": 1744657200000,
+        "openPrice": {
+            "ask": 6456.8,
+            "bid": 6453
+        },
+        "closePrice": {
+            "ask": 6454.8,
+            "bid": 6447
+        },
+        "highPrice": {
+            "ask": 6470,
+            "bid": 6466.9
+        },
+        "lowPrice": {
+            "ask": 6447.9,
+            "bid": 6445.1
+        },
+        "lastTradedVolume": 3982
+    },
+    "1744671600000": {
+        "timestamp": 1744671600000,
+        "openPrice": {
+            "ask": 6466.3,
+            "bid": 6458.5
+        },
+        "closePrice": {
+            "ask": 6462.3,
+            "bid": 6458.5
+        },
+        "highPrice": {
+            "ask": 6487.8,
+            "bid": 6484.2
+        },
+        "lowPrice": {
+            "ask": 6454.8,
+            "bid": 6452
+        },
+        "lastTradedVolume": 4372
+    },
+    "1744686000000": {
+        "timestamp": 1744686000000,
+        "openPrice": {
+            "ask": 6461.3,
+            "bid": 6458.3
+        },
+        "closePrice": {
+            "ask": 6487,
+            "bid": 6484.2
+        },
+        "highPrice": {
+            "ask": 6491.5,
+            "bid": 6487.9
+        },
+        "lowPrice": {
+            "ask": 6452.8,
+            "bid": 6449.7
+        },
+        "lastTradedVolume": 8541
+    },
+    "1744700400000": {
+        "timestamp": 1744700400000,
+        "openPrice": {
+            "ask": 6486.7,
+            "bid": 6483.9
+        },
+        "closePrice": {
+            "ask": 6415.8,
+            "bid": 6412
+        },
+        "highPrice": {
+            "ask": 6504.7,
+            "bid": 6501.9
+        },
+        "lowPrice": {
+            "ask": 6400.1,
+            "bid": 6396.3
+        },
+        "lastTradedVolume": 57839
+    },
+    "1744714800000": {
+        "timestamp": 1744714800000,
+        "openPrice": {
+            "ask": 6416.8,
+            "bid": 6413
+        },
+        "closePrice": {
+            "ask": 6434,
+            "bid": 6431.2
+        },
+        "highPrice": {
+            "ask": 6479.6,
+            "bid": 6476.8
+        },
+        "lowPrice": {
+            "ask": 6391.9,
+            "bid": 6388.1
+        },
+        "lastTradedVolume": 65798
+    },
+    "1744729200000": {
+        "timestamp": 1744729200000,
+        "openPrice": {
+            "ask": 6433.5,
+            "bid": 6430.7
+        },
+        "closePrice": {
+            "ask": 6433.6,
+            "bid": 6429.8
+        },
+        "highPrice": {
+            "ask": 6437.7,
+            "bid": 6434.7
+        },
+        "lowPrice": {
+            "ask": 6383.4,
+            "bid": 6380.3
+        },
+        "lastTradedVolume": 67652
+    },
+    "1744743600000": {
+        "timestamp": 1744743600000,
+        "openPrice": {
+            "ask": 6432.6,
+            "bid": 6429.5
+        },
+        "closePrice": {
+            "ask": 6442,
+            "bid": 6439.2
+        },
+        "highPrice": {
+            "ask": 6450.2,
+            "bid": 6446.3
+        },
+        "lowPrice": {
+            "ask": 6432.6,
+            "bid": 6428.9
+        },
+        "lastTradedVolume": 6078
+    },
+    "1744758000000": {
+        "timestamp": 1744758000000,
+        "openPrice": {
+            "ask": 6438.7,
+            "bid": 6435.9
+        },
+        "closePrice": {
+            "ask": 6405.1,
+            "bid": 6402.3
+        },
+        "highPrice": {
+            "ask": 6446,
+            "bid": 6442.5
+        },
+        "lowPrice": {
+            "ask": 6404.1,
+            "bid": 6400.6
+        },
+        "lastTradedVolume": 4985
+    },
+    "1744772400000": {
+        "timestamp": 1744772400000,
+        "openPrice": {
+            "ask": 6404.1,
+            "bid": 6401.3
+        },
+        "closePrice": {
+            "ask": 6356,
+            "bid": 6352.2
+        },
+        "highPrice": {
+            "ask": 6419.9,
+            "bid": 6416.4
+        },
+        "lowPrice": {
+            "ask": 6335.4,
+            "bid": 6332.3
+        },
+        "lastTradedVolume": 13602
+    },
+    "1744786800000": {
+        "timestamp": 1744786800000,
+        "openPrice": {
+            "ask": 6355.7,
+            "bid": 6352.9
+        },
+        "closePrice": {
+            "ask": 6478.7,
+            "bid": 6475.9
+        },
+        "highPrice": {
+            "ask": 6508.4,
+            "bid": 6505.1
+        },
+        "lowPrice": {
+            "ask": 6352.4,
+            "bid": 6348.9
+        },
+        "lastTradedVolume": 72111
+    },
+    "1744801200000": {
+        "timestamp": 1744801200000,
+        "openPrice": {
+            "ask": 6479.4,
+            "bid": 6475.6
+        },
+        "closePrice": {
+            "ask": 6525.7,
+            "bid": 6521.9
+        },
+        "highPrice": {
+            "ask": 6557.3,
+            "bid": 6554.5
+        },
+        "lowPrice": {
+            "ask": 6466.2,
+            "bid": 6463.4
+        },
+        "lastTradedVolume": 87478
+    },
+    "1744815600000": {
+        "timestamp": 1744815600000,
+        "openPrice": {
+            "ask": 6526,
+            "bid": 6522.9
+        },
+        "closePrice": {
+            "ask": 6549.8,
+            "bid": 6546
+        },
+        "highPrice": {
+            "ask": 6576.9,
+            "bid": 6574.1
+        },
+        "lowPrice": {
+            "ask": 6499.3,
+            "bid": 6495.8
+        },
+        "lastTradedVolume": 78214
+    },
+    "1744830000000": {
+        "timestamp": 1744830000000,
+        "openPrice": {
+            "ask": 6550.5,
+            "bid": 6547
+        },
+        "closePrice": {
+            "ask": 6550.4,
+            "bid": 6542.6
+        },
+        "highPrice": {
+            "ask": 6577.2,
+            "bid": 6574.4
+        },
+        "lowPrice": {
+            "ask": 6537.4,
+            "bid": 6533.6
+        },
+        "lastTradedVolume": 6884
+    },
+    "1744844400000": {
+        "timestamp": 1744844400000,
+        "openPrice": {
+            "ask": 6577.1,
+            "bid": 6569.3
+        },
+        "closePrice": {
+            "ask": 6588.6,
+            "bid": 6585.8
+        },
+        "highPrice": {
+            "ask": 6592.3,
+            "bid": 6589.5
+        },
+        "lowPrice": {
+            "ask": 6541.7,
+            "bid": 6538.9
+        },
+        "lastTradedVolume": 10334
+    },
+    "1744858800000": {
+        "timestamp": 1744858800000,
+        "openPrice": {
+            "ask": 6588.3,
+            "bid": 6585.5
+        },
+        "closePrice": {
+            "ask": 6572.4,
+            "bid": 6568.6
+        },
+        "highPrice": {
+            "ask": 6625.9,
+            "bid": 6623.1
+        },
+        "lowPrice": {
+            "ask": 6569.7,
+            "bid": 6566.6
+        },
+        "lastTradedVolume": 20817
+    },
+    "1744873200000": {
+        "timestamp": 1744873200000,
+        "openPrice": {
+            "ask": 6572.7,
+            "bid": 6568.9
+        },
+        "closePrice": {
+            "ask": 6594.8,
+            "bid": 6591
+        },
+        "highPrice": {
+            "ask": 6601.1,
+            "bid": 6598
+        },
+        "lowPrice": {
+            "ask": 6563.3,
+            "bid": 6560.2
+        },
+        "lastTradedVolume": 41987
+    },
+    "1744887600000": {
+        "timestamp": 1744887600000,
+        "openPrice": {
+            "ask": 6595.1,
+            "bid": 6592.3
+        },
+        "closePrice": {
+            "ask": 6626.5,
+            "bid": 6623.7
+        },
+        "highPrice": {
+            "ask": 6638.1,
+            "bid": 6634.8
+        },
+        "lowPrice": {
+            "ask": 6589.1,
+            "bid": 6586.3
+        },
+        "lastTradedVolume": 60583
+    },
+    "1744902000000": {
+        "timestamp": 1744902000000,
+        "openPrice": {
+            "ask": 6626.8,
+            "bid": 6623
+        },
+        "closePrice": {
+            "ask": 6722.3,
+            "bid": 6719.5
+        },
+        "highPrice": {
+            "ask": 6755.4,
+            "bid": 6752.6
+        },
+        "lowPrice": {
+            "ask": 6626.3,
+            "bid": 6623
+        },
+        "lastTradedVolume": 93579
+    },
+    "1744916400000": {
+        "timestamp": 1744916400000,
+        "openPrice": {
+            "ask": 6723,
+            "bid": 6719.2
+        },
+        "closePrice": {
+            "ask": 6708.3,
+            "bid": 6704.5
+        },
+        "highPrice": {
+            "ask": 6723.9,
+            "bid": 6720.8
+        },
+        "lowPrice": {
+            "ask": 6692.8,
+            "bid": 6690
+        },
+        "lastTradedVolume": 8328
+    },
+    "1745175600000": {
+        "timestamp": 1745175600000,
+        "openPrice": {
+            "ask": 6688.1,
+            "bid": 6684.3
+        },
+        "closePrice": {
+            "ask": 6642.7,
+            "bid": 6638.9
+        },
+        "highPrice": {
+            "ask": 6706.4,
+            "bid": 6701.6
+        },
+        "lowPrice": {
+            "ask": 6632.8,
+            "bid": 6629.5
+        },
+        "lastTradedVolume": 2433
+    },
+    "1745190000000": {
+        "timestamp": 1745190000000,
+        "openPrice": {
+            "ask": 6642.3,
+            "bid": 6638.5
+        },
+        "closePrice": {
+            "ask": 6616.1,
+            "bid": 6613.3
+        },
+        "highPrice": {
+            "ask": 6670.1,
+            "bid": 6666.3
+        },
+        "lowPrice": {
+            "ask": 6594.9,
+            "bid": 6591.5
+        },
+        "lastTradedVolume": 7310
+    },
+    "1745204400000": {
+        "timestamp": 1745204400000,
+        "openPrice": {
+            "ask": 6616.7,
+            "bid": 6612.9
+        },
+        "closePrice": {
+            "ask": 6628.2,
+            "bid": 6624.4
+        },
+        "highPrice": {
+            "ask": 6645.1,
+            "bid": 6642.3
+        },
+        "lowPrice": {
+            "ask": 6605,
+            "bid": 6602.2
+        },
+        "lastTradedVolume": 7151
+    },
+    "1745218800000": {
+        "timestamp": 1745218800000,
+        "openPrice": {
+            "ask": 6627.8,
+            "bid": 6625
+        },
+        "closePrice": {
+            "ask": 6565.3,
+            "bid": 6562.5
+        },
+        "highPrice": {
+            "ask": 6631.4,
+            "bid": 6628.4
+        },
+        "lowPrice": {
+            "ask": 6535.5,
+            "bid": 6532.7
+        },
+        "lastTradedVolume": 37350
+    },
+    "1745233200000": {
+        "timestamp": 1745233200000,
+        "openPrice": {
+            "ask": 6565.9,
+            "bid": 6562.1
+        },
+        "closePrice": {
+            "ask": 6549.3,
+            "bid": 6545.5
+        },
+        "highPrice": {
+            "ask": 6586,
+            "bid": 6583.2
+        },
+        "lowPrice": {
+            "ask": 6499.7,
+            "bid": 6496.9
+        },
+        "lastTradedVolume": 39570
+    },
+    "1745247600000": {
+        "timestamp": 1745247600000,
+        "openPrice": {
+            "ask": 6548.9,
+            "bid": 6545.1
+        },
+        "closePrice": {
+            "ask": 6578.8,
+            "bid": 6575
+        },
+        "highPrice": {
+            "ask": 6582.9,
+            "bid": 6579.7
+        },
+        "lowPrice": {
+            "ask": 6511.3,
+            "bid": 6507.7
+        },
+        "lastTradedVolume": 52251
+    },
+    "1745262000000": {
+        "timestamp": 1745262000000,
+        "openPrice": {
+            "ask": 6578.5,
+            "bid": 6575.7
+        },
+        "closePrice": {
+            "ask": 6584.6,
+            "bid": 6576.8
+        },
+        "highPrice": {
+            "ask": 6598.3,
+            "bid": 6595.5
+        },
+        "lowPrice": {
+            "ask": 6576.8,
+            "bid": 6571.2
+        },
+        "lastTradedVolume": 2988
+    },
+    "1745276400000": {
+        "timestamp": 1745276400000,
+        "openPrice": {
+            "ask": 6603.4,
+            "bid": 6600.6
+        },
+        "closePrice": {
+            "ask": 6591.8,
+            "bid": 6589
+        },
+        "highPrice": {
+            "ask": 6632.6,
+            "bid": 6629.2
+        },
+        "lowPrice": {
+            "ask": 6585.8,
+            "bid": 6583
+        },
+        "lastTradedVolume": 4295
+    },
+    "1745290800000": {
+        "timestamp": 1745290800000,
+        "openPrice": {
+            "ask": 6592.2,
+            "bid": 6588.4
+        },
+        "closePrice": {
+            "ask": 6619.8,
+            "bid": 6617
+        },
+        "highPrice": {
+            "ask": 6624.9,
+            "bid": 6621.7
+        },
+        "lowPrice": {
+            "ask": 6581.3,
+            "bid": 6577.5
+        },
+        "lastTradedVolume": 7791
+    },
+    "1745305200000": {
+        "timestamp": 1745305200000,
+        "openPrice": {
+            "ask": 6619.5,
+            "bid": 6616.7
+        },
+        "closePrice": {
+            "ask": 6638.3,
+            "bid": 6634.5
+        },
+        "highPrice": {
+            "ask": 6663.9,
+            "bid": 6660.5
+        },
+        "lowPrice": {
+            "ask": 6611.4,
+            "bid": 6608.2
+        },
+        "lastTradedVolume": 44413
+    },
+    "1745319600000": {
+        "timestamp": 1745319600000,
+        "openPrice": {
+            "ask": 6636.7,
+            "bid": 6633.9
+        },
+        "closePrice": {
+            "ask": 6630.3,
+            "bid": 6627.5
+        },
+        "highPrice": {
+            "ask": 6658.6,
+            "bid": 6655.2
+        },
+        "lowPrice": {
+            "ask": 6596.3,
+            "bid": 6593.1
+        },
+        "lastTradedVolume": 71956
+    },
+    "1745334000000": {
+        "timestamp": 1745334000000,
+        "openPrice": {
+            "ask": 6630.7,
+            "bid": 6626.9
+        },
+        "closePrice": {
+            "ask": 6652,
+            "bid": 6649.2
+        },
+        "highPrice": {
+            "ask": 6729.4,
+            "bid": 6726.6
+        },
+        "lowPrice": {
+            "ask": 6624.1,
+            "bid": 6620.9
+        },
+        "lastTradedVolume": 97542
+    },
+    "1745348400000": {
+        "timestamp": 1745348400000,
+        "openPrice": {
+            "ask": 6651.6,
+            "bid": 6648.8
+        },
+        "closePrice": {
+            "ask": 6706.3,
+            "bid": 6702.5
+        },
+        "highPrice": {
+            "ask": 6715.6,
+            "bid": 6711.8
+        },
+        "lowPrice": {
+            "ask": 6646.2,
+            "bid": 6642.4
+        },
+        "lastTradedVolume": 5386
+    },
+    "1745362800000": {
+        "timestamp": 1745362800000,
+        "openPrice": {
+            "ask": 6721.5,
+            "bid": 6717.7
+        },
+        "closePrice": {
+            "ask": 6701.7,
+            "bid": 6698.9
+        },
+        "highPrice": {
+            "ask": 6739,
+            "bid": 6735.6
+        },
+        "lowPrice": {
+            "ask": 6698.1,
+            "bid": 6694.4
+        },
+        "lastTradedVolume": 5948
+    },
+    "1745377200000": {
+        "timestamp": 1745377200000,
+        "openPrice": {
+            "ask": 6703.1,
+            "bid": 6699.3
+        },
+        "closePrice": {
+            "ask": 6767.6,
+            "bid": 6764.8
+        },
+        "highPrice": {
+            "ask": 6782.2,
+            "bid": 6779.4
+        },
+        "lowPrice": {
+            "ask": 6689.5,
+            "bid": 6685.7
+        },
+        "lastTradedVolume": 10770
+    },
+    "1745391600000": {
+        "timestamp": 1745391600000,
+        "openPrice": {
+            "ask": 6768,
+            "bid": 6765.2
+        },
+        "closePrice": {
+            "ask": 6731.2,
+            "bid": 6728.4
+        },
+        "highPrice": {
+            "ask": 6785,
+            "bid": 6781.8
+        },
+        "lowPrice": {
+            "ask": 6723.5,
+            "bid": 6720.7
+        },
+        "lastTradedVolume": 48714
+    },
+    "1745406000000": {
+        "timestamp": 1745406000000,
+        "openPrice": {
+            "ask": 6731.8,
+            "bid": 6728
+        },
+        "closePrice": {
+            "ask": 6553.1,
+            "bid": 6549.3
+        },
+        "highPrice": {
+            "ask": 6732.6,
+            "bid": 6728.8
+        },
+        "lowPrice": {
+            "ask": 6455.8,
+            "bid": 6450.6
+        },
+        "lastTradedVolume": 137452
+    },
+    "1745420400000": {
+        "timestamp": 1745420400000,
+        "openPrice": {
+            "ask": 6552.7,
+            "bid": 6548.9
+        },
+        "closePrice": {
+            "ask": 6527.3,
+            "bid": 6523.5
+        },
+        "highPrice": {
+            "ask": 6580.2,
+            "bid": 6576.4
+        },
+        "lowPrice": {
+            "ask": 6477.6,
+            "bid": 6474.8
+        },
+        "lastTradedVolume": 86909
+    },
+    "1745434800000": {
+        "timestamp": 1745434800000,
+        "openPrice": {
+            "ask": 6526.9,
+            "bid": 6524.1
+        },
+        "closePrice": {
+            "ask": 6538.7,
+            "bid": 6530.9
+        },
+        "highPrice": {
+            "ask": 6547,
+            "bid": 6543.2
+        },
+        "lowPrice": {
+            "ask": 6519.8,
+            "bid": 6516
+        },
+        "lastTradedVolume": 3908
+    },
+    "1745449200000": {
+        "timestamp": 1745449200000,
+        "openPrice": {
+            "ask": 6535.1,
+            "bid": 6527.3
+        },
+        "closePrice": {
+            "ask": 6532.1,
+            "bid": 6529.3
+        },
+        "highPrice": {
+            "ask": 6560.1,
+            "bid": 6556.9
+        },
+        "lowPrice": {
+            "ask": 6516.3,
+            "bid": 6512.9
+        },
+        "lastTradedVolume": 1822
+    },
+    "1745463600000": {
+        "timestamp": 1745463600000,
+        "openPrice": {
+            "ask": 6531.5,
+            "bid": 6528.3
+        },
+        "closePrice": {
+            "ask": 6578.8,
+            "bid": 6575
+        },
+        "highPrice": {
+            "ask": 6580.9,
+            "bid": 6578
+        },
+        "lowPrice": {
+            "ask": 6521.1,
+            "bid": 6518.3
+        },
+        "lastTradedVolume": 7658
+    },
+    "1745478000000": {
+        "timestamp": 1745478000000,
+        "openPrice": {
+            "ask": 6578.3,
+            "bid": 6575.5
+        },
+        "closePrice": {
+            "ask": 6599,
+            "bid": 6596.2
+        },
+        "highPrice": {
+            "ask": 6605,
+            "bid": 6601.6
+        },
+        "lowPrice": {
+            "ask": 6535.6,
+            "bid": 6532.4
+        },
+        "lastTradedVolume": 49852
+    },
+    "1745492400000": {
+        "timestamp": 1745492400000,
+        "openPrice": {
+            "ask": 6599.4,
+            "bid": 6596.6
+        },
+        "closePrice": {
+            "ask": 6572.6,
+            "bid": 6569.8
+        },
+        "highPrice": {
+            "ask": 6626,
+            "bid": 6622.7
+        },
+        "lowPrice": {
+            "ask": 6505.8,
+            "bid": 6502.6
+        },
+        "lastTradedVolume": 57064
+    },
+    "1745506800000": {
+        "timestamp": 1745506800000,
+        "openPrice": {
+            "ask": 6573,
+            "bid": 6569.2
+        },
+        "closePrice": {
+            "ask": 6564.7,
+            "bid": 6560.9
+        },
+        "highPrice": {
+            "ask": 6596.1,
+            "bid": 6593.3
+        },
+        "lowPrice": {
+            "ask": 6519.6,
+            "bid": 6516.2
+        },
+        "lastTradedVolume": 50455
+    },
+    "1745521200000": {
+        "timestamp": 1745521200000,
+        "openPrice": {
+            "ask": 6564.3,
+            "bid": 6561.5
+        },
+        "closePrice": {
+            "ask": 6580.5,
+            "bid": 6572.7
+        },
+        "highPrice": {
+            "ask": 6582,
+            "bid": 6575.8
+        },
+        "lowPrice": {
+            "ask": 6555.1,
+            "bid": 6551.9
+        },
+        "lastTradedVolume": 2686
+    },
+    "1745535600000": {
+        "timestamp": 1745535600000,
+        "openPrice": {
+            "ask": 6581.7,
+            "bid": 6573.9
+        },
+        "closePrice": {
+            "ask": 6598.5,
+            "bid": 6594.7
+        },
+        "highPrice": {
+            "ask": 6609.6,
+            "bid": 6606.8
+        },
+        "lowPrice": {
+            "ask": 6578.2,
+            "bid": 6573.9
+        },
+        "lastTradedVolume": 2140
+    },
+    "1745550000000": {
+        "timestamp": 1745550000000,
+        "openPrice": {
+            "ask": 6596.7,
+            "bid": 6593.9
+        },
+        "closePrice": {
+            "ask": 6619,
+            "bid": 6616.2
+        },
+        "highPrice": {
+            "ask": 6631.9,
+            "bid": 6628.5
+        },
+        "lowPrice": {
+            "ask": 6581,
+            "bid": 6577.8
+        },
+        "lastTradedVolume": 4300
+    },
+    "1745564400000": {
+        "timestamp": 1745564400000,
+        "openPrice": {
+            "ask": 6619.9,
+            "bid": 6617.1
+        },
+        "closePrice": {
+            "ask": 6481.3,
+            "bid": 6478.5
+        },
+        "highPrice": {
+            "ask": 6622.5,
+            "bid": 6619.2
+        },
+        "lowPrice": {
+            "ask": 6478.3,
+            "bid": 6475.5
+        },
+        "lastTradedVolume": 32875
+    },
+    "1745578800000": {
+        "timestamp": 1745578800000,
+        "openPrice": {
+            "ask": 6482.1,
+            "bid": 6478.3
+        },
+        "closePrice": {
+            "ask": 6537.5,
+            "bid": 6533.7
+        },
+        "highPrice": {
+            "ask": 6562,
+            "bid": 6558.7
+        },
+        "lowPrice": {
+            "ask": 6477.8,
+            "bid": 6474.6
+        },
+        "lastTradedVolume": 41540
+    },
+    "1745593200000": {
+        "timestamp": 1745593200000,
+        "openPrice": {
+            "ask": 6536.9,
+            "bid": 6533.1
+        },
+        "closePrice": {
+            "ask": 6595.8,
+            "bid": 6592
+        },
+        "highPrice": {
+            "ask": 6616.8,
+            "bid": 6613
+        },
+        "lowPrice": {
+            "ask": 6535.5,
+            "bid": 6532.1
+        },
+        "lastTradedVolume": 57600
+    },
+    "1745607600000": {
+        "timestamp": 1745607600000,
+        "openPrice": {
+            "ask": 6596.2,
+            "bid": 6593
+        },
+        "closePrice": {
+            "ask": 6604,
+            "bid": 6600.2
+        },
+        "highPrice": {
+            "ask": 6622.6,
+            "bid": 6619.3
+        },
+        "lowPrice": {
+            "ask": 6595.8,
+            "bid": 6592
+        },
+        "lastTradedVolume": 3998
+    },
+    "1745780400000": {
+        "timestamp": 1745780400000,
+        "openPrice": {
+            "ask": 6613.6,
+            "bid": 6605.8
+        },
+        "closePrice": {
+            "ask": 6623,
+            "bid": 6615.2
+        },
+        "highPrice": {
+            "ask": 6656.6,
+            "bid": 6651.3
+        },
+        "lowPrice": {
+            "ask": 6587.6,
+            "bid": 6581.3
+        },
+        "lastTradedVolume": 572
+    },
+    "1745794800000": {
+        "timestamp": 1745794800000,
+        "openPrice": {
+            "ask": 6621,
+            "bid": 6617.2
+        },
+        "closePrice": {
+            "ask": 6570.9,
+            "bid": 6567.1
+        },
+        "highPrice": {
+            "ask": 6625.5,
+            "bid": 6621.7
+        },
+        "lowPrice": {
+            "ask": 6568,
+            "bid": 6565.2
+        },
+        "lastTradedVolume": 11113
+    },
+    "1745809200000": {
+        "timestamp": 1745809200000,
+        "openPrice": {
+            "ask": 6569.9,
+            "bid": 6568.1
+        },
+        "closePrice": {
+            "ask": 6610.3,
+            "bid": 6607.5
+        },
+        "highPrice": {
+            "ask": 6629.5,
+            "bid": 6625.7
+        },
+        "lowPrice": {
+            "ask": 6569.9,
+            "bid": 6566.1
+        },
+        "lastTradedVolume": 9999
+    },
+    "1745823600000": {
+        "timestamp": 1745823600000,
+        "openPrice": {
+            "ask": 6609.3,
+            "bid": 6606.5
+        },
+        "closePrice": {
+            "ask": 6552.7,
+            "bid": 6549.9
+        },
+        "highPrice": {
+            "ask": 6609.3,
+            "bid": 6607.5
+        },
+        "lowPrice": {
+            "ask": 6538.7,
+            "bid": 6534.9
+        },
+        "lastTradedVolume": 51199
+    },
+    "1745838000000": {
+        "timestamp": 1745838000000,
+        "openPrice": {
+            "ask": 6553.7,
+            "bid": 6550.9
+        },
+        "closePrice": {
+            "ask": 6485.1,
+            "bid": 6482.3
+        },
+        "highPrice": {
+            "ask": 6586.4,
+            "bid": 6583.6
+        },
+        "lowPrice": {
+            "ask": 6478.1,
+            "bid": 6475.3
+        },
+        "lastTradedVolume": 132200
+    },
+    "1745852400000": {
+        "timestamp": 1745852400000,
+        "openPrice": {
+            "ask": 6484.6,
+            "bid": 6481.3
+        },
+        "closePrice": {
+            "ask": 6471.5,
+            "bid": 6467.7
+        },
+        "highPrice": {
+            "ask": 6495.1,
+            "bid": 6492.3
+        },
+        "lowPrice": {
+            "ask": 6425.7,
+            "bid": 6422.9
+        },
+        "lastTradedVolume": 106797
+    },
+    "1745866800000": {
+        "timestamp": 1745866800000,
+        "openPrice": {
+            "ask": 6471,
+            "bid": 6468.7
+        },
+        "closePrice": {
+            "ask": 6460.1,
+            "bid": 6452.3
+        },
+        "highPrice": {
+            "ask": 6480.4,
+            "bid": 6477.1
+        },
+        "lowPrice": {
+            "ask": 6454.2,
+            "bid": 6449.9
+        },
+        "lastTradedVolume": 272756
+    },
+    "1745881200000": {
+        "timestamp": 1745881200000,
+        "openPrice": {
+            "ask": 6474.8,
+            "bid": 6471
+        },
+        "closePrice": {
+            "ask": 6443.7,
+            "bid": 6440.9
+        },
+        "highPrice": {
+            "ask": 6482.7,
+            "bid": 6479.9
+        },
+        "lowPrice": {
+            "ask": 6441.7,
+            "bid": 6438.9
+        },
+        "lastTradedVolume": 11345
+    },
+    "1745895600000": {
+        "timestamp": 1745895600000,
+        "openPrice": {
+            "ask": 6443.2,
+            "bid": 6439.9
+        },
+        "closePrice": {
+            "ask": 6415.4,
+            "bid": 6412.6
+        },
+        "highPrice": {
+            "ask": 6452.6,
+            "bid": 6448.8
+        },
+        "lowPrice": {
+            "ask": 6398.5,
+            "bid": 6395.7
+        },
+        "lastTradedVolume": 19520
+    },
+    "1745910000000": {
+        "timestamp": 1745910000000,
+        "openPrice": {
+            "ask": 6416.4,
+            "bid": 6413.6
+        },
+        "closePrice": {
+            "ask": 6373.3,
+            "bid": 6370.5
+        },
+        "highPrice": {
+            "ask": 6434.4,
+            "bid": 6431.6
+        },
+        "lowPrice": {
+            "ask": 6356.3,
+            "bid": 6353.5
+        },
+        "lastTradedVolume": 100628
+    },
+    "1745924400000": {
+        "timestamp": 1745924400000,
+        "openPrice": {
+            "ask": 6372.3,
+            "bid": 6369.5
+        },
+        "closePrice": {
+            "ask": 6350.1,
+            "bid": 6346.3
+        },
+        "highPrice": {
+            "ask": 6393.2,
+            "bid": 6390.4
+        },
+        "lowPrice": {
+            "ask": 6319.1,
+            "bid": 6316.3
+        },
+        "lastTradedVolume": 101982
+    },
+    "1745938800000": {
+        "timestamp": 1745938800000,
+        "openPrice": {
+            "ask": 6349.1,
+            "bid": 6345.8
+        },
+        "closePrice": {
+            "ask": 6320.9,
+            "bid": 6317.1
+        },
+        "highPrice": {
+            "ask": 6380.1,
+            "bid": 6377.3
+        },
+        "lowPrice": {
+            "ask": 6310,
+            "bid": 6307.2
+        },
+        "lastTradedVolume": 116691
+    },
+    "1745953200000": {
+        "timestamp": 1745953200000,
+        "openPrice": {
+            "ask": 6319.9,
+            "bid": 6318.1
+        },
+        "closePrice": {
+            "ask": 6307.2,
+            "bid": 6299.4
+        },
+        "highPrice": {
+            "ask": 6331.8,
+            "bid": 6329
+        },
+        "lowPrice": {
+            "ask": 6293.7,
+            "bid": 6289.9
+        },
+        "lastTradedVolume": 8843
+    },
+    "1745967600000": {
+        "timestamp": 1745967600000,
+        "openPrice": {
+            "ask": 6318.1,
+            "bid": 6314.3
+        },
+        "closePrice": {
+            "ask": 6279.4,
+            "bid": 6276.6
+        },
+        "highPrice": {
+            "ask": 6332.5,
+            "bid": 6329.7
+        },
+        "lowPrice": {
+            "ask": 6275.5,
+            "bid": 6272.7
+        },
+        "lastTradedVolume": 10326
+    },
+    "1745982000000": {
+        "timestamp": 1745982000000,
+        "openPrice": {
+            "ask": 6282.4,
+            "bid": 6275.6
+        },
+        "closePrice": {
+            "ask": 6263.4,
+            "bid": 6260.6
+        },
+        "highPrice": {
+            "ask": 6284.5,
+            "bid": 6281.7
+        },
+        "lowPrice": {
+            "ask": 6246.4,
+            "bid": 6243.6
+        },
+        "lastTradedVolume": 24209
+    },
+    "1745996400000": {
+        "timestamp": 1745996400000,
+        "openPrice": {
+            "ask": 6262.4,
+            "bid": 6259.6
+        },
+        "closePrice": {
+            "ask": 6283.9,
+            "bid": 6280.1
+        },
+        "highPrice": {
+            "ask": 6295,
+            "bid": 6292.1
+        },
+        "lowPrice": {
+            "ask": 6211.3,
+            "bid": 6207.5
+        },
+        "lastTradedVolume": 101019
+    },
+    "1746010800000": {
+        "timestamp": 1746010800000,
+        "openPrice": {
+            "ask": 6282.9,
+            "bid": 6279.1
+        },
+        "closePrice": {
+            "ask": 6227.8,
+            "bid": 6225
+        },
+        "highPrice": {
+            "ask": 6298.7,
+            "bid": 6295.9
+        },
+        "lowPrice": {
+            "ask": 6194.4,
+            "bid": 6191.1
+        },
+        "lastTradedVolume": 102057
+    },
+    "1746025200000": {
+        "timestamp": 1746025200000,
+        "openPrice": {
+            "ask": 6226.8,
+            "bid": 6224
+        },
+        "closePrice": {
+            "ask": 6102.5,
+            "bid": 6099.7
+        },
+        "highPrice": {
+            "ask": 6282.8,
+            "bid": 6280
+        },
+        "lowPrice": {
+            "ask": 6076.1,
+            "bid": 6073.3
+        },
+        "lastTradedVolume": 197758
+    },
+    "1746039600000": {
+        "timestamp": 1746039600000,
+        "openPrice": {
+            "ask": 6103.5,
+            "bid": 6100.7
+        },
+        "closePrice": {
+            "ask": 6108.9,
+            "bid": 6101.1
+        },
+        "highPrice": {
+            "ask": 6125.4,
+            "bid": 6121.7
+        },
+        "lowPrice": {
+            "ask": 6090.5,
+            "bid": 6087.7
+        },
+        "lastTradedVolume": 11456
+    },
+    "1746054000000": {
+        "timestamp": 1746054000000,
+        "openPrice": {
+            "ask": 6125.4,
+            "bid": 6117.6
+        },
+        "closePrice": {
+            "ask": 6116.3,
+            "bid": 6112.5
+        },
+        "highPrice": {
+            "ask": 6131.3,
+            "bid": 6128.5
+        },
+        "lowPrice": {
+            "ask": 6102.3,
+            "bid": 6099.5
+        },
+        "lastTradedVolume": 3722
+    },
+    "1746068400000": {
+        "timestamp": 1746068400000,
+        "openPrice": {
+            "ask": 6116.2,
+            "bid": 6113.4
+        },
+        "closePrice": {
+            "ask": 6072.7,
+            "bid": 6068.9
+        },
+        "highPrice": {
+            "ask": 6121.2,
+            "bid": 6118.4
+        },
+        "lowPrice": {
+            "ask": 6063.3,
+            "bid": 6060.5
+        },
+        "lastTradedVolume": 9617
+    },
+    "1746082800000": {
+        "timestamp": 1746082800000,
+        "openPrice": {
+            "ask": 6073.2,
+            "bid": 6069.4
+        },
+        "closePrice": {
+            "ask": 5945.4,
+            "bid": 5942.6
+        },
+        "highPrice": {
+            "ask": 6077.2,
+            "bid": 6074.4
+        },
+        "lowPrice": {
+            "ask": 5930.4,
+            "bid": 5927.6
+        },
+        "lastTradedVolume": 87441
+    },
+    "1746097200000": {
+        "timestamp": 1746097200000,
+        "openPrice": {
+            "ask": 5946.4,
+            "bid": 5943.6
+        },
+        "closePrice": {
+            "ask": 6130.6,
+            "bid": 6127.8
+        },
+        "highPrice": {
+            "ask": 6177.5,
+            "bid": 6174.7
+        },
+        "lowPrice": {
+            "ask": 5941.4,
+            "bid": 5937.7
+        },
+        "lastTradedVolume": 120002
+    },
+    "1746111600000": {
+        "timestamp": 1746111600000,
+        "openPrice": {
+            "ask": 6130.5,
+            "bid": 6127.7
+        },
+        "closePrice": {
+            "ask": 6193.2,
+            "bid": 6190.4
+        },
+        "highPrice": {
+            "ask": 6235,
+            "bid": 6231
+        },
+        "lowPrice": {
+            "ask": 6058.9,
+            "bid": 6056
+        },
+        "lastTradedVolume": 115588
+    },
+    "1746126000000": {
+        "timestamp": 1746126000000,
+        "openPrice": {
+            "ask": 6194.1,
+            "bid": 6190.3
+        },
+        "closePrice": {
+            "ask": 6189.1,
+            "bid": 6181.3
+        },
+        "highPrice": {
+            "ask": 6207.2,
+            "bid": 6204.3
+        },
+        "lowPrice": {
+            "ask": 6180.1,
+            "bid": 6177.3
+        },
+        "lastTradedVolume": 10497
+    },
+    "1746140400000": {
+        "timestamp": 1746140400000,
+        "openPrice": {
+            "ask": 6181,
+            "bid": 6173.2
+        },
+        "closePrice": {
+            "ask": 6263.4,
+            "bid": 6260.6
+        },
+        "highPrice": {
+            "ask": 6268.5,
+            "bid": 6265.7
+        },
+        "lowPrice": {
+            "ask": 6179,
+            "bid": 6173.2
+        },
+        "lastTradedVolume": 9248
+    },
+    "1746154800000": {
+        "timestamp": 1746154800000,
+        "openPrice": {
+            "ask": 6262.5,
+            "bid": 6259.7
+        },
+        "closePrice": {
+            "ask": 6219.6,
+            "bid": 6216.8
+        },
+        "highPrice": {
+            "ask": 6262.5,
+            "bid": 6259.7
+        },
+        "lowPrice": {
+            "ask": 6216.6,
+            "bid": 6212.8
+        },
+        "lastTradedVolume": 9158
+    },
+    "1746169200000": {
+        "timestamp": 1746169200000,
+        "openPrice": {
+            "ask": 6220.5,
+            "bid": 6217.7
+        },
+        "closePrice": {
+            "ask": 6183.3,
+            "bid": 6180.5
+        },
+        "highPrice": {
+            "ask": 6237.6,
+            "bid": 6233.8
+        },
+        "lowPrice": {
+            "ask": 6158.6,
+            "bid": 6155.4
+        },
+        "lastTradedVolume": 59596
+    },
+    "1746183600000": {
+        "timestamp": 1746183600000,
+        "openPrice": {
+            "ask": 6183.2,
+            "bid": 6180.4
+        },
+        "closePrice": {
+            "ask": 6126.1,
+            "bid": 6123.3
+        },
+        "highPrice": {
+            "ask": 6215.9,
+            "bid": 6213.1
+        },
+        "lowPrice": {
+            "ask": 6065.2,
+            "bid": 6061.5
+        },
+        "lastTradedVolume": 98005
+    },
+    "1746198000000": {
+        "timestamp": 1746198000000,
+        "openPrice": {
+            "ask": 6127,
+            "bid": 6124.2
+        },
+        "closePrice": {
+            "ask": 6112.3,
+            "bid": 6108.5
+        },
+        "highPrice": {
+            "ask": 6193.1,
+            "bid": 6190.2
+        },
+        "lowPrice": {
+            "ask": 6077.4,
+            "bid": 6073.6
+        },
+        "lastTradedVolume": 102933
+    },
+    "1746212400000": {
+        "timestamp": 1746212400000,
+        "openPrice": {
+            "ask": 6112.2,
+            "bid": 6109.4
+        },
+        "closePrice": {
+            "ask": 6141.9,
+            "bid": 6138.1
+        },
+        "highPrice": {
+            "ask": 6162.1,
+            "bid": 6159.3
+        },
+        "lowPrice": {
+            "ask": 6107.3,
+            "bid": 6104.4
+        },
+        "lastTradedVolume": 8959
+    },
+    "1746385200000": {
+        "timestamp": 1746385200000,
+        "openPrice": {
+            "ask": 5926.4,
+            "bid": 5922.6
+        },
+        "closePrice": {
+            "ask": 5922.2,
+            "bid": 5918.4
+        },
+        "highPrice": {
+            "ask": 5939,
+            "bid": 5935.2
+        },
+        "lowPrice": {
+            "ask": 5846,
+            "bid": 5842.2
+        },
+        "lastTradedVolume": 29300
+    },
+    "1746399600000": {
+        "timestamp": 1746399600000,
+        "openPrice": {
+            "ask": 5924.6,
+            "bid": 5916.8
+        },
+        "closePrice": {
+            "ask": 5908.6,
+            "bid": 5904.8
+        },
+        "highPrice": {
+            "ask": 5953.7,
+            "bid": 5950.2
+        },
+        "lowPrice": {
+            "ask": 5881.2,
+            "bid": 5877.4
+        },
+        "lastTradedVolume": 12891
+    },
+    "1746414000000": {
+        "timestamp": 1746414000000,
+        "openPrice": {
+            "ask": 5907.7,
+            "bid": 5904.9
+        },
+        "closePrice": {
+            "ask": 5962.3,
+            "bid": 5958.5
+        },
+        "highPrice": {
+            "ask": 5973.4,
+            "bid": 5969.6
+        },
+        "lowPrice": {
+            "ask": 5894.7,
+            "bid": 5891.2
+        },
+        "lastTradedVolume": 14895
+    },
+    "1746428400000": {
+        "timestamp": 1746428400000,
+        "openPrice": {
+            "ask": 5962.1,
+            "bid": 5958.3
+        },
+        "closePrice": {
+            "ask": 6041.8,
+            "bid": 6039
+        },
+        "highPrice": {
+            "ask": 6056.9,
+            "bid": 6054
+        },
+        "lowPrice": {
+            "ask": 5951.4,
+            "bid": 5947.7
+        },
+        "lastTradedVolume": 56958
+    },
+    "1746442800000": {
+        "timestamp": 1746442800000,
+        "openPrice": {
+            "ask": 6041.9,
+            "bid": 6039.1
+        },
+        "closePrice": {
+            "ask": 5977.7,
+            "bid": 5973.9
+        },
+        "highPrice": {
+            "ask": 6071.5,
+            "bid": 6068.7
+        },
+        "lowPrice": {
+            "ask": 5966.7,
+            "bid": 5963.9
+        },
+        "lastTradedVolume": 58653
+    },
+    "1746457200000": {
+        "timestamp": 1746457200000,
+        "openPrice": {
+            "ask": 5976.8,
+            "bid": 5974
+        },
+        "closePrice": {
+            "ask": 6022,
+            "bid": 6018.2
+        },
+        "highPrice": {
+            "ask": 6034,
+            "bid": 6031.2
+        },
+        "lowPrice": {
+            "ask": 5951.8,
+            "bid": 5948.9
+        },
+        "lastTradedVolume": 55910
+    },
+    "1746471600000": {
+        "timestamp": 1746471600000,
+        "openPrice": {
+            "ask": 6021.2,
+            "bid": 6018.4
+        },
+        "closePrice": {
+            "ask": 6027.1,
+            "bid": 6019.3
+        },
+        "highPrice": {
+            "ask": 6032.3,
+            "bid": 6026.7
+        },
+        "lowPrice": {
+            "ask": 6004.3,
+            "bid": 6001.4
+        },
+        "lastTradedVolume": 7730
+    },
+    "1746486000000": {
+        "timestamp": 1746486000000,
+        "openPrice": {
+            "ask": 6022.4,
+            "bid": 6014.6
+        },
+        "closePrice": {
+            "ask": 6108,
+            "bid": 6104.2
+        },
+        "highPrice": {
+            "ask": 6117.9,
+            "bid": 6114.1
+        },
+        "lowPrice": {
+            "ask": 6011.4,
+            "bid": 6007.6
+        },
+        "lastTradedVolume": 16175
+    },
+    "1746500400000": {
+        "timestamp": 1746500400000,
+        "openPrice": {
+            "ask": 6107,
+            "bid": 6104.1
+        },
+        "closePrice": {
+            "ask": 6132.3,
+            "bid": 6128.5
+        },
+        "highPrice": {
+            "ask": 6137.2,
+            "bid": 6133.6
+        },
+        "lowPrice": {
+            "ask": 6101.2,
+            "bid": 6098.4
+        },
+        "lastTradedVolume": 12411
+    },
+    "1746514800000": {
+        "timestamp": 1746514800000,
+        "openPrice": {
+            "ask": 6132.2,
+            "bid": 6128.4
+        },
+        "closePrice": {
+            "ask": 6129,
+            "bid": 6126.2
+        },
+        "highPrice": {
+            "ask": 6191.8,
+            "bid": 6189
+        },
+        "lowPrice": {
+            "ask": 6121.9,
+            "bid": 6119.1
+        },
+        "lastTradedVolume": 73995
+    },
+    "1746529200000": {
+        "timestamp": 1746529200000,
+        "openPrice": {
+            "ask": 6129.2,
+            "bid": 6126.4
+        },
+        "closePrice": {
+            "ask": 6225.4,
+            "bid": 6222.6
+        },
+        "highPrice": {
+            "ask": 6259.8,
+            "bid": 6256.9
+        },
+        "lowPrice": {
+            "ask": 6129.2,
+            "bid": 6126.4
+        },
+        "lastTradedVolume": 93497
+    },
+    "1746543600000": {
+        "timestamp": 1746543600000,
+        "openPrice": {
+            "ask": 6224.7,
+            "bid": 6221.9
+        },
+        "closePrice": {
+            "ask": 6199.6,
+            "bid": 6195.8
+        },
+        "highPrice": {
+            "ask": 6270.9,
+            "bid": 6267.6
+        },
+        "lowPrice": {
+            "ask": 6194.7,
+            "bid": 6191.8
+        },
+        "lastTradedVolume": 87275
+    },
+    "1746558000000": {
+        "timestamp": 1746558000000,
+        "openPrice": {
+            "ask": 6198.7,
+            "bid": 6195.9
+        },
+        "closePrice": {
+            "ask": 6196.7,
+            "bid": 6192.9
+        },
+        "highPrice": {
+            "ask": 6207.5,
+            "bid": 6204.6
+        },
+        "lowPrice": {
+            "ask": 6180.6,
+            "bid": 6177.5
+        },
+        "lastTradedVolume": 7380
+    },
+    "1746572400000": {
+        "timestamp": 1746572400000,
+        "openPrice": {
+            "ask": 6238.9,
+            "bid": 6236.1
+        },
+        "closePrice": {
+            "ask": 6247.9,
+            "bid": 6244.1
+        },
+        "highPrice": {
+            "ask": 6264.6,
+            "bid": 6260.8
+        },
+        "lowPrice": {
+            "ask": 6232.6,
+            "bid": 6228.8
+        },
+        "lastTradedVolume": 10681
+    },
+    "1746586800000": {
+        "timestamp": 1746586800000,
+        "openPrice": {
+            "ask": 6248.1,
+            "bid": 6244.3
+        },
+        "closePrice": {
+            "ask": 6278.4,
+            "bid": 6275.6
+        },
+        "highPrice": {
+            "ask": 6282.8,
+            "bid": 6279.9
+        },
+        "lowPrice": {
+            "ask": 6238.2,
+            "bid": 6235.3
+        },
+        "lastTradedVolume": 10971
+    },
+    "1746601200000": {
+        "timestamp": 1746601200000,
+        "openPrice": {
+            "ask": 6278.5,
+            "bid": 6275.7
+        },
+        "closePrice": {
+            "ask": 6244.3,
+            "bid": 6240.5
+        },
+        "highPrice": {
+            "ask": 6310.6,
+            "bid": 6307.4
+        },
+        "lowPrice": {
+            "ask": 6216.4,
+            "bid": 6213.6
+        },
+        "lastTradedVolume": 67975
+    },
+    "1746615600000": {
+        "timestamp": 1746615600000,
+        "openPrice": {
+            "ask": 6244.4,
+            "bid": 6240.6
+        },
+        "closePrice": {
+            "ask": 6165.2,
+            "bid": 6162.4
+        },
+        "highPrice": {
+            "ask": 6264.4,
+            "bid": 6261.1
+        },
+        "lowPrice": {
+            "ask": 6147.2,
+            "bid": 6144.4
+        },
+        "lastTradedVolume": 75102
+    },
+    "1746630000000": {
+        "timestamp": 1746630000000,
+        "openPrice": {
+            "ask": 6164.9,
+            "bid": 6162.1
+        },
+        "closePrice": {
+            "ask": 6113.2,
+            "bid": 6109.4
+        },
+        "highPrice": {
+            "ask": 6197.1,
+            "bid": 6194.1
+        },
+        "lowPrice": {
+            "ask": 6078.5,
+            "bid": 6074.7
+        },
+        "lastTradedVolume": 101275
+    },
+    "1746644400000": {
+        "timestamp": 1746644400000,
+        "openPrice": {
+            "ask": 6113.3,
+            "bid": 6110.4
+        },
+        "closePrice": {
+            "ask": 6091.2,
+            "bid": 6083.4
+        },
+        "highPrice": {
+            "ask": 6114.2,
+            "bid": 6110.5
+        },
+        "lowPrice": {
+            "ask": 6080.6,
+            "bid": 6077.8
+        },
+        "lastTradedVolume": 12595
+    },
+    "1746658800000": {
+        "timestamp": 1746658800000,
+        "openPrice": {
+            "ask": 6103.9,
+            "bid": 6096.1
+        },
+        "closePrice": {
+            "ask": 6137.8,
+            "bid": 6135
+        },
+        "highPrice": {
+            "ask": 6141,
+            "bid": 6138.2
+        },
+        "lowPrice": {
+            "ask": 6092.4,
+            "bid": 6089.4
+        },
+        "lastTradedVolume": 8264
+    },
+    "1746673200000": {
+        "timestamp": 1746673200000,
+        "openPrice": {
+            "ask": 6138,
+            "bid": 6135.2
+        },
+        "closePrice": {
+            "ask": 6123.3,
+            "bid": 6120.5
+        },
+        "highPrice": {
+            "ask": 6157.7,
+            "bid": 6154.7
+        },
+        "lowPrice": {
+            "ask": 6106.3,
+            "bid": 6103.3
+        },
+        "lastTradedVolume": 16784
+    },
+    "1746687600000": {
+        "timestamp": 1746687600000,
+        "openPrice": {
+            "ask": 6124.1,
+            "bid": 6121.3
+        },
+        "closePrice": {
+            "ask": 6195.5,
+            "bid": 6192.7
+        },
+        "highPrice": {
+            "ask": 6205.2,
+            "bid": 6201.5
+        },
+        "lowPrice": {
+            "ask": 6113.6,
+            "bid": 6110.8
+        },
+        "lastTradedVolume": 42867
+    },
+    "1746702000000": {
+        "timestamp": 1746702000000,
+        "openPrice": {
+            "ask": 6195.3,
+            "bid": 6192.5
+        },
+        "closePrice": {
+            "ask": 6239.1,
+            "bid": 6236.3
+        },
+        "highPrice": {
+            "ask": 6265.7,
+            "bid": 6261.9
+        },
+        "lowPrice": {
+            "ask": 6163.7,
+            "bid": 6160.9
+        },
+        "lastTradedVolume": 94697
+    },
+    "1746716400000": {
+        "timestamp": 1746716400000,
+        "openPrice": {
+            "ask": 6238.8,
+            "bid": 6236
+        },
+        "closePrice": {
+            "ask": 6276,
+            "bid": 6273.2
+        },
+        "highPrice": {
+            "ask": 6288.5,
+            "bid": 6284.7
+        },
+        "lowPrice": {
+            "ask": 6229.9,
+            "bid": 6226.5
+        },
+        "lastTradedVolume": 83452
+    },
+    "1746730800000": {
+        "timestamp": 1746730800000,
+        "openPrice": {
+            "ask": 6276.1,
+            "bid": 6273.3
+        },
+        "closePrice": {
+            "ask": 6309.5,
+            "bid": 6305.7
+        },
+        "highPrice": {
+            "ask": 6325.8,
+            "bid": 6323
+        },
+        "lowPrice": {
+            "ask": 6271.1,
+            "bid": 6268.2
+        },
+        "lastTradedVolume": 13476
+    },
+    "1746745200000": {
+        "timestamp": 1746745200000,
+        "openPrice": {
+            "ask": 6296,
+            "bid": 6292.2
+        },
+        "closePrice": {
+            "ask": 6294.3,
+            "bid": 6291.5
+        },
+        "highPrice": {
+            "ask": 6304,
+            "bid": 6301.2
+        },
+        "lowPrice": {
+            "ask": 6272.2,
+            "bid": 6269.3
+        },
+        "lastTradedVolume": 8586
+    },
+    "1746759600000": {
+        "timestamp": 1746759600000,
+        "openPrice": {
+            "ask": 6294,
+            "bid": 6291.2
+        },
+        "closePrice": {
+            "ask": 6312.1,
+            "bid": 6309.3
+        },
+        "highPrice": {
+            "ask": 6324.8,
+            "bid": 6322
+        },
+        "lowPrice": {
+            "ask": 6286.3,
+            "bid": 6282.5
+        },
+        "lastTradedVolume": 16786
+    },
+    "1746774000000": {
+        "timestamp": 1746774000000,
+        "openPrice": {
+            "ask": 6311.3,
+            "bid": 6307.5
+        },
+        "closePrice": {
+            "ask": 6388.3,
+            "bid": 6384.5
+        },
+        "highPrice": {
+            "ask": 6393.3,
+            "bid": 6390.4
+        },
+        "lowPrice": {
+            "ask": 6301.6,
+            "bid": 6298.3
+        },
+        "lastTradedVolume": 54484
+    },
+    "1746788400000": {
+        "timestamp": 1746788400000,
+        "openPrice": {
+            "ask": 6388.2,
+            "bid": 6384.4
+        },
+        "closePrice": {
+            "ask": 6341.3,
+            "bid": 6337.5
+        },
+        "highPrice": {
+            "ask": 6411.4,
+            "bid": 6408.6
+        },
+        "lowPrice": {
+            "ask": 6303.7,
+            "bid": 6300.3
+        },
+        "lastTradedVolume": 82316
+    },
+    "1746802800000": {
+        "timestamp": 1746802800000,
+        "openPrice": {
+            "ask": 6340.4,
+            "bid": 6337.6
+        },
+        "closePrice": {
+            "ask": 6375.6,
+            "bid": 6372.8
+        },
+        "highPrice": {
+            "ask": 6384.6,
+            "bid": 6381.8
+        },
+        "lowPrice": {
+            "ask": 6330.3,
+            "bid": 6326.5
+        },
+        "lastTradedVolume": 77387
+    },
+    "1746817200000": {
+        "timestamp": 1746817200000,
+        "openPrice": {
+            "ask": 6375.8,
+            "bid": 6373
+        },
+        "closePrice": {
+            "ask": 6376,
+            "bid": 6373.2
+        },
+        "highPrice": {
+            "ask": 6383.7,
+            "bid": 6380.8
+        },
+        "lowPrice": {
+            "ask": 6363.9,
+            "bid": 6360.8
+        },
+        "lastTradedVolume": 6498
+    },
+    "1746990000000": {
+        "timestamp": 1746990000000,
+        "openPrice": {
+            "ask": 6409.3,
+            "bid": 6405.5
+        },
+        "closePrice": {
+            "ask": 6405.5,
+            "bid": 6401.7
+        },
+        "highPrice": {
+            "ask": 6411.3,
+            "bid": 6408.2
+        },
+        "lowPrice": {
+            "ask": 6383.1,
+            "bid": 6379.8
+        },
+        "lastTradedVolume": 3035
+    },
+    "1747004400000": {
+        "timestamp": 1747004400000,
+        "openPrice": {
+            "ask": 6404.8,
+            "bid": 6402
+        },
+        "closePrice": {
+            "ask": 6401.3,
+            "bid": 6398.5
+        },
+        "highPrice": {
+            "ask": 6410.9,
+            "bid": 6408.1
+        },
+        "lowPrice": {
+            "ask": 6369.6,
+            "bid": 6366.6
+        },
+        "lastTradedVolume": 6117
+    },
+    "1747018800000": {
+        "timestamp": 1747018800000,
+        "openPrice": {
+            "ask": 6401.1,
+            "bid": 6398.3
+        },
+        "closePrice": {
+            "ask": 6462.3,
+            "bid": 6459.5
+        },
+        "highPrice": {
+            "ask": 6473.2,
+            "bid": 6470.1
+        },
+        "lowPrice": {
+            "ask": 6397.2,
+            "bid": 6393.7
+        },
+        "lastTradedVolume": 14141
+    },
+    "1747033200000": {
+        "timestamp": 1747033200000,
+        "openPrice": {
+            "ask": 6461.8,
+            "bid": 6459
+        },
+        "closePrice": {
+            "ask": 6586.1,
+            "bid": 6583.3
+        },
+        "highPrice": {
+            "ask": 6606.9,
+            "bid": 6603.9
+        },
+        "lowPrice": {
+            "ask": 6461.6,
+            "bid": 6458.3
+        },
+        "lastTradedVolume": 99570
+    },
+    "1747047600000": {
+        "timestamp": 1747047600000,
+        "openPrice": {
+            "ask": 6585.8,
+            "bid": 6583
+        },
+        "closePrice": {
+            "ask": 6510.5,
+            "bid": 6507.7
+        },
+        "highPrice": {
+            "ask": 6616.6,
+            "bid": 6613.5
+        },
+        "lowPrice": {
+            "ask": 6510.1,
+            "bid": 6507.2
+        },
+        "lastTradedVolume": 92922
+    },
+    "1747062000000": {
+        "timestamp": 1747062000000,
+        "openPrice": {
+            "ask": 6510.3,
+            "bid": 6507.5
+        },
+        "closePrice": {
+            "ask": 6478,
+            "bid": 6475.2
+        },
+        "highPrice": {
+            "ask": 6530.8,
+            "bid": 6528
+        },
+        "lowPrice": {
+            "ask": 6460.3,
+            "bid": 6456.9
+        },
+        "lastTradedVolume": 84813
+    },
+    "1747076400000": {
+        "timestamp": 1747076400000,
+        "openPrice": {
+            "ask": 6477.8,
+            "bid": 6475
+        },
+        "closePrice": {
+            "ask": 6480,
+            "bid": 6472.2
+        },
+        "highPrice": {
+            "ask": 6494.8,
+            "bid": 6490.5
+        },
+        "lowPrice": {
+            "ask": 6448.7,
+            "bid": 6445.9
+        },
+        "lastTradedVolume": 8559
+    },
+    "1747090800000": {
+        "timestamp": 1747090800000,
+        "openPrice": {
+            "ask": 6475.8,
+            "bid": 6468
+        },
+        "closePrice": {
+            "ask": 6453.8,
+            "bid": 6450
+        },
+        "highPrice": {
+            "ask": 6475.8,
+            "bid": 6471.9
+        },
+        "lowPrice": {
+            "ask": 6448.1,
+            "bid": 6445.3
+        },
+        "lastTradedVolume": 3757
+    },
+    "1747105200000": {
+        "timestamp": 1747105200000,
+        "openPrice": {
+            "ask": 6453.1,
+            "bid": 6450.3
+        },
+        "closePrice": {
+            "ask": 6475.6,
+            "bid": 6471.8
+        },
+        "highPrice": {
+            "ask": 6489.1,
+            "bid": 6486.3
+        },
+        "lowPrice": {
+            "ask": 6444.6,
+            "bid": 6441
+        },
+        "lastTradedVolume": 9364
+    },
+    "1747119600000": {
+        "timestamp": 1747119600000,
+        "openPrice": {
+            "ask": 6474.8,
+            "bid": 6472
+        },
+        "closePrice": {
+            "ask": 6526.4,
+            "bid": 6523.6
+        },
+        "highPrice": {
+            "ask": 6532.1,
+            "bid": 6529.1
+        },
+        "lowPrice": {
+            "ask": 6455.2,
+            "bid": 6451.9
+        },
+        "lastTradedVolume": 52030
+    },
+    "1747134000000": {
+        "timestamp": 1747134000000,
+        "openPrice": {
+            "ask": 6526.6,
+            "bid": 6522.8
+        },
+        "closePrice": {
+            "ask": 6570.4,
+            "bid": 6567.6
+        },
+        "highPrice": {
+            "ask": 6612.4,
+            "bid": 6609.6
+        },
+        "lowPrice": {
+            "ask": 6514.1,
+            "bid": 6511.3
+        },
+        "lastTradedVolume": 73545
+    },
+    "1747148400000": {
+        "timestamp": 1747148400000,
+        "openPrice": {
+            "ask": 6569.9,
+            "bid": 6567.1
+        },
+        "closePrice": {
+            "ask": 6638.9,
+            "bid": 6636.1
+        },
+        "highPrice": {
+            "ask": 6657.3,
+            "bid": 6654.5
+        },
+        "lowPrice": {
+            "ask": 6564.6,
+            "bid": 6561.8
+        },
+        "lastTradedVolume": 104903
+    },
+    "1747162800000": {
+        "timestamp": 1747162800000,
+        "openPrice": {
+            "ask": 6639.2,
+            "bid": 6635.4
+        },
+        "closePrice": {
+            "ask": 6634.7,
+            "bid": 6630.9
+        },
+        "highPrice": {
+            "ask": 6642.2,
+            "bid": 6639.1
+        },
+        "lowPrice": {
+            "ask": 6619.8,
+            "bid": 6616
+        },
+        "lastTradedVolume": 11180
+    },
+    "1747177200000": {
+        "timestamp": 1747177200000,
+        "openPrice": {
+            "ask": 6636.3,
+            "bid": 6628.5
+        },
+        "closePrice": {
+            "ask": 6603.1,
+            "bid": 6599.3
+        },
+        "highPrice": {
+            "ask": 6636.6,
+            "bid": 6631.3
+        },
+        "lowPrice": {
+            "ask": 6590.2,
+            "bid": 6587.1
+        },
+        "lastTradedVolume": 7027
+    },
+    "1747191600000": {
+        "timestamp": 1747191600000,
+        "openPrice": {
+            "ask": 6602.9,
+            "bid": 6599.1
+        },
+        "closePrice": {
+            "ask": 6608.3,
+            "bid": 6605.5
+        },
+        "highPrice": {
+            "ask": 6619.9,
+            "bid": 6616.9
+        },
+        "lowPrice": {
+            "ask": 6590.6,
+            "bid": 6587.3
+        },
+        "lastTradedVolume": 10980
+    },
+    "1747206000000": {
+        "timestamp": 1747206000000,
+        "openPrice": {
+            "ask": 6607.8,
+            "bid": 6605
+        },
+        "closePrice": {
+            "ask": 6564.9,
+            "bid": 6562.1
+        },
+        "highPrice": {
+            "ask": 6634.5,
+            "bid": 6631.5
+        },
+        "lowPrice": {
+            "ask": 6549.7,
+            "bid": 6546.9
+        },
+        "lastTradedVolume": 65356
+    },
+    "1747220400000": {
+        "timestamp": 1747220400000,
+        "openPrice": {
+            "ask": 6565.6,
+            "bid": 6561.8
+        },
+        "closePrice": {
+            "ask": 6611.3,
+            "bid": 6608.5
+        },
+        "highPrice": {
+            "ask": 6627.3,
+            "bid": 6624.5
+        },
+        "lowPrice": {
+            "ask": 6555.6,
+            "bid": 6552.3
+        },
+        "lastTradedVolume": 63004
+    },
+    "1747234800000": {
+        "timestamp": 1747234800000,
+        "openPrice": {
+            "ask": 6611.8,
+            "bid": 6609
+        },
+        "closePrice": {
+            "ask": 6563.3,
+            "bid": 6559.5
+        },
+        "highPrice": {
+            "ask": 6618.2,
+            "bid": 6614.9
+        },
+        "lowPrice": {
+            "ask": 6561.6,
+            "bid": 6558.8
+        },
+        "lastTradedVolume": 68213
+    },
+    "1747249200000": {
+        "timestamp": 1747249200000,
+        "openPrice": {
+            "ask": 6563.6,
+            "bid": 6559.8
+        },
+        "closePrice": {
+            "ask": 6563.1,
+            "bid": 6555.3
+        },
+        "highPrice": {
+            "ask": 6567.3,
+            "bid": 6564.5
+        },
+        "lowPrice": {
+            "ask": 6544,
+            "bid": 6541.2
+        },
+        "lastTradedVolume": 9369
+    },
+    "1747263600000": {
+        "timestamp": 1747263600000,
+        "openPrice": {
+            "ask": 6511.7,
+            "bid": 6503.9
+        },
+        "closePrice": {
+            "ask": 6435.8,
+            "bid": 6432
+        },
+        "highPrice": {
+            "ask": 6513.8,
+            "bid": 6507.5
+        },
+        "lowPrice": {
+            "ask": 6432.8,
+            "bid": 6429.7
+        },
+        "lastTradedVolume": 19146
+    },
+    "1747278000000": {
+        "timestamp": 1747278000000,
+        "openPrice": {
+            "ask": 6435.1,
+            "bid": 6432.3
+        },
+        "closePrice": {
+            "ask": 6379,
+            "bid": 6376.2
+        },
+        "highPrice": {
+            "ask": 6468.7,
+            "bid": 6465.9
+        },
+        "lowPrice": {
+            "ask": 6368.3,
+            "bid": 6365.2
+        },
+        "lastTradedVolume": 39484
+    },
+    "1747292400000": {
+        "timestamp": 1747292400000,
+        "openPrice": {
+            "ask": 6378.8,
+            "bid": 6376
+        },
+        "closePrice": {
+            "ask": 6377.8,
+            "bid": 6374
+        },
+        "highPrice": {
+            "ask": 6413.4,
+            "bid": 6410.6
+        },
+        "lowPrice": {
+            "ask": 6325.1,
+            "bid": 6321.6
+        },
+        "lastTradedVolume": 108802
+    },
+    "1747306800000": {
+        "timestamp": 1747306800000,
+        "openPrice": {
+            "ask": 6375.8,
+            "bid": 6373
+        },
+        "closePrice": {
+            "ask": 6401.2,
+            "bid": 6397.4
+        },
+        "highPrice": {
+            "ask": 6463.6,
+            "bid": 6460.1
+        },
+        "lowPrice": {
+            "ask": 6359.3,
+            "bid": 6356.5
+        },
+        "lastTradedVolume": 97825
+    },
+    "1747321200000": {
+        "timestamp": 1747321200000,
+        "openPrice": {
+            "ask": 6400.5,
+            "bid": 6397.7
+        },
+        "closePrice": {
+            "ask": 6433.4,
+            "bid": 6429.6
+        },
+        "highPrice": {
+            "ask": 6447.4,
+            "bid": 6444.6
+        },
+        "lowPrice": {
+            "ask": 6383.2,
+            "bid": 6380.1
+        },
+        "lastTradedVolume": 64873
+    },
+    "1747335600000": {
+        "timestamp": 1747335600000,
+        "openPrice": {
+            "ask": 6434.4,
+            "bid": 6430.6
+        },
+        "closePrice": {
+            "ask": 6436.7,
+            "bid": 6428.9
+        },
+        "highPrice": {
+            "ask": 6447.8,
+            "bid": 6445
+        },
+        "lowPrice": {
+            "ask": 6428.6,
+            "bid": 6424.8
+        },
+        "lastTradedVolume": 5489
+    },
+    "1747350000000": {
+        "timestamp": 1747350000000,
+        "openPrice": {
+            "ask": 6448.6,
+            "bid": 6440.8
+        },
+        "closePrice": {
+            "ask": 6432.6,
+            "bid": 6428.8
+        },
+        "highPrice": {
+            "ask": 6448.6,
+            "bid": 6445.6
+        },
+        "lowPrice": {
+            "ask": 6418.3,
+            "bid": 6415.2
+        },
+        "lastTradedVolume": 3963
+    },
+    "1747364400000": {
+        "timestamp": 1747364400000,
+        "openPrice": {
+            "ask": 6431.6,
+            "bid": 6428.5
+        },
+        "closePrice": {
+            "ask": 6404.3,
+            "bid": 6401.5
+        },
+        "highPrice": {
+            "ask": 6494.9,
+            "bid": 6491.8
+        },
+        "lowPrice": {
+            "ask": 6391,
+            "bid": 6387.5
+        },
+        "lastTradedVolume": 11754
+    },
+    "1747378800000": {
+        "timestamp": 1747378800000,
+        "openPrice": {
+            "ask": 6404,
+            "bid": 6401.2
+        },
+        "closePrice": {
+            "ask": 6457.9,
+            "bid": 6455.1
+        },
+        "highPrice": {
+            "ask": 6460.2,
+            "bid": 6456.7
+        },
+        "lowPrice": {
+            "ask": 6392.9,
+            "bid": 6389.8
+        },
+        "lastTradedVolume": 78786
+    },
+    "1747393200000": {
+        "timestamp": 1747393200000,
+        "openPrice": {
+            "ask": 6458.2,
+            "bid": 6455.4
+        },
+        "closePrice": {
+            "ask": 6464,
+            "bid": 6460.2
+        },
+        "highPrice": {
+            "ask": 6471.5,
+            "bid": 6468.4
+        },
+        "lowPrice": {
+            "ask": 6424.3,
+            "bid": 6421.5
+        },
+        "lastTradedVolume": 65748
+    },
+    "1747407600000": {
+        "timestamp": 1747407600000,
+        "openPrice": {
+            "ask": 6463.7,
+            "bid": 6460.9
+        },
+        "closePrice": {
+            "ask": 6508.3,
+            "bid": 6505.5
+        },
+        "highPrice": {
+            "ask": 6520.2,
+            "bid": 6517.1
+        },
+        "lowPrice": {
+            "ask": 6463.3,
+            "bid": 6460.2
+        },
+        "lastTradedVolume": 83981
+    },
+    "1747422000000": {
+        "timestamp": 1747422000000,
+        "openPrice": {
+            "ask": 6507.9,
+            "bid": 6505.1
+        },
+        "closePrice": {
+            "ask": 6500.4,
+            "bid": 6497.6
+        },
+        "highPrice": {
+            "ask": 6508.3,
+            "bid": 6505.5
+        },
+        "lowPrice": {
+            "ask": 6481.9,
+            "bid": 6478.4
+        },
+        "lastTradedVolume": 7354
+    },
+    "1747594800000": {
+        "timestamp": 1747594800000,
+        "openPrice": {
+            "ask": 6486.7,
+            "bid": 6482.9
+        },
+        "closePrice": {
+            "ask": 6515.6,
+            "bid": 6512.8
+        },
+        "highPrice": {
+            "ask": 6516.6,
+            "bid": 6513.8
+        },
+        "lowPrice": {
+            "ask": 6430.6,
+            "bid": 6425.5
+        },
+        "lastTradedVolume": 2580
+    },
+    "1747609200000": {
+        "timestamp": 1747609200000,
+        "openPrice": {
+            "ask": 6514.6,
+            "bid": 6511.8
+        },
+        "closePrice": {
+            "ask": 6482.9,
+            "bid": 6480.1
+        },
+        "highPrice": {
+            "ask": 6518.6,
+            "bid": 6515.8
+        },
+        "lowPrice": {
+            "ask": 6475.3,
+            "bid": 6472.2
+        },
+        "lastTradedVolume": 3633
+    },
+    "1747623600000": {
+        "timestamp": 1747623600000,
+        "openPrice": {
+            "ask": 6483.9,
+            "bid": 6481.4
+        },
+        "closePrice": {
+            "ask": 6447.6,
+            "bid": 6444.8
+        },
+        "highPrice": {
+            "ask": 6485.6,
+            "bid": 6482.7
+        },
+        "lowPrice": {
+            "ask": 6441.9,
+            "bid": 6439.1
+        },
+        "lastTradedVolume": 7008
+    },
+    "1747638000000": {
+        "timestamp": 1747638000000,
+        "openPrice": {
+            "ask": 6447.9,
+            "bid": 6445.1
+        },
+        "closePrice": {
+            "ask": 6415.6,
+            "bid": 6411.8
+        },
+        "highPrice": {
+            "ask": 6479.3,
+            "bid": 6476.5
+        },
+        "lowPrice": {
+            "ask": 6404.6,
+            "bid": 6401.2
+        },
+        "lastTradedVolume": 56902
+    },
+    "1747652400000": {
+        "timestamp": 1747652400000,
+        "openPrice": {
+            "ask": 6416.3,
+            "bid": 6412.5
+        },
+        "closePrice": {
+            "ask": 6473.4,
+            "bid": 6470.6
+        },
+        "highPrice": {
+            "ask": 6502.1,
+            "bid": 6499.3
+        },
+        "lowPrice": {
+            "ask": 6413.6,
+            "bid": 6410.8
+        },
+        "lastTradedVolume": 61692
+    },
+    "1747666800000": {
+        "timestamp": 1747666800000,
+        "openPrice": {
+            "ask": 6474.1,
+            "bid": 6471.3
+        },
+        "closePrice": {
+            "ask": 6477.2,
+            "bid": 6474.4
+        },
+        "highPrice": {
+            "ask": 6552.2,
+            "bid": 6549.4
+        },
+        "lowPrice": {
+            "ask": 6448.8,
+            "bid": 6446
+        },
+        "lastTradedVolume": 108953
+    },
+    "1747681200000": {
+        "timestamp": 1747681200000,
+        "openPrice": {
+            "ask": 6476.9,
+            "bid": 6474.1
+        },
+        "closePrice": {
+            "ask": 6504,
+            "bid": 6496.2
+        },
+        "highPrice": {
+            "ask": 6508.7,
+            "bid": 6504.9
+        },
+        "lowPrice": {
+            "ask": 6471.6,
+            "bid": 6468.3
+        },
+        "lastTradedVolume": 3799
+    },
+    "1747695600000": {
+        "timestamp": 1747695600000,
+        "openPrice": {
+            "ask": 6514.3,
+            "bid": 6506.5
+        },
+        "closePrice": {
+            "ask": 6500.9,
+            "bid": 6497.1
+        },
+        "highPrice": {
+            "ask": 6523,
+            "bid": 6519.9
+        },
+        "lowPrice": {
+            "ask": 6491.9,
+            "bid": 6489.1
+        },
+        "lastTradedVolume": 6155
+    },
+    "1747710000000": {
+        "timestamp": 1747710000000,
+        "openPrice": {
+            "ask": 6500.5,
+            "bid": 6496.7
+        },
+        "closePrice": {
+            "ask": 6507.7,
+            "bid": 6504.9
+        },
+        "highPrice": {
+            "ask": 6509.1,
+            "bid": 6505.6
+        },
+        "lowPrice": {
+            "ask": 6475,
+            "bid": 6471.8
+        },
+        "lastTradedVolume": 13925
+    },
+    "1747724400000": {
+        "timestamp": 1747724400000,
+        "openPrice": {
+            "ask": 6507.3,
+            "bid": 6504.5
+        },
+        "closePrice": {
+            "ask": 6490.5,
+            "bid": 6487.7
+        },
+        "highPrice": {
+            "ask": 6548.9,
+            "bid": 6546.1
+        },
+        "lowPrice": {
+            "ask": 6452.1,
+            "bid": 6448.9
+        },
+        "lastTradedVolume": 59249
+    },
+    "1747738800000": {
+        "timestamp": 1747738800000,
+        "openPrice": {
+            "ask": 6489.8,
+            "bid": 6487
+        },
+        "closePrice": {
+            "ask": 6467,
+            "bid": 6464.2
+        },
+        "highPrice": {
+            "ask": 6516.9,
+            "bid": 6513.4
+        },
+        "lowPrice": {
+            "ask": 6446.6,
+            "bid": 6443.5
+        },
+        "lastTradedVolume": 64734
+    },
+    "1747753200000": {
+        "timestamp": 1747753200000,
+        "openPrice": {
+            "ask": 6467.3,
+            "bid": 6464.5
+        },
+        "closePrice": {
+            "ask": 6511.2,
+            "bid": 6507.4
+        },
+        "highPrice": {
+            "ask": 6528.9,
+            "bid": 6525.7
+        },
+        "lowPrice": {
+            "ask": 6442.1,
+            "bid": 6439.3
+        },
+        "lastTradedVolume": 71506
+    },
+    "1747767600000": {
+        "timestamp": 1747767600000,
+        "openPrice": {
+            "ask": 6510.2,
+            "bid": 6506.8
+        },
+        "closePrice": {
+            "ask": 6511.9,
+            "bid": 6508.1
+        },
+        "highPrice": {
+            "ask": 6524.4,
+            "bid": 6521.1
+        },
+        "lowPrice": {
+            "ask": 6505.1,
+            "bid": 6501.9
+        },
+        "lastTradedVolume": 6150
+    },
+    "1747782000000": {
+        "timestamp": 1747782000000,
+        "openPrice": {
+            "ask": 6582.4,
+            "bid": 6574.6
+        },
+        "closePrice": {
+            "ask": 6590,
+            "bid": 6586.2
+        },
+        "highPrice": {
+            "ask": 6610.8,
+            "bid": 6608
+        },
+        "lowPrice": {
+            "ask": 6561.6,
+            "bid": 6558.4
+        },
+        "lastTradedVolume": 13873
+    },
+    "1747796400000": {
+        "timestamp": 1747796400000,
+        "openPrice": {
+            "ask": 6589.4,
+            "bid": 6586.6
+        },
+        "closePrice": {
+            "ask": 6567.5,
+            "bid": 6564.7
+        },
+        "highPrice": {
+            "ask": 6613,
+            "bid": 6609.9
+        },
+        "lowPrice": {
+            "ask": 6553.7,
+            "bid": 6550.5
+        },
+        "lastTradedVolume": 17317
+    },
+    "1747810800000": {
+        "timestamp": 1747810800000,
+        "openPrice": {
+            "ask": 6567.3,
+            "bid": 6564.5
+        },
+        "closePrice": {
+            "ask": 6543.8,
+            "bid": 6540
+        },
+        "highPrice": {
+            "ask": 6600.5,
+            "bid": 6597.7
+        },
+        "lowPrice": {
+            "ask": 6540.2,
+            "bid": 6537
+        },
+        "lastTradedVolume": 62105
+    },
+    "1747825200000": {
+        "timestamp": 1747825200000,
+        "openPrice": {
+            "ask": 6544.2,
+            "bid": 6541.4
+        },
+        "closePrice": {
+            "ask": 6487.3,
+            "bid": 6483.5
+        },
+        "highPrice": {
+            "ask": 6586.2,
+            "bid": 6582.6
+        },
+        "lowPrice": {
+            "ask": 6484.6,
+            "bid": 6481.4
+        },
+        "lastTradedVolume": 96836
+    },
+    "1747839600000": {
+        "timestamp": 1747839600000,
+        "openPrice": {
+            "ask": 6486.3,
+            "bid": 6483.3
+        },
+        "closePrice": {
+            "ask": 6448.9,
+            "bid": 6446.1
+        },
+        "highPrice": {
+            "ask": 6503.6,
+            "bid": 6500.3
+        },
+        "lowPrice": {
+            "ask": 6426.8,
+            "bid": 6423.5
+        },
+        "lastTradedVolume": 90460
+    },
+    "1747854000000": {
+        "timestamp": 1747854000000,
+        "openPrice": {
+            "ask": 6448.2,
+            "bid": 6445.4
+        },
+        "closePrice": {
+            "ask": 6426.3,
+            "bid": 6418.5
+        },
+        "highPrice": {
+            "ask": 6451.3,
+            "bid": 6448.5
+        },
+        "lowPrice": {
+            "ask": 6418.9,
+            "bid": 6414.5
+        },
+        "lastTradedVolume": 9003
+    },
+    "1747868400000": {
+        "timestamp": 1747868400000,
+        "openPrice": {
+            "ask": 6429.6,
+            "bid": 6421.8
+        },
+        "closePrice": {
+            "ask": 6443.8,
+            "bid": 6441
+        },
+        "highPrice": {
+            "ask": 6446.8,
+            "bid": 6443.7
+        },
+        "lowPrice": {
+            "ask": 6408.4,
+            "bid": 6405.1
+        },
+        "lastTradedVolume": 6052
+    },
+    "1747882800000": {
+        "timestamp": 1747882800000,
+        "openPrice": {
+            "ask": 6444.2,
+            "bid": 6441.4
+        },
+        "closePrice": {
+            "ask": 6350,
+            "bid": 6346.2
+        },
+        "highPrice": {
+            "ask": 6463.4,
+            "bid": 6460.2
+        },
+        "lowPrice": {
+            "ask": 6339.8,
+            "bid": 6337
+        },
+        "lastTradedVolume": 25868
+    },
+    "1747897200000": {
+        "timestamp": 1747897200000,
+        "openPrice": {
+            "ask": 6349.4,
+            "bid": 6346.6
+        },
+        "closePrice": {
+            "ask": 6323.1,
+            "bid": 6320.3
+        },
+        "highPrice": {
+            "ask": 6404,
+            "bid": 6400.6
+        },
+        "lowPrice": {
+            "ask": 6323.1,
+            "bid": 6319.9
+        },
+        "lastTradedVolume": 67087
+    },
+    "1747911600000": {
+        "timestamp": 1747911600000,
+        "openPrice": {
+            "ask": 6323.9,
+            "bid": 6321.1
+        },
+        "closePrice": {
+            "ask": 6378.2,
+            "bid": 6375.4
+        },
+        "highPrice": {
+            "ask": 6403.1,
+            "bid": 6399.9
+        },
+        "lowPrice": {
+            "ask": 6318,
+            "bid": 6314.7
+        },
+        "lastTradedVolume": 66453
+    },
+    "1747926000000": {
+        "timestamp": 1747926000000,
+        "openPrice": {
+            "ask": 6378.6,
+            "bid": 6375.8
+        },
+        "closePrice": {
+            "ask": 6404,
+            "bid": 6401.2
+        },
+        "highPrice": {
+            "ask": 6412,
+            "bid": 6408.8
+        },
+        "lowPrice": {
+            "ask": 6351,
+            "bid": 6347.8
+        },
+        "lastTradedVolume": 64469
+    },
+    "1747940400000": {
+        "timestamp": 1747940400000,
+        "openPrice": {
+            "ask": 6404.6,
+            "bid": 6400.8
+        },
+        "closePrice": {
+            "ask": 6366.6,
+            "bid": 6358.8
+        },
+        "highPrice": {
+            "ask": 6413.4,
+            "bid": 6410.2
+        },
+        "lowPrice": {
+            "ask": 6360.1,
+            "bid": 6357.2
+        },
+        "lastTradedVolume": 5859
+    },
+    "1747954800000": {
+        "timestamp": 1747954800000,
+        "openPrice": {
+            "ask": 6365.8,
+            "bid": 6358
+        },
+        "closePrice": {
+            "ask": 6356.8,
+            "bid": 6354
+        },
+        "highPrice": {
+            "ask": 6382.9,
+            "bid": 6379.7
+        },
+        "lowPrice": {
+            "ask": 6352.6,
+            "bid": 6349.4
+        },
+        "lastTradedVolume": 3394
+    },
+    "1747969200000": {
+        "timestamp": 1747969200000,
+        "openPrice": {
+            "ask": 6357.2,
+            "bid": 6354.4
+        },
+        "closePrice": {
+            "ask": 6351.3,
+            "bid": 6348.5
+        },
+        "highPrice": {
+            "ask": 6381,
+            "bid": 6377.8
+        },
+        "lowPrice": {
+            "ask": 6350.2,
+            "bid": 6347
+        },
+        "lastTradedVolume": 5390
+    },
+    "1747983600000": {
+        "timestamp": 1747983600000,
+        "openPrice": {
+            "ask": 6351.8,
+            "bid": 6349
+        },
+        "closePrice": {
+            "ask": 6412.2,
+            "bid": 6409.4
+        },
+        "highPrice": {
+            "ask": 6413.2,
+            "bid": 6410.4
+        },
+        "lowPrice": {
+            "ask": 6343.5,
+            "bid": 6340.7
+        },
+        "lastTradedVolume": 40174
+    },
+    "1747998000000": {
+        "timestamp": 1747998000000,
+        "openPrice": {
+            "ask": 6412.6,
+            "bid": 6408.8
+        },
+        "closePrice": {
+            "ask": 6417.8,
+            "bid": 6415
+        },
+        "highPrice": {
+            "ask": 6457.3,
+            "bid": 6454.5
+        },
+        "lowPrice": {
+            "ask": 6291.4,
+            "bid": 6288
+        },
+        "lastTradedVolume": 86163
+    },
+    "1748012400000": {
+        "timestamp": 1748012400000,
+        "openPrice": {
+            "ask": 6417.4,
+            "bid": 6414.6
+        },
+        "closePrice": {
+            "ask": 6447.9,
+            "bid": 6445.1
+        },
+        "highPrice": {
+            "ask": 6452.7,
+            "bid": 6449.5
+        },
+        "lowPrice": {
+            "ask": 6405.4,
+            "bid": 6402.6
+        },
+        "lastTradedVolume": 51865
+    },
+    "1748026800000": {
+        "timestamp": 1748026800000,
+        "openPrice": {
+            "ask": 6447.5,
+            "bid": 6444.7
+        },
+        "closePrice": {
+            "ask": 6454.3,
+            "bid": 6450.5
+        },
+        "highPrice": {
+            "ask": 6455.5,
+            "bid": 6452.1
+        },
+        "lowPrice": {
+            "ask": 6434.8,
+            "bid": 6432
+        },
+        "lastTradedVolume": 2586
+    },
+    "1748199600000": {
+        "timestamp": 1748199600000,
+        "openPrice": {
+            "ask": 6456.9,
+            "bid": 6449.1
+        },
+        "closePrice": {
+            "ask": 6473.7,
+            "bid": 6469.9
+        },
+        "highPrice": {
+            "ask": 6484.9,
+            "bid": 6478.6
+        },
+        "lowPrice": {
+            "ask": 6434.5,
+            "bid": 6427.6
+        },
+        "lastTradedVolume": 533
+    },
+    "1748214000000": {
+        "timestamp": 1748214000000,
+        "openPrice": {
+            "ask": 6473.8,
+            "bid": 6470
+        },
+        "closePrice": {
+            "ask": 6428,
+            "bid": 6424.2
+        },
+        "highPrice": {
+            "ask": 6490.8,
+            "bid": 6486
+        },
+        "lowPrice": {
+            "ask": 6425.9,
+            "bid": 6422.1
+        },
+        "lastTradedVolume": 2358
+    },
+    "1748228400000": {
+        "timestamp": 1748228400000,
+        "openPrice": {
+            "ask": 6427,
+            "bid": 6423.8
+        },
+        "closePrice": {
+            "ask": 6448.1,
+            "bid": 6445.3
+        },
+        "highPrice": {
+            "ask": 6455.8,
+            "bid": 6452.6
+        },
+        "lowPrice": {
+            "ask": 6426,
+            "bid": 6423.2
+        },
+        "lastTradedVolume": 2148
+    },
+    "1748242800000": {
+        "timestamp": 1748242800000,
+        "openPrice": {
+            "ask": 6446.2,
+            "bid": 6443.4
+        },
+        "closePrice": {
+            "ask": 6403.5,
+            "bid": 6399.7
+        },
+        "highPrice": {
+            "ask": 6474.4,
+            "bid": 6471.6
+        },
+        "lowPrice": {
+            "ask": 6402.1,
+            "bid": 6399.3
+        },
+        "lastTradedVolume": 20096
+    },
+    "1748257200000": {
+        "timestamp": 1748257200000,
+        "openPrice": {
+            "ask": 6403.1,
+            "bid": 6400.3
+        },
+        "closePrice": {
+            "ask": 6404.2,
+            "bid": 6400.4
+        },
+        "highPrice": {
+            "ask": 6432.4,
+            "bid": 6429.2
+        },
+        "lowPrice": {
+            "ask": 6396.2,
+            "bid": 6393.4
+        },
+        "lastTradedVolume": 8355
+    },
+    "1748271600000": {
+        "timestamp": 1748271600000,
+        "openPrice": {
+            "ask": 6403.7,
+            "bid": 6400.9
+        },
+        "closePrice": {
+            "ask": 6423.9,
+            "bid": 6420.1
+        },
+        "highPrice": {
+            "ask": 6436.6,
+            "bid": 6433.8
+        },
+        "lowPrice": {
+            "ask": 6403.7,
+            "bid": 6400.9
+        },
+        "lastTradedVolume": 5692
+    },
+    "1748286000000": {
+        "timestamp": 1748286000000,
+        "openPrice": {
+            "ask": 6423.8,
+            "bid": 6420
+        },
+        "closePrice": {
+            "ask": 6423.8,
+            "bid": 6420
+        },
+        "highPrice": {
+            "ask": 6423.8,
+            "bid": 6420
+        },
+        "lowPrice": {
+            "ask": 6423.8,
+            "bid": 6420
+        },
+        "lastTradedVolume": 0
+    },
+    "1748300400000": {
+        "timestamp": 1748300400000,
+        "openPrice": {
+            "ask": 6418.5,
+            "bid": 6410.7
+        },
+        "closePrice": {
+            "ask": 6405.2,
+            "bid": 6401.4
+        },
+        "highPrice": {
+            "ask": 6441.9,
+            "bid": 6438.6
+        },
+        "lowPrice": {
+            "ask": 6391.2,
+            "bid": 6387.4
+        },
+        "lastTradedVolume": 3868
+    },
+    "1748314800000": {
+        "timestamp": 1748314800000,
+        "openPrice": {
+            "ask": 6405.6,
+            "bid": 6401.8
+        },
+        "closePrice": {
+            "ask": 6423.9,
+            "bid": 6421.1
+        },
+        "highPrice": {
+            "ask": 6439.4,
+            "bid": 6436.2
+        },
+        "lowPrice": {
+            "ask": 6377.5,
+            "bid": 6374.3
+        },
+        "lastTradedVolume": 5531
+    },
+    "1748329200000": {
+        "timestamp": 1748329200000,
+        "openPrice": {
+            "ask": 6424.4,
+            "bid": 6420.6
+        },
+        "closePrice": {
+            "ask": 6406.1,
+            "bid": 6403.3
+        },
+        "highPrice": {
+            "ask": 6453.8,
+            "bid": 6450.5
+        },
+        "lowPrice": {
+            "ask": 6390.2,
+            "bid": 6386.9
+        },
+        "lastTradedVolume": 38088
+    },
+    "1748343600000": {
+        "timestamp": 1748343600000,
+        "openPrice": {
+            "ask": 6407,
+            "bid": 6404.2
+        },
+        "closePrice": {
+            "ask": 6323.5,
+            "bid": 6320.7
+        },
+        "highPrice": {
+            "ask": 6422,
+            "bid": 6418.8
+        },
+        "lowPrice": {
+            "ask": 6316.5,
+            "bid": 6313.7
+        },
+        "lastTradedVolume": 63431
+    },
+    "1748358000000": {
+        "timestamp": 1748358000000,
+        "openPrice": {
+            "ask": 6325.4,
+            "bid": 6322.6
+        },
+        "closePrice": {
+            "ask": 6362.9,
+            "bid": 6360.1
+        },
+        "highPrice": {
+            "ask": 6368.5,
+            "bid": 6365.1
+        },
+        "lowPrice": {
+            "ask": 6300.3,
+            "bid": 6297.5
+        },
+        "lastTradedVolume": 58326
+    },
+    "1748372400000": {
+        "timestamp": 1748372400000,
+        "openPrice": {
+            "ask": 6364.4,
+            "bid": 6360.6
+        },
+        "closePrice": {
+            "ask": 6376.3,
+            "bid": 6372.5
+        },
+        "highPrice": {
+            "ask": 6387.3,
+            "bid": 6384
+        },
+        "lowPrice": {
+            "ask": 6362.9,
+            "bid": 6359.6
+        },
+        "lastTradedVolume": 3843
+    },
+    "1748386800000": {
+        "timestamp": 1748386800000,
+        "openPrice": {
+            "ask": 6386.6,
+            "bid": 6383.8
+        },
+        "closePrice": {
+            "ask": 6400.4,
+            "bid": 6396.6
+        },
+        "highPrice": {
+            "ask": 6410.5,
+            "bid": 6406.8
+        },
+        "lowPrice": {
+            "ask": 6384.4,
+            "bid": 6380.6
+        },
+        "lastTradedVolume": 5622
+    },
+    "1748401200000": {
+        "timestamp": 1748401200000,
+        "openPrice": {
+            "ask": 6399.4,
+            "bid": 6395.6
+        },
+        "closePrice": {
+            "ask": 6363,
+            "bid": 6359.2
+        },
+        "highPrice": {
+            "ask": 6402.4,
+            "bid": 6399.5
+        },
+        "lowPrice": {
+            "ask": 6354.1,
+            "bid": 6351.3
+        },
+        "lastTradedVolume": 12180
+    },
+    "1748415600000": {
+        "timestamp": 1748415600000,
+        "openPrice": {
+            "ask": 6364,
+            "bid": 6360.2
+        },
+        "closePrice": {
+            "ask": 6416.8,
+            "bid": 6414
+        },
+        "highPrice": {
+            "ask": 6425.8,
+            "bid": 6423
+        },
+        "lowPrice": {
+            "ask": 6358.9,
+            "bid": 6356.1
+        },
+        "lastTradedVolume": 55540
+    },
+    "1748430000000": {
+        "timestamp": 1748430000000,
+        "openPrice": {
+            "ask": 6415.8,
+            "bid": 6413
+        },
+        "closePrice": {
+            "ask": 6426.5,
+            "bid": 6422.7
+        },
+        "highPrice": {
+            "ask": 6464.7,
+            "bid": 6461.9
+        },
+        "lowPrice": {
+            "ask": 6401.8,
+            "bid": 6399
+        },
+        "lastTradedVolume": 86012
+    },
+    "1748444400000": {
+        "timestamp": 1748444400000,
+        "openPrice": {
+            "ask": 6427.5,
+            "bid": 6423.7
+        },
+        "closePrice": {
+            "ask": 6407.2,
+            "bid": 6404.4
+        },
+        "highPrice": {
+            "ask": 6506.5,
+            "bid": 6503.7
+        },
+        "lowPrice": {
+            "ask": 6402.2,
+            "bid": 6399.4
+        },
+        "lastTradedVolume": 92066
+    },
+    "1748458800000": {
+        "timestamp": 1748458800000,
+        "openPrice": {
+            "ask": 6406.2,
+            "bid": 6403.4
+        },
+        "closePrice": {
+            "ask": 6433.5,
+            "bid": 6425.7
+        },
+        "highPrice": {
+            "ask": 6437.1,
+            "bid": 6434.3
+        },
+        "lowPrice": {
+            "ask": 6399.2,
+            "bid": 6395.4
+        },
+        "lastTradedVolume": 17039
+    },
+    "1748473200000": {
+        "timestamp": 1748473200000,
+        "openPrice": {
+            "ask": 6465.8,
+            "bid": 6458
+        },
+        "closePrice": {
+            "ask": 6511.6,
+            "bid": 6508.8
+        },
+        "highPrice": {
+            "ask": 6517.7,
+            "bid": 6513.9
+        },
+        "lowPrice": {
+            "ask": 6461.8,
+            "bid": 6458
+        },
+        "lastTradedVolume": 11104
+    },
+    "1748487600000": {
+        "timestamp": 1748487600000,
+        "openPrice": {
+            "ask": 6512.6,
+            "bid": 6509.8
+        },
+        "closePrice": {
+            "ask": 6538.2,
+            "bid": 6534.4
+        },
+        "highPrice": {
+            "ask": 6544.2,
+            "bid": 6541.4
+        },
+        "lowPrice": {
+            "ask": 6501.5,
+            "bid": 6498.7
+        },
+        "lastTradedVolume": 17326
+    },
+    "1748502000000": {
+        "timestamp": 1748502000000,
+        "openPrice": {
+            "ask": 6537.2,
+            "bid": 6535.4
+        },
+        "closePrice": {
+            "ask": 6441.9,
+            "bid": 6439.1
+        },
+        "highPrice": {
+            "ask": 6550.1,
+            "bid": 6547.3
+        },
+        "lowPrice": {
+            "ask": 6433.9,
+            "bid": 6431.1
+        },
+        "lastTradedVolume": 97826
+    },
+    "1748516400000": {
+        "timestamp": 1748516400000,
+        "openPrice": {
+            "ask": 6442.9,
+            "bid": 6440.1
+        },
+        "closePrice": {
+            "ask": 6355.5,
+            "bid": 6351.7
+        },
+        "highPrice": {
+            "ask": 6463.8,
+            "bid": 6461
+        },
+        "lowPrice": {
+            "ask": 6311.6,
+            "bid": 6308.8
+        },
+        "lastTradedVolume": 114946
+    },
+    "1748530800000": {
+        "timestamp": 1748530800000,
+        "openPrice": {
+            "ask": 6354.5,
+            "bid": 6351.2
+        },
+        "closePrice": {
+            "ask": 6334.2,
+            "bid": 6331.4
+        },
+        "highPrice": {
+            "ask": 6364.5,
+            "bid": 6361.7
+        },
+        "lowPrice": {
+            "ask": 6323.8,
+            "bid": 6320.5
+        },
+        "lastTradedVolume": 98412
+    },
+    "1748545200000": {
+        "timestamp": 1748545200000,
+        "openPrice": {
+            "ask": 6335.2,
+            "bid": 6332.4
+        },
+        "closePrice": {
+            "ask": 6335.9,
+            "bid": 6332.1
+        },
+        "highPrice": {
+            "ask": 6340.1,
+            "bid": 6337.3
+        },
+        "lowPrice": {
+            "ask": 6324.9,
+            "bid": 6321.2
+        },
+        "lastTradedVolume": 7237
+    },
+    "1748559600000": {
+        "timestamp": 1748559600000,
+        "openPrice": {
+            "ask": 6329.2,
+            "bid": 6321.4
+        },
+        "closePrice": {
+            "ask": 6309.4,
+            "bid": 6306.6
+        },
+        "highPrice": {
+            "ask": 6338.7,
+            "bid": 6335.9
+        },
+        "lowPrice": {
+            "ask": 6292.6,
+            "bid": 6289.8
+        },
+        "lastTradedVolume": 9241
+    },
+    "1748574000000": {
+        "timestamp": 1748574000000,
+        "openPrice": {
+            "ask": 6310.4,
+            "bid": 6305.6
+        },
+        "closePrice": {
+            "ask": 6307,
+            "bid": 6303.2
+        },
+        "highPrice": {
+            "ask": 6321.2,
+            "bid": 6317.4
+        },
+        "lowPrice": {
+            "ask": 6296.2,
+            "bid": 6293.4
+        },
+        "lastTradedVolume": 8796
+    },
+    "1748588400000": {
+        "timestamp": 1748588400000,
+        "openPrice": {
+            "ask": 6306.1,
+            "bid": 6303.3
+        },
+        "closePrice": {
+            "ask": 6386.7,
+            "bid": 6383.9
+        },
+        "highPrice": {
+            "ask": 6388.1,
+            "bid": 6384.9
+        },
+        "lowPrice": {
+            "ask": 6298.1,
+            "bid": 6295.3
+        },
+        "lastTradedVolume": 72745
+    },
+    "1748602800000": {
+        "timestamp": 1748602800000,
+        "openPrice": {
+            "ask": 6386.6,
+            "bid": 6383.8
+        },
+        "closePrice": {
+            "ask": 6273.2,
+            "bid": 6270.4
+        },
+        "highPrice": {
+            "ask": 6406.6,
+            "bid": 6403.8
+        },
+        "lowPrice": {
+            "ask": 6234.7,
+            "bid": 6231.9
+        },
+        "lastTradedVolume": 141572
+    },
+    "1748617200000": {
+        "timestamp": 1748617200000,
+        "openPrice": {
+            "ask": 6274.2,
+            "bid": 6272.3
+        },
+        "closePrice": {
+            "ask": 6265.5,
+            "bid": 6262.7
+        },
+        "highPrice": {
+            "ask": 6295.5,
+            "bid": 6292.2
+        },
+        "lowPrice": {
+            "ask": 6207.1,
+            "bid": 6204.2
+        },
+        "lastTradedVolume": 116245
+    },
+    "1748631600000": {
+        "timestamp": 1748631600000,
+        "openPrice": {
+            "ask": 6266.5,
+            "bid": 6261.7
+        },
+        "closePrice": {
+            "ask": 6264.6,
+            "bid": 6260.8
+        },
+        "highPrice": {
+            "ask": 6285.7,
+            "bid": 6282.9
+        },
+        "lowPrice": {
+            "ask": 6257.6,
+            "bid": 6254.8
+        },
+        "lastTradedVolume": 12456
+    },
+    "1748804400000": {
+        "timestamp": 1748804400000,
+        "openPrice": {
+            "ask": 6309.2,
+            "bid": 6305.4
+        },
+        "closePrice": {
+            "ask": 6374.9,
+            "bid": 6371.1
+        },
+        "highPrice": {
+            "ask": 6405.1,
+            "bid": 6398.9
+        },
+        "lowPrice": {
+            "ask": 6308.7,
+            "bid": 6304.9
+        },
+        "lastTradedVolume": 9439
+    },
+    "1748818800000": {
+        "timestamp": 1748818800000,
+        "openPrice": {
+            "ask": 6375.3,
+            "bid": 6371.5
+        },
+        "closePrice": {
+            "ask": 6436.2,
+            "bid": 6433.4
+        },
+        "highPrice": {
+            "ask": 6438.2,
+            "bid": 6435.4
+        },
+        "lowPrice": {
+            "ask": 6367,
+            "bid": 6362.7
+        },
+        "lastTradedVolume": 14019
+    },
+    "1748833200000": {
+        "timestamp": 1748833200000,
+        "openPrice": {
+            "ask": 6436.3,
+            "bid": 6432.5
+        },
+        "closePrice": {
+            "ask": 6419.1,
+            "bid": 6416.3
+        },
+        "highPrice": {
+            "ask": 6440.2,
+            "bid": 6436.5
+        },
+        "lowPrice": {
+            "ask": 6399.5,
+            "bid": 6396.6
+        },
+        "lastTradedVolume": 17734
+    },
+    "1748847600000": {
+        "timestamp": 1748847600000,
+        "openPrice": {
+            "ask": 6418.2,
+            "bid": 6415.4
+        },
+        "closePrice": {
+            "ask": 6509.4,
+            "bid": 6506.6
+        },
+        "highPrice": {
+            "ask": 6511.1,
+            "bid": 6508.3
+        },
+        "lowPrice": {
+            "ask": 6399.2,
+            "bid": 6395.5
+        },
+        "lastTradedVolume": 114374
+    },
+    "1748862000000": {
+        "timestamp": 1748862000000,
+        "openPrice": {
+            "ask": 6509,
+            "bid": 6506.2
+        },
+        "closePrice": {
+            "ask": 6556.8,
+            "bid": 6553
+        },
+        "highPrice": {
+            "ask": 6564.7,
+            "bid": 6556.9
+        },
+        "lowPrice": {
+            "ask": 6494.2,
+            "bid": 6491.3
+        },
+        "lastTradedVolume": 44669
+    }
+}
