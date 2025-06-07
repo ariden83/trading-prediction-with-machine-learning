@@ -147,25 +147,25 @@ async function loadData(jsonFile) {
 
 (async () => {
     // Charger et filtrer les données pour tous les timeframes
-    const rawData1d = await loadData('../live/1d_2025-6-2.json');
+    const rawData1d = await loadData('../public/live/1d_2025-6-2.json');
     sampleData['1d'] = rawData1d ? rawData1d
         .filter(d => d.close !== undefined && d.open !== undefined)
         .slice(-50) // Garder les 50 dernières données
         : [];
 
-    const rawData4h = await loadData('../live/4h_2025-6-2.json');
+    const rawData4h = await loadData('../public/live/4h_2025-6-2.json');
     sampleData['4h'] = rawData4h ? rawData4h
         .filter(d => d.close !== undefined && d.open !== undefined)
         .slice(-50) // Garder les 50 dernières données
         : [];
 
-    const rawData1h = await loadData('../live/1h_2025-6-2.json');
+    const rawData1h = await loadData('../public/live/1h_2025-6-2.json');
     sampleData['1h'] = rawData1h ? rawData1h
         .filter(d => d.close !== undefined && d.open !== undefined)
         .slice(-50) // Garder les 50 dernières données
         : [];
 
-    const rawData5min = await loadData('../live/5m_2025-6-2.json');
+    const rawData5min = await loadData('../public/live/5m_2025-6-2.json');
     sampleData['5min'] = rawData5min ? rawData5min
         .filter(d => d.close !== undefined && d.open !== undefined)
         .slice(0, -22) // Retirer les 22 dernières données
